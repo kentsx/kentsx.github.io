@@ -1,0 +1,17 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /Tags/
+Allow: /categories/
+Allow: /work/
+
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+
+Sitemap: https://www.kentspcae.xyz/sitemap.xml
+Sitemap: https://www.kentspcae.xyz/baidusitemap.xml
