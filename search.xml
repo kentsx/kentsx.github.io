@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[2018-04-05 给Anisina添加本地搜索]]></title>
+    <url>%2F2018%2F2018-04-05-%E7%BB%99Anisina%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[墙与百度的悲哀]]></title>
+    <url>%2F2018%2F2018-04-04-%E5%A2%99%E4%B8%8E%E7%99%BE%E5%BA%A6%E7%9A%84%E6%82%B2%E5%93%80%2F</url>
+    <content type="text"><![CDATA[本来的预期，是在Github上托管我的个人博客，但是出于两个原因，最终，这个博客托管在了Coding上，正如页面最底下所言，hosted by Coding.net。这不是一篇软文，是我真实的过程。我也是退而求其次，一步步地迁移我的page，最终花落coding。 原因一：我们的高墙 原因二：我们的百度 准确说，这两个原因是承上启下的，由于墙的存在，导致了谷歌的永远失联。其实，谷歌的Search Console以及Analytics真的比百度的不知好用多少，而且效率极高。我在周末提交的链接，周一就已经有不少页面被index了。而傲娇的百度，至今（这篇文章发出的时候）都还没有收录我任何页面。 虽然我不在这个网站是不是有很大的浏览量，我在意的是能够记录下我的生活和想法。我觉得特别可惜的，就是在国内红红火火出现各类共享经济的时候，我已经想到了飞机托运的共享，半年后我就听说吉祥航空已经推出了国内首家做共享托运额度的。 话题扯远了，想到用Coding的原因，主要是在互联网上搜索后发现，要被百度爬虫爬，github是不可能了，所以初衷是想将github作为主站，服务大部分visitor，而coding只是应付下百度的。无奈用了Cloudflare的full（Crypto）之后，SSL的小绿锁是上了，但似乎百度站长一直啥也抓不到，尴尬。而且，CF的DNS在腾讯云似乎一直通不过，而且ping的速度真心有点慢。如果我清理了cookie以及缓存以后，访问我的首页一般都要20s还多，这个速度我觉得是不怎么能忍受的。 在把网页托管到coding上之后，虽然要加上coding的小标签否则会有5s广告，但是审核小标签还是挺效率的，再说了在现在这个互联网讲求“引用”的情况下，加这么个小标签给它也挺合理的吧。 相比Github，Coding直接能提供SSL证书，而且强制用HTTPS这些都是比github更为人性化的。而且我用ip站长也ping了下coding，发现它在境外也设有不少CDN，其中以美国的fastly CDN节点，香港的Zenlayer节点，整体也能把ping的时间控制在30ms以内，这对于一个免费提供托管的repo来说很不错了。也就是说，从境外访问的话，速度也能够得到保证。 另外，采用coding的话，我就直接使用了腾讯云自己的DNS，解析速度也会更快一些。（CF对大部分人而言只是提供了SSL），既然coding已经提供了SSL对吧。 同时，为了以防自己的PC坏了或者突然哪一天Coding挂了，所以我依然选择了同步到github上，以防不测。]]></content>
+      <tags>
+        <tag>建站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[头头俱乐部回忆录]]></title>
+    <url>%2F2018%2F2018-04-03-%E5%A4%B4%E5%A4%B4%E4%BF%B1%E4%B9%90%E9%83%A8%E5%9B%9E%E5%BF%86%E5%BD%95%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>感慨</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[测试视频（后期删除）]]></title>
+    <url>%2F2018%2F%E6%B5%8B%E8%AF%95%E8%A7%86%E9%A2%91%2F</url>
+    <content type="text"><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[是否选择备案问题]]></title>
+    <url>%2F2018%2F2018-04-03-%E6%98%AF%E5%90%A6%E9%80%89%E6%8B%A9%E5%A4%87%E6%A1%88%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[建站的过程中，遇到了一个新问题，是否要选择备案？ 从我的角度说，有两个点是比较纠结的。本身我的博客内容是不会去突破我国的法律体系的，也不太可能会游走在边缘，再加上自身的信誉度也没啥大问题，所以我并不畏惧备案本身。 但是，目前通行的备案制度是，哪家运营商提供域名，哪家运营商要负责管理其服务器，并协助备案。也就是说，比如，我在腾讯云买的域名，如果我要备案，必须通过腾讯云来备案，而且我必须购买使用腾讯云的云服务器CVM（各家云服务商叫法不同，比如阿里叫ESC）。在我看了CVM的定价之后，也就能明白为何域名现在会如此的便宜。因为域名只是一个解析的过程而已，这项工作的边际成本是极低极低的。 但是由于备案制度的存在，其CVM的需求就会大幅上升，而CVM的边际成本要比域名解析来得高一些，但也就那样，毕竟服务器跑起来以后，沉默成本就占了上风了。所以，只要有人在它这买了域名，有很大概率可以转化为CVM客户，从中就能把域名的钱又赚回来了。 目前网站才刚刚起步，域名目前是购买了一年，由于域名的问题，在Google上搜索经常会被Kent Space这家英国公司占了头条，也是心塞。所以很大可能我会在下一年的3月底选择更换域名，届时我可能会考虑换成阿里（如果阿里还活着的话）。万网在域名方面似乎比其他国内的都做的更好一些，另外阿里的计算机应该不比腾讯逊色吧。所以忍住了自己一下子就买好多年服务器的冲动。等网站建起来，确实有不少访问了，同时也成为自己真真实实不可抛弃的生活习惯的时候，那时候是考虑开始云服务器的时候了。现在，我还是需要进一步坚持写作和记录自己的学习生活过程，这样，以后也是自己的财富。]]></content>
+      <tags>
+        <tag>感慨</tag>
+        <tag>建站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HEXO Anisina主题下Work页面设置]]></title>
+    <url>%2F2018%2F2018-4-1-HEXO-Anisina%E4%B8%BB%E9%A2%98%E4%B8%8BWork%E9%A1%B5%E9%9D%A2%E8%AE%BE%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[因本人不是计算机出身，所以对语言多为一知半解，经过多番研究，终于找到了如何设置Anisina主题下Work模式下内容。 适用范围 Hexo框架，且需要为3.0及以上版本 Anisina主题（本主题个人认为比较简洁，适合大多数人使用） 若你是用的不是Anisina，但是也涉及到数据文件的设置，那么仅供参考，具体配置请自行调整 在主页上设置Work页面在Hexo根目录下打开git12hexo new page &quot;work&quot; #此处引号中内容可自定义,则下文文件夹名称会改变，注意大小写，Github是区分大小写的 在source\work件夹内找到index.md文件打开后，在两个---之间加入以下内容：12layout: works #此处只能用works，因为主题作者后续的布局使用的是这个名字 如图：保存后关闭。 出现Work的目录标签此时，在git中hexo clean &amp;&amp; hexo s -g之后，你就可以在本地预览到你的主目录上多了WORK这个标签。 但是点开之后，是空的，只有基本的头像和名字。这是因为我们还没有配置内容文件。 配置Work页中内容 参考Hexo官方关于数据文件的介绍，并结合Anisina作者在works.ejs文件中的配置。 新建文件及文件夹 在source文件夹中创建文件夹_data，注意此处有下划线; 在source\_data文件夹中，新建文件txt文件，并将此文件名与格式改为project.yml。 设置project.yml文件内容 如下图设置文件中内容，为方便大家修改，此处提供代码块，内容请自行修改（文章末尾提供压缩包）： 12345678910111213141516171819project1: title: 以下内容仅用于模板占位 date: 未知 img_link: https://XXXXXXXX.jpg use: lan1: java lan2: C++ subTitle: 测试单个 direction: 本项目为个人博客项目，主要目的是用于自己练手几挑战下自己。 link: http://kentspace.xyz project2: title: 春游 date: 2018-3-10 img_link: https://XXXXXXXX.jpg subTitle: 测试multiple direction: 用于展示部分个人摄影照片 link: http://kentspace.xyz 特别注意我在图片中写的内容及冒号要用英文下的冒号，且需要和后面内容空一格。内容写完后保存 再次生成及部署在git中hexo clean &amp;&amp; hexo s -g后即可预览，当然要真正使用还需要deploy。 完成后效果图可以参考我的Work页面，欢迎提问和留言！ 附件: 下载解压后，将整个文件夹放至source文件夹内。下载_data文件]]></content>
+      <tags>
+        <tag>建站</tag>
+        <tag>HEXO</tag>
+        <tag>Anisina</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[调整Github Page框架]]></title>
+    <url>%2F2018%2F2018-03-31-%E8%B0%83%E6%95%B4Github-Page%E6%A1%86%E6%9E%B6%2F</url>
+    <content type="text"><![CDATA[替换框架始末昨晚终于下定决定对原先的Github Page进行调整，使用Hexo对原blog进行替换。 原本是抱着使用简单的目的，开始使用杨的Tiny Blog项目的，非常感谢杨的这个非常好的创意，利用github issue和静态的页面，组成这样一个对markdown支持度如此之高的blog page（现在换成Hexo的页面，但似乎对于Markdown的表格语言并不支持，估计后期还得再做插件的调整） 可能我有一些外貌控，所以tiny blog的界面极简，同时排版靠右，让我觉得不是特别适应。 另外使用之后发现存在一些问题和不便。主要有以下几点： 博客内容无法设立tag 对内容不能进行归档，例如按照日期等 以上两个问题在博文数量上升之后会显得格外突出 选择Hexo原因选择Hexo的原因其实比较简单，在几个为数不多的选择中，我认为Hexo是最为简便的。 首先，Wordpress过于庞大，不太适合在Github这样的体系中搭建，我之前是用过，认为效果不是很好，同时自己对博客appearance的设定有点复杂。 第二，在其余几个选项中，我认为Hexo最为适合Github，整个的搭建过程简单，同时又有非常多的开源的themes可以选择。 Hexo体验整体而言，Hexo的体验还是不错的，再配合使用了Git和Node.js之后，编辑的速度和deploy的反馈都不错。 困扰的点主要是以下几个： 本人不是码农出身，很多的语法还不熟悉，还有待进一步尝试 Anisina（V3.1）这个主题很不错，很符合我的appetite，不过原作者的文档写得一般般啦，导致有不少设置需要多次尝试才知道。如果之后有空，我会在作者基础上，再写得更详细一些。 七牛云这个储存网站我刚开始使用，还没有很多心得，待时间久一些我再来反馈。 后记最后，还是感谢TinyBlog的作者Yang以及Hexo主题Anisina作者Ma，感谢你们的无私奉献。 此外，在Ma的原文下看到不少评论，其中ZSQ的关于配置调整的文章（点此）有不少借鉴意义。还有就是进一步加入评论功能以及SEO方面的改进。]]></content>
+      <tags>
+        <tag>github</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Kodi Repo]]></title>
+    <url>%2F2018%2F2018-03-22-Kodi-Repo%2F</url>
+    <content type="text"><![CDATA[KODI Repository for xxx contenthttps://github.com/kodibae/repository.kodibae 之后，我会附上这个repo的使用方法。]]></content>
+      <tags>
+        <tag>NAS</tag>
+        <tag>Kodi</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[领克试坐]]></title>
+    <url>%2F2018%2F2018-03-22-%E9%A2%86%E5%85%8B%E8%AF%95%E5%9D%90%2F</url>
+    <content type="text"><![CDATA[The head aches so much that I cannot focus on the study. I tried my best but still, the thoughts wander a lot. I’m now thinking the limo I’d like to buy. This noon, we went to the shopping mall just aside, and sat into the car Linc 01, a SUV. It is a new model that made by Gelly Auto. As years ago, Volvo was acquired by Gelly, this new model is now equipped Volvo 2.0T engine. The inside of the car is quite spatial, even compared to Audi Q5. And the control center is mounted by a huge screen with lifetime 4G service unlimited. So the car can be reached by internet and cell phone.]]></content>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LED产业链投资价值-雪球访谈【转】]]></title>
+    <url>%2F2018%2F2018-03-15-LED%E4%BA%A7%E4%B8%9A%E9%93%BE%E6%8A%95%E8%B5%84%E4%BB%B7%E5%80%BC-%E9%9B%AA%E7%90%83%E8%AE%BF%E8%B0%88%E3%80%90%E8%BD%AC%E3%80%91%2F</url>
+    <content type="text"><![CDATA[在需求上看到这篇文章，感觉还不错，转过来，有空看看。 链接：LED产业链投资价值 -END-]]></content>
+      <tags>
+        <tag>投资</tag>
+        <tag>股票</tag>
+        <tag>LED</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CFA L2 Fixed Income Mindmap]]></title>
+    <url>%2F2018%2F2018-03-13-CFA-L2-Fixed-Income-Mindmap%2F</url>
+    <content type="text"><![CDATA[CFA Level II Fixed Income Mindmap 完整PDF文件下载]]></content>
+      <tags>
+        <tag>CFA</tag>
+        <tag>Fixed Income</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Github Page 从0开始]]></title>
+    <url>%2F2018%2F2018-03-13-Github-Page-%E4%BB%8E0%E5%BC%80%E5%A7%8B%2F</url>
+    <content type="text"><![CDATA[配置github及gitNotepad++的配置 为notepad++加载markdown语法高亮及live preview。 NPP使用的Markdown语法高亮该Github项目更新及时且效果很好，推荐。github项目链接:点此 后记虽然网上有非常多的人建议大家可以注册一个域名，还有人说用了域名之后访问速度提升等等。但是我觉得，作为一个使用github page的同志，多数是想要简单，不希望付费，对吧。要是付费，为什么不用更好地服务器；要是想要额外的自定义，那何不自己写代码呢？直接用Github的域名，简简单单，挺好的不是么~]]></content>
+      <tags>
+        <tag>Github</tag>
+        <tag>建站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Anniversary]]></title>
+    <url>%2F2018%2F2018-03-12-Anniversary%2F</url>
+    <content type="text"><![CDATA[HAPPY ANNIVERSARYDear baby， It’s our first anniversary since last year. At this special moment, I’d like to say I LOVE U! Wish our sweetest future life with children come soon! Love you most, Kent S. Xie]]></content>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[NAS+PC如何在HDH上发种流程]]></title>
+    <url>%2F2018%2F2018-03-11-NAS-PC%E5%A6%82%E4%BD%95%E5%9C%A8HDH%E4%B8%8A%E5%8F%91%E7%A7%8D%E6%B5%81%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[Q：为什么我要单独写这个贴？ A：因为我铁威马的NAS F4-220，所以可以保持24hr做种，但本人不熟悉Linux系统，且铁威马不想群辉那么多软件，所以开发得靠自己。 PT站点上发布种子流程（by uTorrent）首先，度娘之后，发现此帖写的很不错，PT如何用uT发种。 整体而言此文，已经言简意赅的写了如何用utorrent发种的过程。 提醒下：由于uT 3.X版本有漏洞，不少PT站点已经不支持3.x版本，不过大家可以用2.x版本来做种和下载。 HDHome的特殊流程在网页上上传后，需要下载种子，并自动检验一遍种子以后，就会开始做种了。 但是。。。 HDHome种子上传后，并不会出现在种子界面中，而是在live中。所以发种的人，要在再编辑一次种子，转存到种子列表中。 使用NAS的朋友的流程使用NAS做种的话，其实也不难，将你做种的文件先手动保存到NAS上，然后再用NAS上的PT下载软件（多为transmission web），把种子下载一遍到保存的位置，原理和在纯uT上操作一样，只不过这一步移到了NAS上。 -END-]]></content>
+      <tags>
+        <tag>NAS</tag>
+        <tag>HDHome</tag>
+        <tag>PT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[在同一台电脑上配置多个github的git方法]]></title>
+    <url>%2F2018%2F2018-03-10-%E5%9C%A8%E5%90%8C%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E4%B8%8A%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgithub%E7%9A%84git%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[由于近期测试在github page上托管个人主页，前一个是用html做的，但没有套用AXEO及其他，纯HTML，尽管界面套用模板挺漂亮，但发布文章实在是非常麻烦，所以便又重新注册此github账号用以单独作为page使用。 所以这里就碰到了一个问题，需要在同一台电脑上配置两个github的ssh，方便git。 在强大互联网上搜索之后，总结出自己的这套。借鉴前人的经验，略有不完善处，我会继续改进。文后会给出参考文章网址。 假设环境 账号一：github第一个账号：github；账号二：github第二个账号：gitsecond。 配置账号一生成ssh密钥1234561、安装Git软件2、在桌面打开Git，进行设置git config --global user.name &quot;userName&quot;//github的帐号名(也可以自定义)git config --global user.email &quot;emailAdress&quot;//github的邮箱地址(也可以自定义)3、生成ssh密钥ssh-keygen -t rsa -C &quot;githubEmailAdress&quot;//github邮箱地址 github网站配置在github上将id_rsa.pub文件内容添加上（简略方法如下，还不清楚请百度） 具体方法为: 在github页面右上角，点击头像，然后Settings；左边栏点击SSH and GPG keys,右侧出现New SSH key按键，将内容复制进去即可。 配置账号二生产ssh密钥123ssh-keygen -t rsa -C &quot;githubEmailAdress&quot;//github邮箱地址# 设置名称为id_rsa_gitsecondEnter file in which to save the key (/c/Users/Administrator/.ssh/id_rsa): id_rsa_gitsecond 注意此时.ssh文件夹中会产生两个名字为id_rsa_gitsecond的文件。 新密钥添加到SSH agent中12ssh-agent bashssh-add ~/.ssh/id_rsa_gitsecond 用记事本创建一个config文件（后缀请在编辑完内容后删除）123456789101112# 该文件用于配置私钥对应的服务器# Default github userHost githubHostName github.comUser gitIdentityFile C:/Users/Administrator/.ssh/id_rsa# gitsecond配置Host gitsecondHostName github.comUser gitIdentityFile C:/Users/Administrator/.ssh/id_rsa_gitsecond 测试链接情况1234567$ ssh -T githubHi xxxxxxx! You&apos;ve successfully authenticated, but GitHub does not provide shell access.$ ssh -T gitsecond #使用config中的host值Hi yyyyyyy! You&apos;ve successfully authenticated, but GitHub does not provide shell access. clone文件至本地 若使用gitsecond账号：1git clone gitsecond:github_name/your_repository_name.git #第一个为你的github名字，第二个为repo的名字 日常使用注意：日常使用中，若是使用第一个账号，因为是default的，push前无需额外操作。但使用gitsecond账号，push前要将ssh再加载到agent上一次。命令如下：12ssh-agent bashssh-add ~/.ssh/id_rsa_gitsecond 参考链接：百度经验贴CSDN帖子]]></content>
+      <tags>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Markdown语法【转】]]></title>
+    <url>%2F2017%2FMarkdown%E8%AF%AD%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[此文已被不时之需 Markdown 语法和 MWeb 写作使用说明Markdown 的设计哲学 Markdown 的目标是实现「易读易写」。不过最需要强调的便是它的可读性。一份使用 Markdown 格式撰写的文件应该可以直接以纯文字发佈，并且看起来不会像是由许多标籤或是格式指令所构成。Markdown 的语法有个主要的目的：用来作为一种网路内容的写作用语言。 标题Markdown 语法： 123# 第一级标题 `&lt;h1&gt;` ## 第二级标题 `&lt;h2&gt;` ###### 第六级标题 `&lt;h6&gt;` 效果如下： 第一级标题 &lt;h1&gt;第二级标题 &lt;h2&gt;第六级标题 &lt;h6&gt;强调Markdown 语法： 12345*这些文字会生成`&lt;em&gt;`*_这些文字会生成`&lt;u&gt;`_**这些文字会生成`&lt;strong&gt;`**__这些文字会生成`&lt;strong&gt;`__ 在 MWeb 中的快捷键为： CMD + U、CMD + I、CMD + B效果如下： 这些文字会生成&lt;em&gt;这些文字会生成&lt;u&gt; 这些文字会生成&lt;strong&gt;这些文字会生成&lt;strong&gt; 换行四个及以上空格加回车。 列表无序列表Markdown 语法： 1234* 项目一 无序列表 `* + 空格键`* 项目二 * 项目二的子项目一 无序列表 `TAB + * + 空格键` * 项目二的子项目二 效果如下： 项目一 无序列表 * + 空格键 项目二 项目二的子项目一 无序列表 TAB + * + 空格键 项目二的子项目二 有序列表Markdown 语法： 123451. 项目一 有序列表 `数字 + . + 空格键`2. 项目二 3. 项目三 1. 项目三的子项目一 有序列表 `TAB + 数字 + . + 空格键` 2. 项目三的子项目二 效果如下： 项目一 有序列表 数字 + . + 空格键 项目二 项目三 项目三的子项目一 有序列表 TAB + 数字 + . + 空格键 项目三的子项目二 任务列表（Task lists）Markdown 语法： 12- [ ] 任务一 未做任务 `- + 空格 + [ ]`- [x] 任务二 已做任务 `- + 空格 + [x]` 效果如下： 任务一 未做任务 - + 空格 + [ ] 任务二 已做任务 - + 空格 + [x] 图片Markdown 语法： 12![GitHub set up](https://assets-cdn.github.com/images/modules/logos_page/Octocat.png)格式: ![Alt Text](url) 效果如下： 链接Markdown 语法： 123email &lt;example@example.com&gt;[GitHub](http://github.com)自动生成连接 &lt;http://www.github.com/&gt; Email 连接： &#x65;&#x78;&#97;&#109;&#x70;&#108;&#101;&#x40;&#x65;&#x78;&#x61;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#109;连接标题Github网站自动生成连接像： http://www.github.com/ 这样 区块引用Markdown 语法： 123某某说:&gt; 第一行引用&gt; 第二行费用文字 效果如下： 某某说: 第一行引用第二行费用文字 行内代码Markdown 语法： 1像这样即可：`&lt;addr&gt;` `code` 效果如下： 像这样即可：&lt;addr&gt; code 多行或者一段代码Markdown 语法： 123456function fancyAlert(arg) &#123; if(arg) &#123; $.facebox(&#123;div:'#foo'&#125;) &#125;&#125; 效果如下： 123456function fancyAlert(arg) &#123; if(arg) &#123; $.facebox(&#123;div:'#foo'&#125;) &#125; &#125; 顺序图或流程图Markdown 语法： 123张三-&gt;李四: 嘿，小四儿, 写博客了没?Note right of 李四: 李四愣了一下，说：李四--&gt;张三: 忙得吐血，哪有时间写。 12345678st=&gt;start: 开始e=&gt;end: 结束op=&gt;operation: 我的操作cond=&gt;condition: 确认？st-&gt;op-&gt;condcond(yes)-&gt;econd(no)-&gt;op 效果如下（ Preferences - Themes - Enable sequence &amp; flow chart 才会看到效果 ）： 123张三-&gt;李四: 嘿，小四儿, 写博客了没?Note right of 李四: 李四愣了一下，说：李四--&gt;张三: 忙得吐血，哪有时间写。 12345678st=&gt;start: 开始e=&gt;end: 结束op=&gt;operation: 我的操作cond=&gt;condition: 确认？st-&gt;op-&gt;condcond(yes)-&gt;econd(no)-&gt;op 更多请参考：http://bramp.github.io/js-sequence-diagrams/, http://adrai.github.io/flowchart.js/ 表格Markdown 语法： 1234第一格表头 | 第二格表头--------- | -------------内容单元格 第一列第一格 | 内容单元格第二列第一格内容单元格 第一列第二格 多加文字 | 内容单元格第二列第二格 效果如下： 第一格表头 第二格表头 内容单元格 第一列第一格 内容单元格第二列第一格 内容单元格 第一列第二格 多加文字 内容单元格第二列第二格 删除线Markdown 语法： 加删除线像这样用： ~~删除这些~~ 效果如下： 加删除线像这样用： 删除这些 分隔线以下三种方式都可以生成分隔线： *** ***** - - - 效果如下： MathMarkdown 语法： 1$$ x = \dfrac&#123;-b \pm \sqrt&#123;b^2 - 4ac&#125;&#125;&#123;2a&#125; $$ 效果如下： $$ x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$ TOCMarkdown 语法： 1[TOC] 效果如下： [TOC]]]></content>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[又一次飞新加坡，而我却在想这些]]></title>
+    <url>%2F2016%2F2016-07-08-%E5%8F%88%E4%B8%80%E6%AC%A1%E9%A3%9E%E6%96%B0%E5%8A%A0%E5%9D%A1%EF%BC%8C%E8%80%8C%E6%88%91%E5%8D%B4%E5%9C%A8%E6%83%B3%E8%BF%99%E4%BA%9B%2F</url>
+    <content type="text"><![CDATA[时隔两个月，仿佛还记得5月份的时候从那边飞回来的场景，大包小包，和爸妈一起飞到了浦东机场。中间还出了点小插曲，我们五个托运行李中有一个被错拿了，导致我们在传送带边上苦等1个半钟头LOL。不过还好第二天就被确认错拿了，东航也很快把箱子送到了我家里——不过无论怎样，都是吓了一跳，尽管是虚惊一场。那次的我们是兴奋地回来，惊现地回到家，又开心地收到行李。 今天，我怀揣着参加毕业典礼的心情，又踏上了去往新加坡的旅程。轻装前进，只有一个8公斤的托运（相信回来的时候，一定不止这点分量了，^_^）。也许是下午时候的一个问答，也许是其他原因，比如累了，老爸今天有点闷闷不乐的，路上开车也感觉一直在超车，很不安稳，非常不像平时的他。我知道家里因吵架而产生的变故，一定让他心里有着不一样的起伏。我已经不知道如何才能调和家里的矛盾，或者说潜在的波澜。我也许真的是不懂事，我唯一能想到的对策就是逃避——我想自己在上海有自己的事业，不仅仅是因为上海有我的同学，上海有我的朋友，上海有我的机遇，还有就是上海不是杭州，我不需要去直面个中苦涩。 不管怎样，我内心都希望我们家庭的和谐。和爷爷怄气，是因为我觉得这件事即使他没有错，但真没有必要这样不低头。古话说得好，吃亏是福，其实站在我爷爷的角度，这件事情他吃个小亏，低个头，勉为其难的“认个错”，整盘棋就活了不是嘛？我们能好好地回宁波过年，家里的气氛不会因为这些事情而总是如此尴尬。这就有点像央行的逆回购，因为这个操作，能带动不知多少产业。也许这就是农民的视野吧，我不是在这里批评这些曾经为了国家拼搏，打下江山的老一辈；仅仅是站在一个晚辈的身份，去看待一件可以很简单就被解决问题的角度去评论——我没有不敬，只是为了家庭的和睦。 我知道大家都有错，但是问题真的没有这么难，大家真没有必要怄气。哎，怎么就都不能退一步呢。 这次的我，仿佛又成熟一点了，想到的问题更多是金融，家庭和爱情。希望我能保持成熟，摒弃幼稚，但保有童心。]]></content>
+      <tags>
+        <tag>生活</tag>
+        <tag>感慨</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[“最好”的我——最近的loser]]></title>
+    <url>%2F2016%2F2016-06-18-%E2%80%9C%E6%9C%80%E5%A5%BD%E2%80%9D%E7%9A%84%E6%88%91%E2%80%94%E2%80%94%E6%9C%80%E8%BF%91%E7%9A%84loser%2F</url>
+    <content type="text"><![CDATA[没有打广告的意思，只是确实发现iQiyi的会员还不错，很多片子都能直接在线高清看，加之可以推送到电视机上，即使不是TV版的会员（这个比一般的要贵），也能一样看。 网络剧《最好的我们》，让我不禁回忆已然悄悄走过的5年，回到当初的高三，忍不住还是有点鼻子酸酸的。那年的我们，是那么的无邪，心中也许除了对有所好感的Ta，心无杂念，只为通过高考这一座独木桥。因为我们所有的事情，所有的犯难，都由父母、老师兜着。 在《好先生》中有这样一句话：成年人需要收拾自己的烂摊子。 也许过于一帆风顺——尽管在之前，都认为这是人生的大风大浪，但回头看去，都已经是浩瀚大海中的一朵小浪花。这顺利，也让我最近的loser之路，尤为难过。 最近有三件事，让我觉得很压抑，我感觉到了奋斗的号角，我要化悲愤为动力。 实习面试我自己准备的不充分，被面试官的批评，心中不免难过。我已经不太记得那天是怎么走出那间会议室的，只记得步伐不是很稳，有些踉跄。我知道我很多都不会，对这方面的专业知识知之甚少，但我真的觉得实习应该给我们一个机会，而不是找那些什么都会的，不是吗？也许这真的是loser的天真想法。 从业资格考试那么多的条款，如此多的数字，让我有些蒙逼，Shenmegui！这些之间真的没有规律，真的没有规律，真的没有规律！我强迫自己去找到些痕迹，但我又是一个loser。不知道下周末的考试会不会来得更猛一些呢？ 我的体重每天都没有站上电子秤的欲望，怎么办！我的体重究竟是怎么了！LOSER啊！ 好吧，碎碎叨叨的吐槽了这么多，心中的不快也出来了很多。正如我说的，我要化这些loser元素为进步的燃料，填充进我的推进器里，燃烧吧，小宇宙！哈哈，给自己一个目标，看看是不是我终会到达！]]></content>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[和父母一起逛SG]]></title>
+    <url>%2F2016%2F2016-05-18-%E5%92%8C%E7%88%B6%E6%AF%8D%E4%B8%80%E8%B5%B7%E9%80%9BSG%2F</url>
+    <content type="text"><![CDATA[5月6号凌晨，纠结的时间，5点多抵达的航班。在和朋友凌晨看了“美队3”之后，在朋友家睡了一小时，我就在闹钟响起的前20秒惊醒！ OMG，他们该到了！起身，冲了出去。到机场的时候，他们已经等了我一小会了。 也许是我高估了他们的精力，也许也是我高估了自己安排的水平，之后的每一天的行程，都和之前的安排不一样。万幸，我们顺利的看完了所有的景点。 Day 1（FRI）安排爸妈到家住下之后，本以为我能快速进入梦乡补觉，结果，我一分钟也没有睡着。仿佛是打了鸡血一般，异常兴奋。我老妈，大概是感冒还没有彻底恢复，除了声音沙哑之外，精力也特别不好。她睡得特别香。 休息到下午，我便带他们先是去牛车水随意逛了下，看了看这个淘宝实体店集中区，顺带买了之后所有景点的票（牛车水有特别多的旅行社，票价比景点门口要低很多）。晚上原计划的Gardens by the Bay，因为我妈的身体不适，改成了休息+我爸烧晚饭。当时感觉好有趣，到新加坡的第一餐就让他们烧，好有生活气息。 Day 2（SAT） 经过昨天的打乱计划之后，我又重新把所有行程进行了“洗牌”。由于要和爸爸的同学吃饭，所以就安排了他们来逛逛我的学校！一路上看到他们对小坡的花花草草都感到新奇，感觉好可爱，真的，是那种可爱。在学校里，和他们一块拍了我穿着“硕士服”的照片，逛了UTown。感受了一下蓝天白云青草地的夏天。下午带着父母去IMM血拼了。哈哈，我愣是把好好的一个自由行弄成了购物游。 Day 3（SUN）呼地一下，就已经是第三天了，周日，又碰上了母亲节，整个新加坡仿佛是被什么洪荒之力撼动了一般，所有的人出门了，都在街上。上午带他们去Orchid Road那边，本是像给他们买些衣服什么的，但结果打折季还没开始，似乎折扣力度不大，没有什么吸引力，带他们逛了一会，他们就失去兴趣了。一个新的安排就被想出来了，回家拿上Night Safari的票，直接先把这个景点去了吧！说走就走，当晚我们就去到了SG zoo。 也许就如的士司机说的，母亲节，这Night Safari叫一个人多啊。看到了吗，这还仅仅是7点15分进场的人。真正的大门其实还要再前面一些，过了画面中白色牌子之后还有大概15米的地方。那晚虽然看到了很多从没见过的动物，看了一场很不错的人、动物的表演，不过总体而言，我觉得Night Safari一般，不算很惊艳。难怪去之前有朋友和我说River Safari更好。 Day 4（MON）新的一周又开始了，今天的旅游“任务”还不轻松呢。Sentosa一日游！今天的节目很丰富哟。首先是小坡最大的鱼尾狮。 这个狮子外面看着普普通通，但里面却别有洞天。在看了一个介绍新加坡以及鱼尾狮由来的短片之后，我们会坐电梯到狮子的头部，可以登上其顶部，俯瞰新加坡，还能在狮口处照相。 之后和爸妈一起逛了圣淘沙的后部，有亚洲大陆最南端，看了看海景。中午则在入口处的Seafood Republic一起吃了Jumbo的辣椒蟹。下午去了SEA海洋馆，看了让人惊叹的鲨鱼、水母等等。 Day 5（TUE）这是最后一天在小坡了。 早上一早理好了箱子之后，和爸妈一块大包小包的坐上的士，前往我预定的在Clarke Quay的酒店。 稍事休息之后，也已经差不多中午了，带着他们吃了顿肉骨茶（Bak Kut Teh），闻着浓浓的胡椒粉味道，加上鲜美的肉汤，真的就想赖在店里一直喝汤。哈哈哈。 下午，又是一个重头戏，Gardens by the Bay。我觉得这是新加坡最美的景点之一。有花有草，还有水，晚上还能看到Supertree的表演，多赞！]]></content>
+      <tags>
+        <tag>SGlife</tag>
+        <tag>NUS</tag>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[学生时代要完结了]]></title>
+    <url>%2F2016%2F2016-05-04-%E5%AD%A6%E7%94%9F%E6%97%B6%E4%BB%A3%E8%A6%81%E5%AE%8C%E7%BB%93%E4%BA%86%2F</url>
+    <content type="text"><![CDATA[最近总是失眠，也许也不能算是失眠，只是因为我的生物钟过的是欧美时间吧。由于目前还是学生的缘故吧，我可以任性，我可以为自己说的话不负责任。 有时想来，做学生真的是太幸福了。可以在不想去上课的时候，赖在宿舍中；可以在厌倦食堂的饭菜的时候，肆意下馆子搓一顿；可以在期末考试周之前，随性的选择上课跟不上课；可以在腰包瘪下去的时候，一个电话给父母，然后他们就明白了。 不过这样的时光，每个人总是在经历的过程中痛恨它——为什么要交这么多作业，为什么有这么多的due，为什么有期末考试！为什么！但，这是一个很长的但，对于所有已经工作了的人，也许他们都是无比怀念曾经的美好时光吧。 我，一个90后，掰指一算，都二十过半了。我还在读书，还有最后两门final，我想我的学生生涯就暂时告一段落了。但我惶恐了。真的，我不知道我毕业之后，将去向何方；也许是上海吧，这个大魔都，离家很近；但是那儿真的会有我的立足之地吗？我不知道。 我的心迹如同这四通八达的马路一般，不知道终点在哪里。我会成为成功还是失败的case？是会成为今后别人口中“别人家的”小孩如何好，还是那个“别人家的”小孩你别去学呢？我不知道。 也许世上本没有终点，只是说的人多了，就成了终点吧。]]></content>
+      <tags>
+        <tag>生活</tag>
+        <tag>感慨</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[One day @ Suntec]]></title>
+    <url>%2F2016%2F2016-04-13-One-day-Suntec%2F</url>
+    <content type="text"><![CDATA[今天在Suntec做工，做Franchising的推广。 在那边做了一天，除了少量来问问的人之外，真的很少有实际要下订单或者承接的。在我看来，叔叔的生意，做了差不多8年了（since 2007），在新加坡开了7家分店，其实是个不错的成绩。真的很不容易。很多事情，他都亲力亲为，让我看到了作为创业公司的难处和不易。对于他的生意，我也已经接触了小半年的时间了，但是确实各类推广、营销的效果都不是很显著。 我的体会，也许是站着说话不腰疼的，叔叔有一种小本生意的思想，在这种想法下，很难把一家start-up做成一个企业；要做加盟的模式，不仅要有自己原先的产品、服务、培训，也需要一个大局观的角度。而叔叔的经营理念中，缺少这一项。 另外，和Vicky聊天很开心。虽然她是我妈妈辈的年龄的人，但是相比我妈，也许是国情不同，她的思想上还是挺先进的。她和我讲的一些事情，虽然不想在这里细说，不过，从很多方面来看，她其实是一个很心急，也不是脾气特别好的人。但是到了现在的这个岁数，她也开始想要平和下自己的心态，与别人好好沟通了。 对比我自己，尽管我还没有她这个岁数的阅历，但是没见过猪跑，还没吃过猪肉吗？周边这么多人的耳濡目染，听来的、看来的都在告诉我要放低自己的姿态，做个认真的倾听者而不是咄咄逼人。 既然这是简书这的第一篇，也不那么复杂了。就酱紫吧。]]></content>
+      <tags>
+        <tag>SGlife</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[The grade came out]]></title>
+    <url>%2F2015%2F2015-12-27-The-grade-came-out%2F</url>
+    <content type="text"><![CDATA[It was 8 am still, on 22nd December. Quite early in the morning. And for me, even earlier. Last night, I went to Clark Quay with a friend of university, who was in Singapore for a competition. As is known, Clark Quay is the place for drinking. We drank for a lot last night, and almost missed the last MRT. Fortunately, we both caught it. But, that morning was special enough. Because the final exam grade would come out. And because of subscription of SMS notification, I received the grade exactly 8 am. I was woken up by the vibration of my wristband, still feeling dizzy a bit. “What’s up? It’s quite weird that I receive SMS such early.” the though in my mind.,”MUST BE SOME WRONG INFO.” But habitably, I still grabbed the mobile phone and clicked the power button. “WHAT THE F**K!” I almost shouted out. How could the SMS comes so early, with me having the sweet dream!! I trembled, hesitating whether to open the message. Should I? What if the result is horrible? I have no confidence for the final exam, especially, having the ST5214, the nightmare. Alright, finally, I still chose to open the message. Closing my eyes and praying for not a horrible result. Maybe my prayers were heard by certain god, when I open my eyes, looking at the screen, I was full of amazingness. The score was pretty good, much much better than I expected. OMG, I even could not use words to express my happiness.]]></content>
+      <tags>
+        <tag>SGlife</tag>
+        <tag>NUS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Judgement Day]]></title>
+    <url>%2F2015%2F2015-11-27-Judgement-Day%2F</url>
+    <content type="text"><![CDATA[Of course, it’s not that THE JUDGEMENT DAY that I mentioned here. But for me, it is truly one. I had my most difficult courses ever since I started my learning phase from primary school. I felt so helpless when reading the notes of the course. Even with the solutions to the tutorials, I still have difficulties understanding. I was so nervous that I couldn’t sleep until the dawn of the next day. Lying on the bed, nightmares of the imaginary exam papers and the terrible results occurs over and over again, image by image. How could I do? I tried, and I really did my best to understand this course, and truly, I began to know what this course is teaching. Abstract as it may be, I used the whole ‘RAM’ of my brain to decipher the codes. Now, it’s over. At 7 pm last night, this exam finally finished. Not good though, but it was really a relief for me. I would like to take a rest and prep the best me for the left two courses. All of a sudden, I find that I’m just like Dr. John Watson, the friend of Sherlock Holmes, like to use blogs to record my daily life. My writing is not that interesting as what he wrote, of course. All I’m doing to remind myself that once I had this life before in case that I forgot in the future.]]></content>
+      <tags>
+        <tag>SGlife</tag>
+        <tag>NUS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[New Findings for Singtel Prepaid -- Tested for Some Rules]]></title>
+    <url>%2F2015%2F2015-11-23-New-Findings-for-Singtel-Prepaid-Tested-for-Some-Rules%2F</url>
+    <content type="text"><![CDATA[I did one ‘brave’ thing. Tested the rules of Singtel prepaid card. In fact, I did similar thing at the end of the first month. Here, let me explain some rules of prepaid card. Your account will be divided into many parts, main account, bonus, data.Bonus account usually comes after you buy the bonus packages or top up some money into main account. Real money, here by I mean money from bank card or paid at AXS or SAM, etc. will be stored into main account. Money in main account can be used to buy bonus packages or data etc.KEY FINDINGS: The best deal I think to use data is this way. Buy a 1GB best value @ $7, valid for 7 days At the last day of validation, buy 10MB @ $1 (if you still have a lot of data left) or buy another 1GB @ $7. This will extend the expiration date and the data will be accumulated. Today I also find, if you buy four 10MBs together, like I did this afternoon, then the expiration day will extend directly 28 days instead of 7 days. The maximum is four, the fifth cannot be done. This is what I find today, share with everyone. If any mistake or misunderstanding, leave comments, and I will reply ASAP.]]></content>
+      <tags>
+        <tag>SGlife</tag>
+      </tags>
+  </entry>
+</search>
