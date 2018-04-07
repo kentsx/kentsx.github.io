@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="肯特の天地">
 <meta property="og:description" content="目前这个改进还是个半成品，不知为何我只能实现在首页使用这个搜索，且搜索框的长度不能出现滚动带，所以内容多的时候会无限长。另外，可能是与原主体css产生了冲突，导致搜索出来的内容不能高亮显示。如果有大神愿意改进，那就太好了。鉴于我自己的水平有限，所以我改用了next主题，关于Anisina的改进，短期内可能会不再进行了。 首先是安装hexo-generator-search安装分为两步，首先通过 n">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-07T14:50:04.933Z">
+<meta property="og:updated_time" content="2018-04-07T14:53:16.486Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="给Anisina添加本地搜索">
 <meta name="twitter:description" content="目前这个改进还是个半成品，不知为何我只能实现在首页使用这个搜索，且搜索框的长度不能出现滚动带，所以内容多的时候会无限长。另外，可能是与原主体css产生了冲突，导致搜索出来的内容不能高亮显示。如果有大神愿意改进，那就太好了。鉴于我自己的水平有限，所以我改用了next主题，关于Anisina的改进，短期内可能会不再进行了。 首先是安装hexo-generator-search安装分为两步，首先通过 n">
@@ -381,17 +381,18 @@
 
       
         <p>目前这个改进还是个半成品，不知为何我只能实现在首页使用这个搜索，且搜索框的长度不能出现滚动带，所以内容多的时候会无限长。另外，可能是与原主体css产生了冲突，导致搜索出来的内容不能高亮显示。如果有大神愿意改进，那就太好了。鉴于我自己的水平有限，所以我改用了next主题，关于Anisina的改进，短期内可能会不再进行了。</p>
-<p>首先是安装<code>hexo-generator-search</code><br>安装分为两步，首先通过 npm 将插件安装到本地：</p>
+<h2 id="首先是安装hexo-generator-search"><a href="#首先是安装hexo-generator-search" class="headerlink" title="首先是安装hexo-generator-search"></a>首先是安装<code>hexo-generator-search</code></h2><p>安装分为两步，首先通过 npm 将插件安装到本地：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure>
-<p>然后在全局（<code>_config.yml</code>）配置：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">search.xml</span></span><br><span class="line"><span class="attr">  field:</span> <span class="string">post</span></span><br></pre></td></tr></table></figure>
+<h2 id="然后在全局（-config-yml）配置："><a href="#然后在全局（-config-yml）配置：" class="headerlink" title="然后在全局（_config.yml）配置："></a>然后在全局（<code>_config.yml</code>）配置：</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">search.xml</span></span><br><span class="line"><span class="attr">  field:</span> <span class="string">post</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>path</code>，生成的路径，上述配置后可以通过 <code>/search.xml</code> 访问到文件</li>
 <li><code>field</code>，用来配置全局检索的区间，可以是 <code>post/page/all</code></li>
 </ul>
 <p>以上内容可在hexo-generator-search的主页找到。</p>
-<p>剩下内容，则我已提供相关文件于repo中，可自行<a href="https://github.com/kentsx/anisina_localsearch" target="_blank" rel="noopener">fork或下载</a>修正。</p>
-<p>最后，在<code>template</code>文件中，我提供了如下代码，大家可以将其插入到你喜欢的部位，如footer等。</p>
+<h2 id="剩下内容，则我已提供相关文件于repo中"><a href="#剩下内容，则我已提供相关文件于repo中" class="headerlink" title="剩下内容，则我已提供相关文件于repo中"></a>剩下内容，则我已提供相关文件于repo中</h2><blockquote>
+<p>可自行<a href="https://github.com/kentsx/anisina_localsearch" target="_blank" rel="noopener">fork或下载</a>。</p>
+</blockquote>
+<h2 id="最后，在template文件中"><a href="#最后，在template文件中" class="headerlink" title="最后，在template文件中"></a>最后，在<code>template</code>文件中</h2><p>我提供了如下代码，大家可以将其插入到你喜欢的部位，如footer等。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;section align= center&gt;</span><br><span class="line">&lt;!-- Local Search--&gt;</span><br><span class="line">&lt;%- partial(<span class="string">'_partial/search'</span>, &#123;<span class="attr">wrapStyle</span>: <span class="string">''</span>, <span class="attr">inputStyle</span>: <span class="string">''</span>&#125;) %&gt;</span><br><span class="line">&lt;<span class="regexp">/section&gt;</span></span><br></pre></td></tr></table></figure>
       
     </div>
@@ -534,8 +535,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -612,6 +622,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#首先是安装hexo-generator-search"><span class="nav-number">1.</span> <span class="nav-text">首先是安装hexo-generator-search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#然后在全局（-config-yml）配置："><span class="nav-number">2.</span> <span class="nav-text">然后在全局（_config.yml）配置：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#剩下内容，则我已提供相关文件于repo中"><span class="nav-number">3.</span> <span class="nav-text">剩下内容，则我已提供相关文件于repo中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后，在template文件中"><span class="nav-number">4.</span> <span class="nav-text">最后，在template文件中</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
