@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kentspace.xyz/about/index.html</loc>
+    
+    <lastmod>2018-04-09T02:30:36.167Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kentspace.xyz/photo/index.html</loc>
     
-    <lastmod>2018-04-09T01:25:05.901Z</lastmod>
+    <lastmod>2018-04-09T01:42:46.371Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>https://kentspace.xyz/2018/2018-04-05-%E7%BB%99Anisina%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2/</loc>
     
     <lastmod>2018-04-07T14:53:16.486Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kentspace.xyz/about/index.html</loc>
-    
-    <lastmod>2018-04-07T14:15:52.378Z</lastmod>
     
   </url>
   
