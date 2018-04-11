@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="肯特, Kent S. XIE, 谢诗澜, 个人博客" />
 
 
 
@@ -97,7 +97,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -177,7 +177,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description"></h1>
       
   </div>
 
@@ -309,10 +309,9 @@
       <span class="archive-page-counter">
         
         
+         
         
-          
-        
-        嗯..! 目前共计 29 篇日志。 继续努力。
+        OK! 目前共计 32 篇日志。 继续努力。
       </span>
 
       
@@ -324,7 +323,7 @@
         
           
           <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2016">2016</h1>
+            <h2 class="archive-year" id="archive-year-2016">2016</h2>
           </div>
         
         
@@ -334,7 +333,7 @@
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
             <a class="post-title-link" href="/2016/2016-07-08-又一次飞新加坡，而我却在想这些/" itemprop="url">
               
@@ -342,7 +341,7 @@
               
             </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -371,7 +370,7 @@
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
             <a class="post-title-link" href="/2016/2016-06-18-“最好”的我——最近的loser/" itemprop="url">
               
@@ -379,7 +378,7 @@
               
             </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -408,7 +407,7 @@
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
             <a class="post-title-link" href="/2016/2016-05-18-和父母一起逛SG/" itemprop="url">
               
@@ -416,7 +415,7 @@
               
             </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -445,7 +444,7 @@
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
             <a class="post-title-link" href="/2016/2016-05-04-学生时代要完结了/" itemprop="url">
               
@@ -453,7 +452,7 @@
               
             </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -482,7 +481,7 @@
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
             <a class="post-title-link" href="/2016/2016-04-13-One-day-Suntec/" itemprop="url">
               
@@ -490,7 +489,7 @@
               
             </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
@@ -537,6 +536,8 @@
 
   <aside id="sidebar" class="sidebar">
     
+      <div id="sidebar-dimmer"></div>
+    
     <div class="sidebar-inner">
 
       
@@ -562,7 +563,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -613,6 +614,12 @@
                     <a href="mailto:kentisxie@126.com" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://douban.com/people/kent_sx" target="_blank" title="豆瓣">
+                      
+                        <i class="fa fa-fw fa-user-circle-o"></i></a>
                   </span>
                 
             </div>
@@ -674,18 +681,12 @@
 
   
     <span class="site-uv">
-      <i class="fa fa-user"></i>
+      <i class="fa fa-user"> 总访客数:</i>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
       
     </span>
   
 
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
   
 </div>
 
@@ -703,6 +704,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     

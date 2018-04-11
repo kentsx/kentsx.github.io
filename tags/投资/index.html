@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="肯特, Kent S. XIE, 谢诗澜, 个人博客" />
 
 
 
@@ -97,7 +97,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -177,7 +177,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description"></h1>
       
   </div>
 
@@ -306,8 +306,8 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>投资<small>标签</small>
-        </h1>
+        <h2>投资<small>标签</small>
+        </h2>
       </div>
 
       
@@ -316,7 +316,7 @@
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
-      <h2 class="post-title">
+      <h3 class="post-title">
         
             <a class="post-title-link" href="/2018/2018-03-15-LED产业链投资价值-雪球访谈【转】/" itemprop="url">
               
@@ -324,13 +324,41 @@
               
             </a>
         
-      </h2>
+      </h3>
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
               datetime="2018-03-15T13:55:39+08:00"
               content="2018-03-15" >
           03-15
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2018/2018-01-30-记一件事，明一种理/" itemprop="url">
+              
+                <span itemprop="name">记一件事，明一种理</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-01-30T23:13:30+08:00"
+              content="2018-01-30" >
+          01-30
         </time>
       </div>
 
@@ -369,6 +397,8 @@
 
   <aside id="sidebar" class="sidebar">
     
+      <div id="sidebar-dimmer"></div>
+    
     <div class="sidebar-inner">
 
       
@@ -394,7 +424,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -445,6 +475,12 @@
                     <a href="mailto:kentisxie@126.com" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://douban.com/people/kent_sx" target="_blank" title="豆瓣">
+                      
+                        <i class="fa fa-fw fa-user-circle-o"></i></a>
                   </span>
                 
             </div>
@@ -506,18 +542,12 @@
 
   
     <span class="site-uv">
-      <i class="fa fa-user"></i>
+      <i class="fa fa-user"> 总访客数:</i>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
       
     </span>
   
 
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
   
 </div>
 
@@ -535,6 +565,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
