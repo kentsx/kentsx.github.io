@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kentspace.xyz/photo/index.html</loc>
+    
+    <lastmod>2018-04-17T16:54:26.603Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kentspace.xyz/2018/2018-04-09-Hexo-next%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E9%A1%B5/</loc>
     
     <lastmod>2018-04-17T16:40:41.054Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>https://kentspace.xyz/2018/2018-01-30-%E8%AE%B0%E4%B8%80%E4%BB%B6%E4%BA%8B%EF%BC%8C%E6%98%8E%E4%B8%80%E7%A7%8D%E7%90%86/</loc>
     
     <lastmod>2018-04-11T15:20:50.283Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kentspace.xyz/photo/index.html</loc>
-    
-    <lastmod>2018-04-11T15:10:32.476Z</lastmod>
     
   </url>
   
