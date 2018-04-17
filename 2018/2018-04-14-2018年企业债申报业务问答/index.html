@@ -447,7 +447,14 @@
 
     
       <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+        <!-- 文章结束 -->
+  <% if(is_post()) { %>
+      <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+  <% } %>
+  <br>
+  <hr>
+
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
   <div>感谢您的支持与鼓励！</div>
   <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
     <span>打赏</span>
@@ -524,6 +531,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/2018-04-17-不出户解决12306的身份核验/" rel="prev" title="不出户解决12306的身份核验">
+                不出户解决12306的身份核验 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -602,7 +613,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
