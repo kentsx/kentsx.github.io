@@ -1925,7 +1925,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4aff9e;
+  background: #7958f4;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3026,7 +3026,7 @@ hr {
     text-align: center;
   }
 }
-.box {
+.divbox {
   width: 30%;
   height: 150px;
   position: relative;
@@ -3037,7 +3037,7 @@ background
   margin-top: 2%;
   margin-left: 2.5%;
 }
-.box .bmbox {
+.divbox .bmbox {
   width: 100%;
   height: 30px;
   background: #000;
@@ -3051,7 +3051,7 @@ background
   background: rgba(0,0,0,0.7);
   text-align: center;
 }
-.box:hover .bmbox {
+.divbox:hover .bmbox {
   width: 100%;
   height: 30px;
   background: #000;
