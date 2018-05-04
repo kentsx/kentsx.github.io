@@ -1925,7 +1925,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a290ff;
+  background: #f4ffc9;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3026,11 +3026,38 @@ hr {
     text-align: center;
   }
 }
-.viceDiv_1 {
-  display: inline-block;
-background-color
-  margin-top: 2%;
-  margin-left: 2.5%;
+.box {
   width: 30%;
   height: 150px;
+  position: relative;
+background
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  margin-top: 2%;
+  margin-left: 2.5%;
+}
+.box .bmbox {
+  width: 100%;
+  height: 30px;
+  background: #000;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  display: none;
+  font: 12px/30px "宋体";
+  color: #fff;
+  text-align: center;
+}
+.box:hover .bmbox {
+  width: 100%;
+  height: 30px;
+  background: #000;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  display: block;
+  font: 12px/30px "宋体";
+  color: #fff;
+  text-align: center;
 }
