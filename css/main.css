@@ -1925,7 +1925,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #dff;
+  background: #ffffe9;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3045,7 +3045,7 @@ background
   bottom: 0px;
   left: 0px;
   display: none;
-  font: 12px/30px "宋体";
+  font: 12px/30px "arial";
   opacity: 0.9;
   color: #fff;
   background: rgba(0,0,0,0.7);
@@ -3059,9 +3059,21 @@ background
   bottom: 0px;
   left: 0px;
   display: block;
-  font: 12px/30px "宋体";
+  font: 12px/30px "arial";
   opacity: 0.9;
   color: #fff;
   background: rgba(0,0,0,0.7);
+  text-align: center;
+}
+.phototitle {
+  width: 100%;
+  height: 60px;
+  font: bold 30px/60px sans-serif;
+  text-align: center;
+}
+.phototitle_h1 {
+  width: 100%;
+  height: 60px;
+  font: 20px/60px sans-serif;
   text-align: center;
 }
