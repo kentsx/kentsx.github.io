@@ -3,33 +3,73 @@
 
 
     
-    
-    
   <url>
     <loc>https://kentspace.xyz/2018/2018-05-05-EasyPub-%E6%88%AA%E8%87%B3%E7%9B%AE%E5%89%8D%E6%9C%80%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AC%E6%8D%A2%E5%99%A8/</loc>
-    <lastmod>2018-05-05T04:21:51.326Z</lastmod>
+    <lastmod>2018-05-05T07:24:57.458Z</lastmod>
     <data>
         <display>
-        <title>2018-05-05 EasyPub-截至目前最好用的转换器</title>
+        <title>EasyPub-截至目前最好用的转换器</title>
         <pubTime>2018-05-05T04:21:51.000Z</pubTime>
         
+        <tag>电子书</tag>
+         
+        <tag>软件</tag>
+         
          
            
              
-              <breadCrumb title="下班以后嗨起来" url="https://kentspace.xyz/categories/%E4%B8%8B%E7%8F%AD%E4%BB%A5%E5%90%8E%E5%97%A8%E8%B5%B7%E6%9D%A5/"/>
+              <breadCrumb title="学术" url="https://kentspace.xyz/categories/%E5%AD%A6%E6%9C%AF/"/>
           
-             
-              <breadCrumb title="金融狗在假装码农" url="https://kentspace.xyz/categories/%E4%B8%8B%E7%8F%AD%E4%BB%A5%E5%90%8E%E5%97%A8%E8%B5%B7%E6%9D%A5/%E9%87%91%E8%9E%8D%E7%8B%97%E5%9C%A8%E5%81%87%E8%A3%85%E7%A0%81%E5%86%9C/"/>
-          
-             
-              <breadCrumb title="金融狗工作日常" url="https://kentspace.xyz/categories/%E4%B8%8B%E7%8F%AD%E4%BB%A5%E5%90%8E%E5%97%A8%E8%B5%B7%E6%9D%A5/%E9%87%91%E8%9E%8D%E7%8B%97%E5%9C%A8%E5%81%87%E8%A3%85%E7%A0%81%E5%86%9C/%E9%87%91%E8%9E%8D%E7%8B%97%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%B8%B8/"/>
-          
-             
-             
         </display>
     </data>
     </url>
 
+    
+  <url>
+    <loc>https://kentspace.xyz/2018/2018-05-05-%E6%90%AD%E5%BB%BA%E7%9B%B8%E5%86%8C%E9%A1%B5%E9%9D%A2-%E6%9B%B4%E6%96%B0%E5%8E%9F%E6%80%9D%E8%B7%AF/</loc>
+    <lastmod>2018-05-05T07:13:26.822Z</lastmod>
+    <data>
+        <display>
+        <title>搭建相册页面-更新原思路</title>
+        <pubTime>2018-05-05T05:41:14.000Z</pubTime>
+        
+        <tag>建站</tag>
+         
+        <tag>优化</tag>
+         
+         
+           
+             
+              <breadCrumb title="金融狗在假装码农" url="https://kentspace.xyz/categories/%E9%87%91%E8%9E%8D%E7%8B%97%E5%9C%A8%E5%81%87%E8%A3%85%E7%A0%81%E5%86%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>https://kentspace.xyz/2018/2018-05-03-%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96-%E8%AE%BE%E7%BD%AE%E9%83%A8%E5%88%86%E5%9B%BE%E7%89%87%E4%B8%8D%E4%BD%BF%E7%94%A8fancybox/</loc>
+    <lastmod>2018-05-05T05:43:54.239Z</lastmod>
+    <data>
+        <display>
+        <title>网站优化-设置部分图片不使用fancybox</title>
+        <pubTime>2018-05-03T15:51:23.000Z</pubTime>
+        
+        <tag>建站</tag>
+         
+        <tag>优化</tag>
+         
+         
+           
+             
+              <breadCrumb title="金融狗在假装码农" url="https://kentspace.xyz/categories/%E9%87%91%E8%9E%8D%E7%8B%97%E5%9C%A8%E5%81%87%E8%A3%85%E7%A0%81%E5%86%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>https://kentspace.xyz/2018/2018-04-06-%E6%9D%8F%E4%BB%81%E6%8E%92%E5%88%B6%E4%BD%9C%E8%AE%B0%E5%BD%95/</loc>
@@ -47,48 +87,6 @@
            
              
               <breadCrumb title="下班以后嗨起来" url="https://kentspace.xyz/categories/%E4%B8%8B%E7%8F%AD%E4%BB%A5%E5%90%8E%E5%97%A8%E8%B5%B7%E6%9D%A5/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://kentspace.xyz/2018/2018-05-03-%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96-%E8%AE%BE%E7%BD%AE%E9%83%A8%E5%88%86%E5%9B%BE%E7%89%87%E4%B8%8D%E4%BD%BF%E7%94%A8fancybox/</loc>
-    <lastmod>2018-05-03T16:23:16.445Z</lastmod>
-    <data>
-        <display>
-        <title>网站优化-设置部分图片不使用fancybox</title>
-        <pubTime>2018-05-03T15:51:23.000Z</pubTime>
-        
-        <tag>建站</tag>
-         
-         
-           
-             
-              <breadCrumb title="金融狗在假装码农" url="https://kentspace.xyz/categories/%E9%87%91%E8%9E%8D%E7%8B%97%E5%9C%A8%E5%81%87%E8%A3%85%E7%A0%81%E5%86%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://kentspace.xyz/2018/2018-05-03-%E4%B8%80%E9%94%AE%E5%88%A0%E9%99%A4/</loc>
-    <lastmod>2018-05-03T15:52:17.493Z</lastmod>
-    <data>
-        <display>
-        <title>一键删除</title>
-        <pubTime>2018-05-02T16:13:34.000Z</pubTime>
-        
-        <tag>感慨</tag>
-         
-        <tag>生活</tag>
-         
-         
-           
-             
-              <breadCrumb title="转移过往内容" url="https://kentspace.xyz/categories/%E8%BD%AC%E7%A7%BB%E8%BF%87%E5%BE%80%E5%86%85%E5%AE%B9/"/>
           
         </display>
     </data>
@@ -472,11 +470,11 @@
         <title>和父母一起逛SG</title>
         <pubTime>2016-05-18T03:24:14.000Z</pubTime>
         
+        <tag>生活</tag>
+         
         <tag>SGlife</tag>
          
         <tag>NUS</tag>
-         
-        <tag>生活</tag>
          
          
            
