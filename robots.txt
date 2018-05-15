@@ -12,6 +12,7 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
+Disallow: /work-log/
 
 Sitemap: https://www.kentspcae.xyz/sitemap.xml
 Sitemap: https://www.kentspcae.xyz/baidusitemap.xml
