@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[余罪可能是现在的我们的榜样]]></title>
+    <url>%2F2018%2F2018-05-21-%E4%BD%99%E7%BD%AA%E5%8F%AF%E8%83%BD%E6%98%AF%E7%8E%B0%E5%9C%A8%E7%9A%84%E6%88%91%E4%BB%AC%E7%9A%84%E6%A6%9C%E6%A0%B7%2F</url>
+    <content type="text"><![CDATA[大概就10天前吧，没日没夜的看完了《余罪》的1-8,为此还甚至买了KU。可能有人说，为这个买个KU，傻了吧。KU这东西吧，其实也是变相激励自己去多看看书。尽管KU书店的书还很少，电子书不适合教材类的书籍，但人文类、小说、传记还是可以读读的，丰富自己的文学修养在我看来变得越来越重要了。 不过说实话，我预测我可能最多还是会去看小说。LOL。 余罪，一个痞痞的少年，不服输，贼精明的小子。这么一个不像警察的警察，竟然愣是受到了这么多小姑娘的青睐。这肯定是有原因的。我之所以说他可能是现在的我们的榜样，主要是他的部分性格确实值得我们去学习；肯拼，人性。 现在这个社会，其实谁也不服谁。这可能就是信息爆炸互通，渠道开阔后的结果。每个人都觉得自己很牛。但其实呢，每个人又什么都不是。尤其是国内，整个氛围极其浮躁，连学术界也是沆瀣一气，没几个真正在潜心学术的。教授办企业，学生来打工；这似乎已经不是什么新闻了。小三上位，网红当道；这已经是家常便饭了。是什么，让我泱泱大国的同胞们变得如此耐不住寂寞，追求快速的支致富之路？ 这一届的领导，是既有执行力的。这一届的领导也进一步提出了“工匠精神”这个词，这个已经被社会淡忘的词。余罪中有一个18年前旧案被重新侦破的案子，还有一个偷牛案，都在说明，这小子有一股子钻劲，不放弃。跋山涉水，去找一点点的牛粪便化验，去上海万千司机中寻找那个18年前杀了人的孩子。细枝末节的线索，却在他那组成了一幅生动的画面。 我们现在正是缺乏这种精神。巴不得今天学的东西明天就能致富。今天买的股票，明天就来个涨停。我就呵呵笑了，你当自己都是股神啊？巴菲特的方法根本不是短线，人家是价值投资，是靠分红和企业的壮大而赚到钱；即使是他也不可能告诉你，明天哪只股会涨。那些通过技术分析就天天在那边吹吹吹的人，多半没什么实力。 先扯这么多。其实余罪这人挺有特点的，对于我自己来说，要学的还不少。等着出第九本，哈哈！]]></content>
+      <categories>
+        <category>下班以后嗨起来</category>
+      </categories>
+      <tags>
+        <tag>阅读</tag>
+        <tag>小说</tag>
+        <tag>悬疑</tag>
+        <tag>读后感</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[关于可交换债券的疑惑]]></title>
     <url>%2F2018%2F2018-05-16-%E5%85%B3%E4%BA%8E%E5%8F%AF%E4%BA%A4%E6%8D%A2%E5%80%BA%E5%88%B8%E7%9A%84%E7%96%91%E6%83%91%2F</url>
     <content type="text"><![CDATA[前言这两天很忙，忙的事情也比较与众不同。 首先是招投标工作，这个其实还算是routine，只不过我非常不喜欢投标，因为总是要准备很多奇奇怪怪的材料，并且费时费力还极有可能不中标。不过由于默默地计财将投标保证金已经还款过去了，我们也只能印着头皮上了。希望会有好结果！前前后后更改标书里面的内容、表述等，着实花了不少力气。 额，差点文不对题了。关于可交换债，我有不少疑问。 正文首先，站在我一个一级投行从业人员的角度，到底是偏股的可交债还是偏债的好卖？在现在这种债券违约已经和吃饭差不多频率的时代，没有都有新的违约在产生，偏债的可交债真的安全么？毕竟质押只是股票而已，即使120%到130%的安全垫，但是一旦一家公司的现金流出现问题，它的股价也会一落千丈。尤其是发债主体就是上市公司的控股集团等，本身没什么业务，全靠对外投资类型的，这种安全么？ 另一个，我将市场上已发的可交债的条款、正股、初始溢价等等算出来，期望通过IRR来算出一个与其他变量之间的回归关系。散点图的形状已经挺难看的了，基本看不出什么特别显著的线性或多项式的关系。果然用R拟合，得到的拟合度大概是30%左右。最为神奇的是，这个IRR竟然与正股的sigma无关！！！（我手算了各正股发行前30个交易日的sigma）。吃惊啊！是否有高人能解释下？从BSM的角度，这至少是一个option吧，怎么也应该相关啊，于情于理都不至于不显著吧？而且算出来的p值都是在0.8这种超大的附近。。。非常郁闷。 P.S.这次为了拉股价等数据，动用了Wind数据终端的Python接口。发现Wind在这方面的操作手册写的真的不是一般的烂，至少我作为一个不怎么会用Python的人，对其中的数据类型真的是搞得很懵。返回值这个对象的属性里，各种类型的值都有，外加时间的提取好像很复杂。反正用的真的是很不舒服。难道这抄Bloomberg又没全学来撒~~ 给自己定了一个小目标：等CFA二级考完，在CPA之余，学习Python的数据处理外加写写Wind Python的学习手册。]]></content>
@@ -82,8 +96,8 @@
         <category>下班以后嗨起来</category>
       </categories>
       <tags>
-        <tag>生活</tag>
         <tag>感慨</tag>
+        <tag>生活</tag>
         <tag>拍摄</tag>
       </tags>
   </entry>
@@ -377,14 +391,14 @@
         <category>下班以后嗨起来</category>
       </categories>
       <tags>
-        <tag>生活</tag>
         <tag>金融</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Markdown语法【转】]]></title>
     <url>%2F2017%2F2017-01-01-Markdown%E8%AF%AD%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[此文已被不时之需 Markdown 语法和 MWeb 写作使用说明Markdown 的设计哲学 Markdown 的目标是实现「易读易写」。不过最需要强调的便是它的可读性。一份使用 Markdown 格式撰写的文件应该可以直接以纯文字发佈，并且看起来不会像是由许多标籤或是格式指令所构成。Markdown 的语法有个主要的目的：用来作为一种网路内容的写作用语言。 标题Markdown 语法： 123# 第一级标题 `&lt;h1&gt;` ## 第二级标题 `&lt;h2&gt;` ###### 第六级标题 `&lt;h6&gt;` 效果如下： 第一级标题 &lt;h1&gt;第二级标题 &lt;h2&gt;第六级标题 &lt;h6&gt;强调Markdown 语法： 12345*这些文字会生成`&lt;em&gt;`*_这些文字会生成`&lt;u&gt;`_**这些文字会生成`&lt;strong&gt;`**__这些文字会生成`&lt;strong&gt;`__ 在 MWeb 中的快捷键为： CMD + U、CMD + I、CMD + B效果如下： 这些文字会生成&lt;em&gt;这些文字会生成&lt;u&gt; 这些文字会生成&lt;strong&gt;这些文字会生成&lt;strong&gt; 换行四个及以上空格加回车。 列表无序列表Markdown 语法： 1234* 项目一 无序列表 `* + 空格键`* 项目二 * 项目二的子项目一 无序列表 `TAB + * + 空格键` * 项目二的子项目二 效果如下： 项目一 无序列表 * + 空格键 项目二 项目二的子项目一 无序列表 TAB + * + 空格键 项目二的子项目二 有序列表Markdown 语法： 123451. 项目一 有序列表 `数字 + . + 空格键`2. 项目二 3. 项目三 1. 项目三的子项目一 有序列表 `TAB + 数字 + . + 空格键` 2. 项目三的子项目二 效果如下： 项目一 有序列表 数字 + . + 空格键 项目二 项目三 项目三的子项目一 有序列表 TAB + 数字 + . + 空格键 项目三的子项目二 任务列表（Task lists）Markdown 语法： 12- [ ] 任务一 未做任务 `- + 空格 + [ ]`- [x] 任务二 已做任务 `- + 空格 + [x]` 效果如下： 任务一 未做任务 - + 空格 + [ ] 任务二 已做任务 - + 空格 + [x] 图片Markdown 语法： 12![GitHub set up](https://assets-cdn.github.com/images/modules/logos_page/Octocat.png)格式: ![Alt Text](url) 效果如下： 链接Markdown 语法： 123email &lt;example@example.com&gt;[GitHub](http://github.com)自动生成连接 &lt;http://www.github.com/&gt; Email 连接： &#101;&#x78;&#x61;&#109;&#112;&#108;&#x65;&#64;&#101;&#x78;&#x61;&#109;&#x70;&#x6c;&#101;&#x2e;&#99;&#x6f;&#109;连接标题Github网站自动生成连接像： http://www.github.com/ 这样 区块引用Markdown 语法： 123某某说:&gt; 第一行引用&gt; 第二行费用文字 效果如下： 某某说: 第一行引用第二行费用文字 行内代码Markdown 语法： 1像这样即可：`&lt;addr&gt;` `code` 效果如下： 像这样即可：&lt;addr&gt; code 多行或者一段代码Markdown 语法： 123456function fancyAlert(arg) &#123; if(arg) &#123; $.facebox(&#123;div:'#foo'&#125;) &#125;&#125; 效果如下： 123456function fancyAlert(arg) &#123; if(arg) &#123; $.facebox(&#123;div:'#foo'&#125;) &#125; &#125; 顺序图或流程图Markdown 语法： 123张三-&gt;李四: 嘿，小四儿, 写博客了没?Note right of 李四: 李四愣了一下，说：李四--&gt;张三: 忙得吐血，哪有时间写。 12345678st=&gt;start: 开始e=&gt;end: 结束op=&gt;operation: 我的操作cond=&gt;condition: 确认？st-&gt;op-&gt;condcond(yes)-&gt;econd(no)-&gt;op 效果如下（ Preferences - Themes - Enable sequence &amp; flow chart 才会看到效果 ）： 123张三-&gt;李四: 嘿，小四儿, 写博客了没?Note right of 李四: 李四愣了一下，说：李四--&gt;张三: 忙得吐血，哪有时间写。 12345678st=&gt;start: 开始e=&gt;end: 结束op=&gt;operation: 我的操作cond=&gt;condition: 确认？st-&gt;op-&gt;condcond(yes)-&gt;econd(no)-&gt;op 更多请参考：http://bramp.github.io/js-sequence-diagrams/, http://adrai.github.io/flowchart.js/ 表格Markdown 语法： 1234第一格表头 | 第二格表头--------- | -------------内容单元格 第一列第一格 | 内容单元格第二列第一格内容单元格 第一列第二格 多加文字 | 内容单元格第二列第二格 效果如下： 第一格表头 第二格表头 内容单元格 第一列第一格 内容单元格第二列第一格 内容单元格 第一列第二格 多加文字 内容单元格第二列第二格 删除线Markdown 语法： 加删除线像这样用： ~~删除这些~~ 效果如下： 加删除线像这样用： 删除这些 分隔线以下三种方式都可以生成分隔线： *** ***** - - - 效果如下： MathMarkdown 语法： 1$$ x = \dfrac&#123;-b \pm \sqrt&#123;b^2 - 4ac&#125;&#125;&#123;2a&#125; $$ 效果如下： $$ x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$ TOCMarkdown 语法： 1[TOC] 效果如下： [TOC]]]></content>
+    <content type="text"><![CDATA[此文已被不时之需 Markdown 语法和 MWeb 写作使用说明Markdown 的设计哲学 Markdown 的目标是实现「易读易写」。不过最需要强调的便是它的可读性。一份使用 Markdown 格式撰写的文件应该可以直接以纯文字发佈，并且看起来不会像是由许多标籤或是格式指令所构成。Markdown 的语法有个主要的目的：用来作为一种网路内容的写作用语言。 标题Markdown 语法： 123# 第一级标题 `&lt;h1&gt;` ## 第二级标题 `&lt;h2&gt;` ###### 第六级标题 `&lt;h6&gt;` 效果如下： 第一级标题 &lt;h1&gt;第二级标题 &lt;h2&gt;第六级标题 &lt;h6&gt;强调Markdown 语法： 12345*这些文字会生成`&lt;em&gt;`*_这些文字会生成`&lt;u&gt;`_**这些文字会生成`&lt;strong&gt;`**__这些文字会生成`&lt;strong&gt;`__ 在 MWeb 中的快捷键为： CMD + U、CMD + I、CMD + B效果如下： 这些文字会生成&lt;em&gt;这些文字会生成&lt;u&gt; 这些文字会生成&lt;strong&gt;这些文字会生成&lt;strong&gt; 换行四个及以上空格加回车。 列表无序列表Markdown 语法： 1234* 项目一 无序列表 `* + 空格键`* 项目二 * 项目二的子项目一 无序列表 `TAB + * + 空格键` * 项目二的子项目二 效果如下： 项目一 无序列表 * + 空格键 项目二 项目二的子项目一 无序列表 TAB + * + 空格键 项目二的子项目二 有序列表Markdown 语法： 123451. 项目一 有序列表 `数字 + . + 空格键`2. 项目二 3. 项目三 1. 项目三的子项目一 有序列表 `TAB + 数字 + . + 空格键` 2. 项目三的子项目二 效果如下： 项目一 有序列表 数字 + . + 空格键 项目二 项目三 项目三的子项目一 有序列表 TAB + 数字 + . + 空格键 项目三的子项目二 任务列表（Task lists）Markdown 语法： 12- [ ] 任务一 未做任务 `- + 空格 + [ ]`- [x] 任务二 已做任务 `- + 空格 + [x]` 效果如下： 任务一 未做任务 - + 空格 + [ ] 任务二 已做任务 - + 空格 + [x] 图片Markdown 语法： 12![GitHub set up](https://assets-cdn.github.com/images/modules/logos_page/Octocat.png)格式: ![Alt Text](url) 效果如下： 链接Markdown 语法： 123email &lt;example@example.com&gt;[GitHub](http://github.com)自动生成连接 &lt;http://www.github.com/&gt; Email 连接： &#101;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#64;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#x65;&#46;&#x63;&#111;&#x6d;连接标题Github网站自动生成连接像： http://www.github.com/ 这样 区块引用Markdown 语法： 123某某说:&gt; 第一行引用&gt; 第二行费用文字 效果如下： 某某说: 第一行引用第二行费用文字 行内代码Markdown 语法： 1像这样即可：`&lt;addr&gt;` `code` 效果如下： 像这样即可：&lt;addr&gt; code 多行或者一段代码Markdown 语法： 123456function fancyAlert(arg) &#123; if(arg) &#123; $.facebox(&#123;div:'#foo'&#125;) &#125;&#125; 效果如下： 123456function fancyAlert(arg) &#123; if(arg) &#123; $.facebox(&#123;div:'#foo'&#125;) &#125; &#125; 顺序图或流程图Markdown 语法： 123张三-&gt;李四: 嘿，小四儿, 写博客了没?Note right of 李四: 李四愣了一下，说：李四--&gt;张三: 忙得吐血，哪有时间写。 12345678st=&gt;start: 开始e=&gt;end: 结束op=&gt;operation: 我的操作cond=&gt;condition: 确认？st-&gt;op-&gt;condcond(yes)-&gt;econd(no)-&gt;op 效果如下（ Preferences - Themes - Enable sequence &amp; flow chart 才会看到效果 ）： 123张三-&gt;李四: 嘿，小四儿, 写博客了没?Note right of 李四: 李四愣了一下，说：李四--&gt;张三: 忙得吐血，哪有时间写。 12345678st=&gt;start: 开始e=&gt;end: 结束op=&gt;operation: 我的操作cond=&gt;condition: 确认？st-&gt;op-&gt;condcond(yes)-&gt;econd(no)-&gt;op 更多请参考：http://bramp.github.io/js-sequence-diagrams/, http://adrai.github.io/flowchart.js/ 表格Markdown 语法： 1234第一格表头 | 第二格表头--------- | -------------内容单元格 第一列第一格 | 内容单元格第二列第一格内容单元格 第一列第二格 多加文字 | 内容单元格第二列第二格 效果如下： 第一格表头 第二格表头 内容单元格 第一列第一格 内容单元格第二列第一格 内容单元格 第一列第二格 多加文字 内容单元格第二列第二格 删除线Markdown 语法： 加删除线像这样用： ~~删除这些~~ 效果如下： 加删除线像这样用： 删除这些 分隔线以下三种方式都可以生成分隔线： *** ***** - - - 效果如下： MathMarkdown 语法： 1$$ x = \dfrac&#123;-b \pm \sqrt&#123;b^2 - 4ac&#125;&#125;&#123;2a&#125; $$ 效果如下： $$ x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$ TOCMarkdown 语法： 1[TOC] 效果如下： [TOC]]]></content>
       <categories>
         <category>金融狗在假装码农</category>
       </categories>
@@ -400,8 +414,8 @@
         <category>转移过往内容</category>
       </categories>
       <tags>
-        <tag>生活</tag>
         <tag>感慨</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -423,9 +437,9 @@
         <category>转移过往内容</category>
       </categories>
       <tags>
+        <tag>生活</tag>
         <tag>SGlife</tag>
         <tag>NUS</tag>
-        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -436,8 +450,8 @@
         <category>转移过往内容</category>
       </categories>
       <tags>
-        <tag>生活</tag>
         <tag>感慨</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
