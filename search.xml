@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[羞涩的回应]]></title>
+    <url>%2F2018%2F2018-07-08-%E7%BE%9E%E6%B6%A9%E7%9A%84%E5%9B%9E%E5%BA%94%2F</url>
+    <content type="text"><![CDATA[大家好，我是J小姐～没想到一个周末不见，K先生竟搞了个公众号，用来……撒狗粮？嘿嘿，甚是惊喜。 不得不说，在爱情上，我是一个很幼稚的人，感谢K先生的包容与引导。我希望在这个公众号上记录下我一点一滴的成长，一步一步走出我那小小的的执念～ 作为两只金融狗，我和K先生经常会忙到没时间约会，或者索性天南地北见不着面。而且，工作上的压力也让我们身心俱疲。但是，K先生还是会用有限的时间和经费给我营造各种浪漫。现实生活中的普通人，哪有那么多诗和远方，我们只能尽力自嗨一把喽。 当然，总是秀恩爱容易齁到大家，所以我打算更多地会把我工作与生活中的感悟分享出来。 by Miss J]]></content>
+      <categories>
+        <category>K与J的爱情</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>爱情</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[K与J的日常出道之路]]></title>
     <url>%2F2018%2F2018-07-07-K%E4%B8%8EJ%E7%9A%84%E6%97%A5%E5%B8%B8%E5%87%BA%E9%81%93%E4%B9%8B%E8%B7%AF%2F</url>
     <content type="text"><![CDATA[从2018年7月7日开始，本频道正式出到了。刚刚建立初期，必然有很多不完善的地方。建立这个频道更多地是为了记录下我与J小姐在一起的生活，不为流量，不为赚钱，只是为了记录下美好的瞬间，期待将来可以拿着它跟孩子说：“看，你爸当年追你妈的时候。。。。” K先生与J小姐的合影不算多，但都是精品狗粮，欢迎狂吃，管够！ 如今这个年代早已过了用书信的时光，大家都是用的这类及时消息。不过订阅号到目前为止依然只能一天一条，也就是说，如果我今天有什么想说缺忘说的话，也只能留到明天了。哈哈，这似乎与书信有那么些许相似啊！ 之所以在和J小姐在一起快一年半的时候开始用微信公众号，主要是感觉到我们的关系更进一步了。尽管J小姐有时候有些小执念，让我很无奈，但这也是我爱她的地方。前段时间，争吵不少，其实都是我们太爱对方了；吵完过后，依然能最后两人一抱一吻，和好如初。这已经不是简简单单的爱情了吧，有种准备好生活下去的感觉了，夫妻之间，床头吵架床尾和。 K先生 书于戊戌年初夏 ps:既然已经见了公众号，那就在自己的网站上推一下啦。]]></content>
@@ -337,8 +349,8 @@
         <category>金融狗在假装码农</category>
       </categories>
       <tags>
-        <tag>Kodi</tag>
         <tag>NAS</tag>
+        <tag>Kodi</tag>
       </tags>
   </entry>
   <entry>
@@ -444,14 +456,14 @@
         <category>下班以后嗨起来</category>
       </categories>
       <tags>
-        <tag>生活</tag>
         <tag>金融</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Markdown语法【转】]]></title>
     <url>%2F2017%2F2017-01-01-Markdown%E8%AF%AD%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[此文已被不时之需 Markdown 语法和 MWeb 写作使用说明Markdown 的设计哲学 Markdown 的目标是实现「易读易写」。不过最需要强调的便是它的可读性。一份使用 Markdown 格式撰写的文件应该可以直接以纯文字发佈，并且看起来不会像是由许多标籤或是格式指令所构成。Markdown 的语法有个主要的目的：用来作为一种网路内容的写作用语言。 标题Markdown 语法： 123# 第一级标题 `&lt;h1&gt;` ## 第二级标题 `&lt;h2&gt;` ###### 第六级标题 `&lt;h6&gt;` 效果如下： 第一级标题 &lt;h1&gt;第二级标题 &lt;h2&gt;第六级标题 &lt;h6&gt;强调Markdown 语法： 12345*这些文字会生成`&lt;em&gt;`*_这些文字会生成`&lt;u&gt;`_**这些文字会生成`&lt;strong&gt;`**__这些文字会生成`&lt;strong&gt;`__ 在 MWeb 中的快捷键为： CMD + U、CMD + I、CMD + B效果如下： 这些文字会生成&lt;em&gt;这些文字会生成&lt;u&gt; 这些文字会生成&lt;strong&gt;这些文字会生成&lt;strong&gt; 换行四个及以上空格加回车。 列表无序列表Markdown 语法： 1234* 项目一 无序列表 `* + 空格键`* 项目二 * 项目二的子项目一 无序列表 `TAB + * + 空格键` * 项目二的子项目二 效果如下： 项目一 无序列表 * + 空格键 项目二 项目二的子项目一 无序列表 TAB + * + 空格键 项目二的子项目二 有序列表Markdown 语法： 123451. 项目一 有序列表 `数字 + . + 空格键`2. 项目二 3. 项目三 1. 项目三的子项目一 有序列表 `TAB + 数字 + . + 空格键` 2. 项目三的子项目二 效果如下： 项目一 有序列表 数字 + . + 空格键 项目二 项目三 项目三的子项目一 有序列表 TAB + 数字 + . + 空格键 项目三的子项目二 任务列表（Task lists）Markdown 语法： 12- [ ] 任务一 未做任务 `- + 空格 + [ ]`- [x] 任务二 已做任务 `- + 空格 + [x]` 效果如下： 任务一 未做任务 - + 空格 + [ ] 任务二 已做任务 - + 空格 + [x] 图片Markdown 语法： 12![GitHub set up](https://assets-cdn.github.com/images/modules/logos_page/Octocat.png)格式: ![Alt Text](url) 效果如下： 链接Markdown 语法： 123email &lt;example@example.com&gt;[GitHub](http://github.com)自动生成连接 &lt;http://www.github.com/&gt; Email 连接： &#x65;&#120;&#97;&#x6d;&#112;&#x6c;&#x65;&#x40;&#x65;&#x78;&#97;&#109;&#112;&#x6c;&#101;&#46;&#99;&#x6f;&#109;连接标题Github网站自动生成连接像： http://www.github.com/ 这样 区块引用Markdown 语法： 123某某说:&gt; 第一行引用&gt; 第二行费用文字 效果如下： 某某说: 第一行引用第二行费用文字 行内代码Markdown 语法： 1像这样即可：`&lt;addr&gt;` `code` 效果如下： 像这样即可：&lt;addr&gt; code 多行或者一段代码Markdown 语法： 123456function fancyAlert(arg) &#123; if(arg) &#123; $.facebox(&#123;div:'#foo'&#125;) &#125;&#125; 效果如下： 123456function fancyAlert(arg) &#123; if(arg) &#123; $.facebox(&#123;div:'#foo'&#125;) &#125; &#125; 顺序图或流程图Markdown 语法： 123张三-&gt;李四: 嘿，小四儿, 写博客了没?Note right of 李四: 李四愣了一下，说：李四--&gt;张三: 忙得吐血，哪有时间写。 12345678st=&gt;start: 开始e=&gt;end: 结束op=&gt;operation: 我的操作cond=&gt;condition: 确认？st-&gt;op-&gt;condcond(yes)-&gt;econd(no)-&gt;op 效果如下（ Preferences - Themes - Enable sequence &amp; flow chart 才会看到效果 ）： 123张三-&gt;李四: 嘿，小四儿, 写博客了没?Note right of 李四: 李四愣了一下，说：李四--&gt;张三: 忙得吐血，哪有时间写。 12345678st=&gt;start: 开始e=&gt;end: 结束op=&gt;operation: 我的操作cond=&gt;condition: 确认？st-&gt;op-&gt;condcond(yes)-&gt;econd(no)-&gt;op 更多请参考：http://bramp.github.io/js-sequence-diagrams/, http://adrai.github.io/flowchart.js/ 表格Markdown 语法： 1234第一格表头 | 第二格表头--------- | -------------内容单元格 第一列第一格 | 内容单元格第二列第一格内容单元格 第一列第二格 多加文字 | 内容单元格第二列第二格 效果如下： 第一格表头 第二格表头 内容单元格 第一列第一格 内容单元格第二列第一格 内容单元格 第一列第二格 多加文字 内容单元格第二列第二格 删除线Markdown 语法： 加删除线像这样用： ~~删除这些~~ 效果如下： 加删除线像这样用： 删除这些 分隔线以下三种方式都可以生成分隔线： *** ***** - - - 效果如下： MathMarkdown 语法： 1$$ x = \dfrac&#123;-b \pm \sqrt&#123;b^2 - 4ac&#125;&#125;&#123;2a&#125; $$ 效果如下： $$ x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$ TOCMarkdown 语法： 1[TOC] 效果如下： [TOC]]]></content>
+    <content type="text"><![CDATA[此文已被不时之需 Markdown 语法和 MWeb 写作使用说明Markdown 的设计哲学 Markdown 的目标是实现「易读易写」。不过最需要强调的便是它的可读性。一份使用 Markdown 格式撰写的文件应该可以直接以纯文字发佈，并且看起来不会像是由许多标籤或是格式指令所构成。Markdown 的语法有个主要的目的：用来作为一种网路内容的写作用语言。 标题Markdown 语法： 123# 第一级标题 `&lt;h1&gt;` ## 第二级标题 `&lt;h2&gt;` ###### 第六级标题 `&lt;h6&gt;` 效果如下： 第一级标题 &lt;h1&gt;第二级标题 &lt;h2&gt;第六级标题 &lt;h6&gt;强调Markdown 语法： 12345*这些文字会生成`&lt;em&gt;`*_这些文字会生成`&lt;u&gt;`_**这些文字会生成`&lt;strong&gt;`**__这些文字会生成`&lt;strong&gt;`__ 在 MWeb 中的快捷键为： CMD + U、CMD + I、CMD + B效果如下： 这些文字会生成&lt;em&gt;这些文字会生成&lt;u&gt; 这些文字会生成&lt;strong&gt;这些文字会生成&lt;strong&gt; 换行四个及以上空格加回车。 列表无序列表Markdown 语法： 1234* 项目一 无序列表 `* + 空格键`* 项目二 * 项目二的子项目一 无序列表 `TAB + * + 空格键` * 项目二的子项目二 效果如下： 项目一 无序列表 * + 空格键 项目二 项目二的子项目一 无序列表 TAB + * + 空格键 项目二的子项目二 有序列表Markdown 语法： 123451. 项目一 有序列表 `数字 + . + 空格键`2. 项目二 3. 项目三 1. 项目三的子项目一 有序列表 `TAB + 数字 + . + 空格键` 2. 项目三的子项目二 效果如下： 项目一 有序列表 数字 + . + 空格键 项目二 项目三 项目三的子项目一 有序列表 TAB + 数字 + . + 空格键 项目三的子项目二 任务列表（Task lists）Markdown 语法： 12- [ ] 任务一 未做任务 `- + 空格 + [ ]`- [x] 任务二 已做任务 `- + 空格 + [x]` 效果如下： 任务一 未做任务 - + 空格 + [ ] 任务二 已做任务 - + 空格 + [x] 图片Markdown 语法： 12![GitHub set up](https://assets-cdn.github.com/images/modules/logos_page/Octocat.png)格式: ![Alt Text](url) 效果如下： 链接Markdown 语法： 123email &lt;example@example.com&gt;[GitHub](http://github.com)自动生成连接 &lt;http://www.github.com/&gt; Email 连接： &#x65;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#64;&#101;&#120;&#x61;&#x6d;&#112;&#108;&#101;&#x2e;&#99;&#111;&#109;连接标题Github网站自动生成连接像： http://www.github.com/ 这样 区块引用Markdown 语法： 123某某说:&gt; 第一行引用&gt; 第二行费用文字 效果如下： 某某说: 第一行引用第二行费用文字 行内代码Markdown 语法： 1像这样即可：`&lt;addr&gt;` `code` 效果如下： 像这样即可：&lt;addr&gt; code 多行或者一段代码Markdown 语法： 123456function fancyAlert(arg) &#123; if(arg) &#123; $.facebox(&#123;div:'#foo'&#125;) &#125;&#125; 效果如下： 123456function fancyAlert(arg) &#123; if(arg) &#123; $.facebox(&#123;div:'#foo'&#125;) &#125; &#125; 顺序图或流程图Markdown 语法： 123张三-&gt;李四: 嘿，小四儿, 写博客了没?Note right of 李四: 李四愣了一下，说：李四--&gt;张三: 忙得吐血，哪有时间写。 12345678st=&gt;start: 开始e=&gt;end: 结束op=&gt;operation: 我的操作cond=&gt;condition: 确认？st-&gt;op-&gt;condcond(yes)-&gt;econd(no)-&gt;op 效果如下（ Preferences - Themes - Enable sequence &amp; flow chart 才会看到效果 ）： 123张三-&gt;李四: 嘿，小四儿, 写博客了没?Note right of 李四: 李四愣了一下，说：李四--&gt;张三: 忙得吐血，哪有时间写。 12345678st=&gt;start: 开始e=&gt;end: 结束op=&gt;operation: 我的操作cond=&gt;condition: 确认？st-&gt;op-&gt;condcond(yes)-&gt;econd(no)-&gt;op 更多请参考：http://bramp.github.io/js-sequence-diagrams/, http://adrai.github.io/flowchart.js/ 表格Markdown 语法： 1234第一格表头 | 第二格表头--------- | -------------内容单元格 第一列第一格 | 内容单元格第二列第一格内容单元格 第一列第二格 多加文字 | 内容单元格第二列第二格 效果如下： 第一格表头 第二格表头 内容单元格 第一列第一格 内容单元格第二列第一格 内容单元格 第一列第二格 多加文字 内容单元格第二列第二格 删除线Markdown 语法： 加删除线像这样用： ~~删除这些~~ 效果如下： 加删除线像这样用： 删除这些 分隔线以下三种方式都可以生成分隔线： *** ***** - - - 效果如下： MathMarkdown 语法： 1$$ x = \dfrac&#123;-b \pm \sqrt&#123;b^2 - 4ac&#125;&#125;&#123;2a&#125; $$ 效果如下： $$ x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$ TOCMarkdown 语法： 1[TOC] 效果如下： [TOC]]]></content>
       <categories>
         <category>金融狗在假装码农</category>
       </categories>
