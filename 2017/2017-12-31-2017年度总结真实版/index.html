@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="金融,生活," />
+  <meta name="keywords" content="生活,金融," />
 
 
 
@@ -82,7 +82,7 @@
 
 
 <meta name="description" content="开头声明这是一篇严肃的文章，是我作为一个菜鸟站长，菜鸟职员的对自己的工作和生活的总结。希望我也能像罗胖一样，一张票可以用40年；我能每年像年审报告一般，在430之前，写出我内心最真实的年度总结。">
-<meta name="keywords" content="金融,生活">
+<meta name="keywords" content="生活,金融">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2017年度总结真实版">
 <meta property="og:url" content="https://blog.kenny4ever.com/2017/2017-12-31-2017年度总结真实版/index.html">
@@ -405,6 +405,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/2017-12-31-2017年度总结真实版/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/2017-12-31-2017年度总结真实版/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -503,9 +513,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/金融/" rel="tag"> <i class="fa fa-paper-plane"></i> 金融</a>
-          
             <a href="/tags/生活/" rel="tag"> <i class="fa fa-paper-plane"></i> 生活</a>
+          
+            <a href="/tags/金融/" rel="tag"> <i class="fa fa-paper-plane"></i> 金融</a>
           
         </div>
       
@@ -561,9 +571,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTM2OC8xMTkwNA=="></div>
     </div>
-
   
 
 
@@ -889,26 +897,37 @@
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'f0IAtvV4JCrEKhhKCmkpg0cv-gzGzoHsz',
+        appKey: 'kuWPTFYN1C3qDUADPM7ryYs3',
+        placeholder: '谢谢您的宝贵意见！',
+        avatar:'robohash',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

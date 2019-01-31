@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="感慨,生活," />
+  <meta name="keywords" content="生活,感慨," />
 
 
 
@@ -82,7 +82,7 @@
 
 
 <meta name="description" content="最近总是失眠，也许也不能算是失眠，只是因为我的生物钟过的是欧美时间吧。由于目前还是学生的缘故吧，我可以任性，我可以为自己说的话不负责任。 有时想来，做学生真的是太幸福了。可以在不想去上课的时候，赖在宿舍中；可以在厌倦食堂的饭菜的时候，肆意下馆子搓一顿；可以在期末考试周之前，随性的选择上课跟不上课；可以在腰包瘪下去的时候，一个电话给父母，然后他们就明白了。 不过这样的时光，每个人总是在经历的过程中痛">
-<meta name="keywords" content="感慨,生活">
+<meta name="keywords" content="生活,感慨">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学生时代要完结了">
 <meta property="og:url" content="https://blog.kenny4ever.com/2016/2016-05-04-学生时代要完结了/index.html">
@@ -407,6 +407,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/2016-05-04-学生时代要完结了/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2016/2016-05-04-学生时代要完结了/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -511,9 +521,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/感慨/" rel="tag"> <i class="fa fa-paper-plane"></i> 感慨</a>
-          
             <a href="/tags/生活/" rel="tag"> <i class="fa fa-paper-plane"></i> 生活</a>
+          
+            <a href="/tags/感慨/" rel="tag"> <i class="fa fa-paper-plane"></i> 感慨</a>
           
         </div>
       
@@ -569,9 +579,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTM2OC8xMTkwNA=="></div>
     </div>
-
   
 
 
@@ -872,26 +880,37 @@
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'f0IAtvV4JCrEKhhKCmkpg0cv-gzGzoHsz',
+        appKey: 'kuWPTFYN1C3qDUADPM7ryYs3',
+        placeholder: '谢谢您的宝贵意见！',
+        avatar:'robohash',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

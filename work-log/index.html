@@ -333,7 +333,7 @@
       <div class="post-body">
         
         
-          <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <div id="hbe-security"> <div class="hbe-input-container"> <input type="password" class="hbe-form-control" id="pass" placeholder="Please enter the password to read." /> <label for="pass">Please enter the password to read.</label> <div class="bottom-line"></div> </div> </div> <div id="decryptionError" style="display:none;">Incorrect Password!</div> <div id="noContentError" style="display:none;">No content to display!</div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX1/HpMTXnZawTC2U4LbxRcc3BjBDbiuiOhuNn8vsOK/tPOwYGCqnWYMrhtoI6daAGUcYcf6jFgTo8w+DPpgc08vmWgoNXYEb/RIUG5kONJXHw3wFAUVQ5/WPR/u0w9OUJJXwwIR6b3lEZKUUPOURqv5aO7ulogxIFMwi1/6byG92z15LIOnJLUSw </div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
+          <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <div id="hbe-security"> <div class="hbe-input-container"> <input type="password" class="hbe-form-control" id="pass" placeholder="Please enter the password to read." /> <label for="pass">Please enter the password to read.</label> <div class="bottom-line"></div> </div> </div> <div id="decryptionError" style="display:none;">Incorrect Password!</div> <div id="noContentError" style="display:none;">No content to display!</div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX1+ajs8Ty2xaRpmerrtcJ2sO61BRFJnlsjFbpRw4NMFOIJ41eT/irCmXLiOUVagJMtCfONFxcs+ZOr4/0m9+UgWPnxzuVIIq+amtXbmgjIYjyK8/Z4+ogMG86Lp3qX1SMA28/gSaLNQygs7IUkRN6OSZtseEac4PzthE/JA6dDk2PTBvWFUaDhNF </div><script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
         
       </div>
       
@@ -657,6 +657,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'f0IAtvV4JCrEKhhKCmkpg0cv-gzGzoHsz',
+        appKey: 'kuWPTFYN1C3qDUADPM7ryYs3',
+        placeholder: '谢谢您的宝贵意见！',
+        avatar:'robohash',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
