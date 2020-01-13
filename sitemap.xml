@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.kmore.ml/about/index.html</loc>
+    
+    <lastmod>2020-01-13T12:46:18.965Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.kmore.ml/2020/2020-01-09-%E6%9D%82%E8%B0%88%E8%AE%B0%E4%BA%8B/</loc>
     
     <lastmod>2020-01-09T14:42:06.063Z</lastmod>
@@ -65,7 +72,7 @@
   </url>
   
   <url>
-    <loc>https://blog.kmore.ml/about/index.html</loc>
+    <loc>https://blog.kmore.ml/about/index%20-%20origin.html</loc>
     
     <lastmod>2019-07-15T13:07:46.835Z</lastmod>
     
