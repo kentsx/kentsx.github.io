@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+    <meta name="keywords" content="KENT, ELMORE, MORE STORIES">
+  
+  
+    <meta name="description" content="MORE ABOUT MR.K LIFE">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    通过V2Ray一键安装WS+TLS |
+    
+    KMORE</title>
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+  <script src="/js/pace.min.js"></script>
+</head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-2019-11-01-通过V2Ray一键安装WS-TLS" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      通过V2Ray一键安装WS+TLS
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/2019-11-01-通过V2Ray一键安装WS-TLS/" class="article-date">
+  <time datetime="2019-11-01T05:30:26.000Z" itemprop="datePublished">2019-11-01</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/金融狗在假装码农/">金融狗在假装码农</a>
+  </div>
+
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <p>由于国庆等不知名原因，我的小机场在很长一段时间里都用不来，家里的软路由也废在那边。</p>
+<blockquote>
+<p>我的情况是Ping不通我的VPS。所以更加不用提什么科学上网了。</p>
+</blockquote>
+<p>之后通过一个不太好用渠道，在油管上找了几个视频，学习了下什么是V2Ray，如何安装，什么是Websocket+TLS，如何弄，如何拯救我这种被墙掉的IP。下面就记录一下我自己折腾的过程。<br><a id="more"></a></p>
+<h1 id="何为V2Ray"><a href="#何为V2Ray" class="headerlink" title="何为V2Ray"></a>何为V2Ray</h1><p>具体V2Ray是怎样一个东西，大家可以在科学上网以后去它的官网看看。我这里就讲讲我的粗糙的理解，它其实是一个集合的工具平台，它集合了例如SS、TCP、SOCKS5、MTProto等等。你可以理解成它就好比是一套瑞士军刀，上面很多的小工具都能让你转发你的浏览内容，对内容进行加密然后科学上网。这里，我们今天主要讲的是用Websocket+TLS的方式。</p>
+<h1 id="WS-TLS方式"><a href="#WS-TLS方式" class="headerlink" title="WS+TLS方式"></a>WS+TLS方式</h1><p>这个方式可能是目前相对比较安全的一种科学上网模式，它的逻辑是将你的访问，伪装成访问一个网站，并且我们通过TLS的模式，就相当于再一层加密。作为我们这个使用层面的玩家，理解这些就够了LOL</p>
+<h1 id="安装前的准备和要求"><a href="#安装前的准备和要求" class="headerlink" title="安装前的准备和要求"></a>安装前的准备和要求</h1><ul>
+<li>有一个境外的VPS【系统要求CentOS 7+、Debian 8+、Ubuntu 16+，作者更推荐Debian 9.】</li>
+<li>有一个一级域名（后面会教你如何申请）</li>
+<li>VPS如果不能ping通，那么可能需要挂代理</li>
+<li>一个Cloudflare账号，用于拯救被墙问题</li>
+</ul>
+<h1 id="主要步骤及思路"><a href="#主要步骤及思路" class="headerlink" title="主要步骤及思路"></a>主要步骤及思路</h1><p>1、想办法ping通你的VPS（本文的前提是你已经能够连接上VPS了）<br>2、申请一个一级域名<br>3、往VPS里装入一键安装包，完成V2Ray安装（我用的是233一键安装版）<br>4、设置V2Ray模式为WS+TLS，并配置好<br>5、通过Cloudflare的CDN来绕开被墙问题，我们其实是在访问CF没有被墙的节点<br>6、可选配置：有一个DNSPod的账户，用于访问分流</p>
+<h2 id="配置步骤1：申请域名"><a href="#配置步骤1：申请域名" class="headerlink" title="配置步骤1：申请域名"></a>配置步骤1：申请域名</h2><p>1、我们这里申请一个免费域名。用的freenom（dot.tk也已经是freenom的一部分了）。申请freenom上的域名，步骤基本是很傻瓜式了，选择12个月的免费即可。另外，申请时候如果一直跳什么“不能认证你是个human”或者“技术错误”等。你就先用google或者Facebook之类登录以后，再申请就可以了。<br>2、申请完域名之后，如果你是选择DNSPod进行DNS配置的话，就从DNSpod里把它的Nameserver地址复制到freenom申请的域名下。如果直接用Cloudflare做DNS，那么添加了CF的NS以后，一定要把云从橘黄色点成灰色，DNS Only。<br>3、因为这个域名是新申请的，应该很快就能被DNSPod识别控制了。如果DNSPod还未识别，我们等等；如果不配置DNSPod，那可以直接在freenom中加入DNS设置，直接看第5步。<br>4、OK，现在这个域名已经被DNSPod识别了，就用这个时间进行DNS的配置（如果不加DNSPod，在freenom中也是一样进行配置）。DNSPod设置部分详见本文最后附加步骤。<br>5、首先，我们选择增加一个A记录，将它指向我们申请的VPS的IP地址。（在这里千万不要配置别的ip地址，因为会影响V2Ray的设置）<br>6、然后是等，等待这个DNS配置生效，一般在几分钟。方法是可以ping一下你的域名，是否已经指向你的VPS的IP地址。</p>
+<h2 id="配置步骤2：安装V2Ray"><a href="#配置步骤2：安装V2Ray" class="headerlink" title="配置步骤2：安装V2Ray"></a>配置步骤2：安装V2Ray</h2><blockquote>
+<p>我用的是233一件安装版。如果你非要觉得有什么后门，欢迎自行研究用V2Ray的官网方法。</p>
+</blockquote>
+<p>1、root账号登陆VPS，系统中需要有curl。一般也都有，如果没有输入下列命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># CentOS：</span><br><span class="line">yum update -y &amp;&amp; yum install curl -y</span><br><span class="line"># Debian/Ubuntu：</span><br><span class="line">apt-get update -y &amp;&amp; apt-get install curl -y</span><br></pre></td></tr></table></figure></p>
+<p>2、调整VPS时间为我们自己电脑的时间。这个是V2Ray的安装要求。输入以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 修改vps时区和时间</span><br><span class="line"># 删除/etc/localtime</span><br><span class="line">rm /etc/localtime</span><br><span class="line"># 做软链</span><br><span class="line">ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure></p>
+<p>3、往系统里装入V2Ray。输入以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -s -L https://git.io/v2ray.sh)</span><br></pre></td></tr></table></figure></p>
+<p>这里系统会让你开始选择安装的模式，我们选4，Websocket+TLS。然后关于端口，就用默认的即可；关于域名，就输入我们申请的域名例如，<code>abc.tk</code>；是否要开启SS，我是选择了开启，因为有些设备SS会比较方便一些（默认是不开）。全部完成后，我们的VPS端就已经配置完毕了。</p>
+<p>4、下载一个V2Ray的客户端，我以windows系统为例，我下载了V2RayN，其他的客户端方法大同小异。</p>
+<h2 id="配置步骤3：配置DNS，绕开被墙"><a href="#配置步骤3：配置DNS，绕开被墙" class="headerlink" title="配置步骤3：配置DNS，绕开被墙"></a>配置步骤3：配置DNS，绕开被墙</h2><p>1、在这一步，你需要一个Cloudflare账号，cloudflare有免费的套餐，可以使用它的CDN（可以理解成它的各种节点，镜像备份你的网站或者VPS了）。<br>2、我从油管一位大神那儿看了视频，他介绍了如何利用CNAME介入cloudflare，从而可以选择CF的节点位置。我这里就文字介绍一下。需要使用到CF的partner。他推荐了一个<a href="https://cdn.moeelf.com/" target="_blank" rel="noopener">https://cdn.moeelf.com/</a>，用CF账号登陆即可。我在后文的附加步骤里具体介绍。<a href="aaa">跳转至后文</a><br>3、通过CF官网登录你的账号，进去，应该已经可以看到你的网站了，一定要将TLS那里点成FULL。把前面点灰色的云点成橘黄色，即DNS+TLS。</p>
+<h2 id="开启BBR或锐速（二选一）"><a href="#开启BBR或锐速（二选一）" class="headerlink" title="开启BBR或锐速（二选一）"></a>开启BBR或锐速（二选一）</h2><p>在VPS中输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v2ray bbr</span><br></pre></td></tr></table></figure></p>
+<p>然后选择安装即可。不过我们如果是这种CDN绕道的方法下，这个开启后提速不明显，因为主要的速度受限在于CF的CDN速度和节点。</p>
+<hr>
+<p>OK，截至这里，你的V2Ray已经建立完毕了。你可以到你的各个设备上愉快的配置了。</p>
+<hr>
+<h1 id="【附加】关于使用CF-partner及DNSPod"><a href="#【附加】关于使用CF-partner及DNSPod" class="headerlink" title="【附加】关于使用CF partner及DNSPod"></a>【附加】关于使用CF partner及DNSPod</h1><p>提供如下两个网站供使用：</p>
+<blockquote>
+<p>查看CF各线路的情况：<a href="https://ofvps.com/201907510" target="_blank" rel="noopener">https://ofvps.com/201907510</a><br>CF Partner：<a href="https://cdn.moeelf.com/" target="_blank" rel="noopener">https://cdn.moeelf.com/</a><br>查看traceroute的一个网站：<a href="https://tools.ipip.net/traceroute.php" target="_blank" rel="noopener">https://tools.ipip.net/traceroute.php</a></p>
+</blockquote>
+<p>1、首先，现在DNS这里加入你的域名。如果你是直接从前面配置步骤3跳过来的，那请注意，一定一定要把那朵云点成灰色的。<br>尽管CF partner这里我们实际并不使用它的DNS功能，但还是需要告诉它我们的中心IP是哪里，所以要添加一个A记录。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">添加DNS  @  A记录  填写你的VPS的IP</span><br></pre></td></tr></table></figure></p>
+<p>2、添加DNS之后，就会产生一个CNAME，我们把这个CNAME复制到DNSPod中。把之前在DNSPod中添加的那个指向VPS的IP的A记录删除掉或者暂停掉。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@  CNAME  【线路】默认    填写记录值（复制的那个值）</span><br></pre></td></tr></table></figure></p>
+<p>3、再根据你的需求去选择联通、移动、境内的各个线路。这里就需要用到我提供的CF线路查询的网站记录内容了。我建议是可以先用站长工具ping一下或者用TraceRoute查一下，这条线路到底是如何跳转的。选择最适合你的节点信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@   A     移动     xxxx        cloudflare的服务器IP</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+        <footer class="article-footer">
+          <!--关闭share
+          <a data-url="https://blog.kmore.ml/2019/2019-11-01-通过V2Ray一键安装WS-TLS/" data-id="ck60d98zb006nkoezeazosuio"
+             class="article-share-link">分享</a>
+          -->
+          
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GFW/">GFW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SS/">SS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/V2Ray/">V2Ray</a></li></ul>
+
+          
+            <div>&nbsp;</div>
+            <div>&nbsp;</div> 
+            <div style="text-align:center;color: #ccc;font-size:14px;">------------- END &nbsp;&nbsp;<i class="fe fe-smile"></i>&nbsp;&nbsp;感谢您的阅读 -------------</div>
+          
+            <!--文章结尾-->
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div class="article-copyright" style="text-align:left;font-size:14px;"><b>本文链接：</b><a href="https://blog.kmore.ml/2019/2019-11-01-通过V2Ray一键安装WS-TLS/">
+            https://blog.kmore.ml/2019/2019-11-01-通过V2Ray一键安装WS-TLS/</a></div>
+            <div class="article-copyright" style="text-align:left;font-size:14px;"><b>版权声明：</b>
+            本站遵循 “署名-非商业性使用-相同方式共享 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">3.0 (CC BY-NC-SA 3.0)”</a>许可协议。</div>
+        </footer>
+      
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2019/2019-11-01-V2Ray-视窗界面安装/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            V2Ray 视窗界面安装
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/2019-07-28-U盘软路由版简易NAS——废旧笔记本又有了新生/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">U盘软路由版简易NAS——废旧笔记本又有了新生</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+	
+  <div class="comment_headling"  style="margin-top:5rem;">
+	<font size="5"><i class="fe fe-comments"></i> 评论</font>
+  </div>
+  <div class="comment"></div>
+  <script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="/js/Valine.min.js"></script>
+  <script type="text/javascript">
+  // https://cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js
+  GUEST_INFO = ["nick", "mail", "link"],
+  guest_info = "nick,mail,link".split(",").filter(function(i) {
+		return - 1 < GUEST_INFO.indexOf(i)
+  });
+  guest_info = 0 == guest_info.length ? GUEST_INFO: guest_info,
+  new Valine({
+	 // AV 对象来自上面引入av-min.js
+	 av: AV, 
+	 el: '.comment',
+	 app_id: 'f0IAtvV4JCrEKhhKCmkpg0cv-gzGzoHsz', 
+	 app_key: 'kuWPTFYN1C3qDUADPM7ryYs3', 
+	 placeholder: '记得留下你的昵称和邮箱...可以快速收到回复ヾﾉ≧∀≦)o',
+	 meta: guest_info,
+	 notify: true,
+	 verify: true,
+	 avatar: 'monsterid',
+	 recordIP: true,
+	 visitor: false,
+	 lang: 'zh-cn'
+  });
+  </script>
+
+  
+
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2013 - 2020 KMORE</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+<aside class="sidebar">
+  <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/images/logo.png" alt="KMORE"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="https://kmore.ml">首页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">博客</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">时间轴</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">分类</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">相册</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">关于</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+</aside>
+<script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+  <script src="/js/tocbot.min.js"></script>
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script src="/js/ocean.js"></script>
+
+<script>!function(i){var o=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function r(t,e){var n=new Image,i=t.getAttribute("data-original");n.onload=function(){t.src=i,e&&e()},n.src=i}function t(){for(var t=0;t<o.length;t++)e=o[t],void 0,0<=(n=e.getBoundingClientRect()).top&&0<=n.left&&n.top<=(i.innerHeight||document.documentElement.clientHeight)&&r(o[t],function(){o.splice(t,t)});var e,n}t(),i.addEventListener("scroll",t)}(this);</script></body>
+</html>

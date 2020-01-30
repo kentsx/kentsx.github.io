@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+    <meta name="keywords" content="KENT, ELMORE, MORE STORIES">
+  
+  
+    <meta name="description" content="MORE ABOUT MR.K LIFE">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    在同一台电脑上配置多个github的git方法 |
+    
+    KMORE</title>
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+  <script src="/js/pace.min.js"></script>
+</head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-2018-03-10-在同一台电脑上配置多个github的git方法" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在同一台电脑上配置多个github的git方法
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2018/2018-03-10-在同一台电脑上配置多个github的git方法/" class="article-date">
+  <time datetime="2018-03-09T20:25:07.000Z" itemprop="datePublished">2018-03-10</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/金融狗在假装码农/">金融狗在假装码农</a>
+  </div>
+
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+        <p>由于近期测试在github page上托管个人主页，前一个是用html做的，但没有套用AXEO及其他，纯HTML，尽管界面套用模板挺漂亮，但发布文章实在是非常麻烦，所以便又重新注册此github账号用以单独作为page使用。</p>
+<p>所以这里就碰到了一个问题，需要在同一台电脑上配置两个github的ssh，方便git。</p>
+<p>在强大互联网上搜索之后，总结出自己的这套。借鉴前人的经验，略有不完善处，我会继续改进。文后会给出参考文章网址。</p>
+<hr>
+<h3 id="假设环境"><a href="#假设环境" class="headerlink" title="假设环境"></a>假设环境</h3><blockquote>
+<p>账号一：github第一个账号：github；<br>账号二：github第二个账号：gitsecond。</p>
+</blockquote>
+<h3 id="配置账号一"><a href="#配置账号一" class="headerlink" title="配置账号一"></a>配置账号一</h3><h4 id="生成ssh密钥"><a href="#生成ssh密钥" class="headerlink" title="生成ssh密钥"></a>生成ssh密钥</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1、安装Git软件</span><br><span class="line">2、在桌面打开Git，进行设置</span><br><span class="line">git config --global user.name &quot;userName&quot;//github的帐号名(也可以自定义)</span><br><span class="line">git config --global user.email &quot;emailAdress&quot;//github的邮箱地址(也可以自定义)</span><br><span class="line">3、生成ssh密钥</span><br><span class="line">ssh-keygen -t rsa -C &quot;githubEmailAdress&quot;//github邮箱地址</span><br></pre></td></tr></table></figure>
+<h4 id="github网站配置"><a href="#github网站配置" class="headerlink" title="github网站配置"></a>github网站配置</h4><p>在github上将<code>id_rsa.pub</code>文件内容添加上（简略方法如下，还不清楚请百度）</p>
+<p>具体方法为:</p>
+<blockquote>
+<p>在github页面右上角，点击<code>头像</code>，然后<code>Settings</code>；<br>左边栏点击<code>SSH and GPG keys</code>,右侧出现<code>New SSH key</code>按键，将内容复制进去即可。</p>
+</blockquote>
+<h3 id="配置账号二"><a href="#配置账号二" class="headerlink" title="配置账号二"></a>配置账号二</h3><h4 id="生产ssh密钥"><a href="#生产ssh密钥" class="headerlink" title="生产ssh密钥"></a>生产ssh密钥</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;githubEmailAdress&quot;//github邮箱地址</span><br><span class="line"># 设置名称为id_rsa_gitsecond</span><br><span class="line">Enter file in which to save the key (/c/Users/Administrator/.ssh/id_rsa): id_rsa_gitsecond</span><br></pre></td></tr></table></figure>
+<p>注意此时.ssh文件夹中会产生两个名字为<code>id_rsa_gitsecond</code>的文件。</p>
+<h4 id="新密钥添加到SSH-agent中"><a href="#新密钥添加到SSH-agent中" class="headerlink" title="新密钥添加到SSH agent中"></a>新密钥添加到SSH agent中</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent bash</span><br><span class="line">ssh-add ~/.ssh/id_rsa_gitsecond</span><br></pre></td></tr></table></figure>
+<h4 id="用记事本创建一个config文件（后缀请在编辑完内容后删除）"><a href="#用记事本创建一个config文件（后缀请在编辑完内容后删除）" class="headerlink" title="用记事本创建一个config文件（后缀请在编辑完内容后删除）"></a>用记事本创建一个config文件（后缀请在编辑完内容后删除）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 该文件用于配置私钥对应的服务器</span><br><span class="line"># Default github user</span><br><span class="line">Host github</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line">IdentityFile C:/Users/Administrator/.ssh/id_rsa</span><br><span class="line"></span><br><span class="line"># gitsecond配置</span><br><span class="line">Host gitsecond</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line">IdentityFile C:/Users/Administrator/.ssh/id_rsa_gitsecond</span><br></pre></td></tr></table></figure>
+<h4 id="测试链接情况"><a href="#测试链接情况" class="headerlink" title="测试链接情况"></a>测试链接情况</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T github</span><br><span class="line">Hi xxxxxxx! You&apos;ve successfully authenticated, but GitHub does not provide shel</span><br><span class="line">l access.</span><br><span class="line"></span><br><span class="line">$ ssh -T gitsecond #使用config中的host值</span><br><span class="line">Hi yyyyyyy! You&apos;ve successfully authenticated, but GitHub does not provide shell</span><br><span class="line"> access.</span><br></pre></td></tr></table></figure>
+<h4 id="clone文件至本地"><a href="#clone文件至本地" class="headerlink" title="clone文件至本地"></a>clone文件至本地</h4><blockquote>
+<p>若使用gitsecond账号：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone gitsecond:github_name/your_repository_name.git #第一个为你的github名字，第二个为repo的名字</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<h4 id="日常使用"><a href="#日常使用" class="headerlink" title="日常使用"></a>日常使用</h4><p><strong>注意：日常使用中，若是使用第一个账号，因为是default的，push前无需额外操作。但使用gitsecond账号，push前要将ssh再加载到agent上一次。命令如下：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent bash</span><br><span class="line">ssh-add ~/.ssh/id_rsa_gitsecond</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>参考链接：<br><a href="https://jingyan.baidu.com/article/219f4bf7f6f8e1de442d3829.html" target="_blank" rel="noopener">百度经验贴</a><br><a href="http://blog.csdn.net/u012150370/article/details/52694629" target="_blank" rel="noopener">CSDN帖子</a></p>
+
+      
+    </div>
+    
+        <footer class="article-footer">
+          <!--关闭share
+          <a data-url="https://blog.kmore.ml/2018/2018-03-10-在同一台电脑上配置多个github的git方法/" data-id="ck60d98vo001jkoezwsi96ssx"
+             class="article-share-link">分享</a>
+          -->
+          
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
+
+          
+            <div>&nbsp;</div>
+            <div>&nbsp;</div> 
+            <div style="text-align:center;color: #ccc;font-size:14px;">------------- END &nbsp;&nbsp;<i class="fe fe-smile"></i>&nbsp;&nbsp;感谢您的阅读 -------------</div>
+          
+            <!--文章结尾-->
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div class="article-copyright" style="text-align:left;font-size:14px;"><b>本文链接：</b><a href="https://blog.kmore.ml/2018/2018-03-10-在同一台电脑上配置多个github的git方法/">
+            https://blog.kmore.ml/2018/2018-03-10-在同一台电脑上配置多个github的git方法/</a></div>
+            <div class="article-copyright" style="text-align:left;font-size:14px;"><b>版权声明：</b>
+            本站遵循 “署名-非商业性使用-相同方式共享 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">3.0 (CC BY-NC-SA 3.0)”</a>许可协议。</div>
+        </footer>
+      
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2018/2018-03-11-NAS-PC如何在HDH上发种流程/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            NAS+PC如何在HDH上发种流程
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2018/2018-01-30-记一件事，明一种理/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">记一件事，明一种理</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+    
+	
+  <div class="comment_headling"  style="margin-top:5rem;">
+	<font size="5"><i class="fe fe-comments"></i> 评论</font>
+  </div>
+  <div class="comment"></div>
+  <script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="/js/Valine.min.js"></script>
+  <script type="text/javascript">
+  // https://cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js
+  GUEST_INFO = ["nick", "mail", "link"],
+  guest_info = "nick,mail,link".split(",").filter(function(i) {
+		return - 1 < GUEST_INFO.indexOf(i)
+  });
+  guest_info = 0 == guest_info.length ? GUEST_INFO: guest_info,
+  new Valine({
+	 // AV 对象来自上面引入av-min.js
+	 av: AV, 
+	 el: '.comment',
+	 app_id: 'f0IAtvV4JCrEKhhKCmkpg0cv-gzGzoHsz', 
+	 app_key: 'kuWPTFYN1C3qDUADPM7ryYs3', 
+	 placeholder: '记得留下你的昵称和邮箱...可以快速收到回复ヾﾉ≧∀≦)o',
+	 meta: guest_info,
+	 notify: true,
+	 verify: true,
+	 avatar: 'monsterid',
+	 recordIP: true,
+	 visitor: false,
+	 lang: 'zh-cn'
+  });
+  </script>
+
+  
+
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2013 - 2020 KMORE</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+<aside class="sidebar">
+  <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/images/logo.png" alt="KMORE"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="https://kmore.ml">首页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">博客</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">时间轴</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">分类</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">相册</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">关于</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+</aside>
+<script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+  <script src="/js/tocbot.min.js"></script>
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+<script src="/js/ocean.js"></script>
+
+<script>!function(i){var o=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function r(t,e){var n=new Image,i=t.getAttribute("data-original");n.onload=function(){t.src=i,e&&e()},n.src=i}function t(){for(var t=0;t<o.length;t++)e=o[t],void 0,0<=(n=e.getBoundingClientRect()).top&&0<=n.left&&n.top<=(i.innerHeight||document.documentElement.clientHeight)&&r(o[t],function(){o.splice(t,t)});var e,n}t(),i.addEventListener("scroll",t)}(this);</script></body>
+</html>
