@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.kmore.ml/gallery/photography.html</loc>
+    
+    <lastmod>2020-01-31T11:25:04.714Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.kmore.ml/gallery/index.html</loc>
     
     <lastmod>2020-01-31T06:05:29.561Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://blog.kmore.ml/gallery/photoset1.html</loc>
     
     <lastmod>2020-01-31T06:01:24.567Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kmore.ml/gallery/photography.html</loc>
-    
-    <lastmod>2020-01-31T01:37:09.381Z</lastmod>
     
   </url>
   
