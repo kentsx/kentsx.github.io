@@ -2,9 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.kmore.ml/gallery/index.html</loc>
+    
+    <lastmod>2020-01-31T01:39:58.693Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.kmore.ml/gallery/photography.html</loc>
     
-    <lastmod>2020-01-30T20:13:35.266Z</lastmod>
+    <lastmod>2020-01-31T01:37:09.381Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kmore.ml/gallery/photoset3.html</loc>
+    
+    <lastmod>2020-01-31T01:29:38.341Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kmore.ml/gallery/photoset2.html</loc>
+    
+    <lastmod>2020-01-31T01:29:36.164Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.kmore.ml/gallery/photoset1.html</loc>
+    
+    <lastmod>2020-01-31T01:29:34.483Z</lastmod>
     
   </url>
   
@@ -12,13 +40,6 @@
     <loc>https://blog.kmore.ml/gallery/dailypic.html</loc>
     
     <lastmod>2020-01-30T20:02:10.575Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.kmore.ml/gallery/index.html</loc>
-    
-    <lastmod>2020-01-30T19:10:07.170Z</lastmod>
     
   </url>
   
