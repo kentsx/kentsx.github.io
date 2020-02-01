@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    告别KENTSPACE |
+    不蒜子不灵了，快更新域名 |
     
     KMORE</title>
   
@@ -35,7 +35,7 @@
   <section class="outer">
   
 
-<article id="post-2019-01-21-告别kentspace" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+<article id="post-2018-10-18-不蒜子不灵了，快更新域名" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
   
   <div class="article-inner">
     
@@ -43,7 +43,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      告别KENTSPACE
+      不蒜子不灵了，快更新域名
     </h1>
   
   
@@ -56,8 +56,8 @@
 
     
       <div class="article-meta">
-        <a href="/2019/" class="article-date">
-  <time datetime="2019-01-21T07:39:20.000Z" itemprop="datePublished">2019-01-21</time>
+        <a href="/2018/2018-10-18-%E4%B8%8D%E8%92%9C%E5%AD%90%E4%B8%8D%E7%81%B5%E4%BA%86%EF%BC%8C%E5%BF%AB%E6%9B%B4%E6%96%B0%E5%9F%9F%E5%90%8D/" class="article-date">
+  <time datetime="2018-10-18T13:47:23.000Z" itemprop="datePublished">2018-10-18</time>
 </a>
         
   <div class="article-category">
@@ -82,43 +82,27 @@
       
 
       
-        <blockquote>
-<p>Jan 31, 2019</p>
-</blockquote>
-<p>这两天不知道发生了什么情况，商城的其他页面都还挺正常的，唯独这个会员登录的页面，怎么也载不出来，显示一个空白页，也没有任何的报错。正好趁这个机会，去巩固了一下python的内容，以后再拿其他的语言来弄这个商城网站吧，或者重新刷过。也许是我换login-bg出现的问题吧。需要再反复检查一下。</p>
+        <p>因为CPA的缘故，导致很久没有来更新自己的主页了。突然发现自己页面上的总访客数以及文章阅读量都显示不正常了。</p>
 <a id="more"></a>
+<p>我一开始以为是Next出了些问题，后来思前想后，终于发现是不蒜子bug了。</p>
+<p>在网上搜索一番以后，借鉴了下前辈的方法，在此小弟也copy至此。原因很简单，<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener">不蒜子官网</a>也写了:</p>
 <blockquote>
-<p>Jan 25, 2019</p>
+<p><strong>因七牛强制过期『dn-lbstatics.qbox.me』域名，与客服沟通无果，只能更换域名到『busuanzi.ibruce.info』！</strong></p>
 </blockquote>
-<p>通过两天的折腾，把vps洗白刷新后，终于把商城上线了。地址为<a href="https://store.kenny4ever.com" target="_blank" rel="noopener">store.kenny4ever.com</a>。</p>
-<p>目前刚搭了框架，还只是把模板登上去了而已，后期要一步步改成自己的内容。另外，也还没有测试支付的东西，所以，还有很多要做。另外，使用的是opencart的商城模板，不过是国内公司汉化定制过的，先试试看，不行再换原版。</p>
-<p>这次搭建商城，更多的是为了将来品牌上线做准备。</p>
-<blockquote>
-<p>Jan 22, 2019</p>
-</blockquote>
-<p>经过一晚上折腾，域名基本已经好了。这次索性将所有的内容都从coding搬到github了。对服务器在国内的repo还是有点害怕。</p>
-<p>另外，发现github的强制https竟然还是会被报错，说是没加密，所以我还是动用了Cloudflare的DNS再加Https了。Porkbun的免费https就等到之后自己用服务器的时候再说吧。</p>
-<p>也有考虑Vultr的，不过最近有点忙，而且要自己搭git，麻烦了点。</p>
-<p>PS：换域名期间，如果发现部分链接打不开，可能是域名没更改。此项已经为todo项。</p>
-<blockquote>
-<p>Jan 21, 2019</p>
-</blockquote>
-<p>已经准备好了，新域名马上准备上线了，<a href="https://kenny4ever.com" target="_blank" rel="noopener">kenny4ever.com</a>。</p>
-<p>博客首页也会变成：<a href="https://blog.kenny4ever.com" target="_blank" rel="noopener">blog.kenny4ever.com</a></p>
-<p>有没有感觉像个正经网站多了。还是把<code>.com</code>顶级域名用起来比较靠谱。blog的名字也改了，因为，K先生已经不是一个人啦~~</p>
-<p>最近两个月，原域名应该会打算弃用了，虽然没到期，但就用来各家搜索引擎搞些替换等等，CNAME之后应该就登陆不了了，也懒得做什么302跳转了。不过，到了三月下旬，原域名也到期了，那就直接转入新域名了。</p>
-<p>如果您还在浏览我这个不怎么靠谱的博客主，那就请您更新下网站，谢谢啦。</p>
-
+<p>所以，如果还要继续用不蒜子的小功能，那么久换个域名就可以了。针对NeXT，方法如下：</p>
+<p>找到<code>\themes\next\layout\_third-party\analytics</code>的<code>busuanzi-counter.swig</code>。<br>将里面的的唯一一句你能看到https字样的话里面的<code>dn-lbstatics.qbox.me</code>改成<strong><code>busuanzi.ibruce.info</code></strong>即可。</p>
+<p>改完后，整行代码变为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script async src&#x3D;&quot;https:&#x2F;&#x2F;busuanzi.ibruce.info&#x2F;busuanzi&#x2F;2.3&#x2F;busuanzi.pure.mini.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
       
     </div>
     
         <footer class="article-footer">
           <!--关闭share
-          <a data-url="https://blog.kmore.ml/2019/" data-id="ck63wkqxa005jnwezdxsth08n"
+          <a data-url="https://blog.kmore.ml/2018/2018-10-18-%E4%B8%8D%E8%92%9C%E5%AD%90%E4%B8%8D%E7%81%B5%E4%BA%86%EF%BC%8C%E5%BF%AB%E6%9B%B4%E6%96%B0%E5%9F%9F%E5%90%8D/" data-id="ck63yr348005r78ezf3nc3qjl"
              class="article-share-link">分享</a>
           -->
           
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9F%9F%E5%90%8D/" rel="tag">域名</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a></li></ul>
 
           
             <div>&nbsp;</div>
@@ -128,8 +112,8 @@
             <!--文章结尾-->
             <div>&nbsp;</div>
             <div>&nbsp;</div>
-            <div class="article-copyright" style="text-align:left;font-size:14px;"><b>本文链接：</b><a href="https://blog.kmore.ml/2019/">
-            https://blog.kmore.ml/2019/</a></div>
+            <div class="article-copyright" style="text-align:left;font-size:14px;"><b>本文链接：</b><a href="https://blog.kmore.ml/2018/2018-10-18-%E4%B8%8D%E8%92%9C%E5%AD%90%E4%B8%8D%E7%81%B5%E4%BA%86%EF%BC%8C%E5%BF%AB%E6%9B%B4%E6%96%B0%E5%9F%9F%E5%90%8D/">
+            https://blog.kmore.ml/2018/2018-10-18-%E4%B8%8D%E8%92%9C%E5%AD%90%E4%B8%8D%E7%81%B5%E4%BA%86%EF%BC%8C%E5%BF%AB%E6%9B%B4%E6%96%B0%E5%9F%9F%E5%90%8D/</a></div>
             <div class="article-copyright" style="text-align:left;font-size:14px;"><b>版权声明：</b>
             本站遵循 “署名-非商业性使用-相同方式共享 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">3.0 (CC BY-NC-SA 3.0)”</a>许可协议。</div>
         </footer>
@@ -140,19 +124,19 @@
     
   <nav class="article-nav">
     
-      <a href="/2019/" class="article-nav-link">
+      <a href="/2018/2018-10-18-%E8%BF%91%E6%9C%9F%E5%AF%B9%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E7%9A%84%E6%9E%B6%E6%9E%84%E8%B0%83%E6%95%B4%E8%AE%A1%E5%88%92/" class="article-nav-link">
         <strong class="article-nav-caption">前一篇</strong>
         <div class="article-nav-title">
           
-            搭建opencart的过程
+            近期对个人网站的架构调整计划
           
         </div>
       </a>
     
     
-      <a href="/2018/" class="article-nav-link">
+      <a href="/2018/2018-10-18-%E4%BD%A0%E6%98%AF%E6%88%91%E5%AD%A4%E7%8B%AC%E4%B8%96%E7%95%8C%E7%9A%84%E5%94%AF%E4%B8%80%E4%BA%AE%E5%85%89/" class="article-nav-link">
         <strong class="article-nav-caption">后一篇</strong>
-        <div class="article-nav-title">尝试刷入OpenWRT</div>
+        <div class="article-nav-title">你是我孤独世界的唯一亮光</div>
       </a>
     
   </nav>
@@ -161,42 +145,9 @@
   
 
   
+  <!--
     
-	
-  <div class="comment_headling"  style="margin-top:5rem;">
-	<font size="5"><i class="fe fe-comments"></i> 评论</font>
-  </div>
-  <div class="comment"></div>
-  
-<script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-
-  
-<script src="/js/Valine.min.js"></script>
-
-  <script type="text/javascript">
-  // https://cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js
-  GUEST_INFO = ["nick", "mail", "link"],
-  guest_info = "nick,mail,link".split(",").filter(function(i) {
-		return - 1 < GUEST_INFO.indexOf(i)
-  });
-  guest_info = 0 == guest_info.length ? GUEST_INFO: guest_info,
-  new Valine({
-	 // AV 对象来自上面引入av-min.js
-	 av: AV, 
-	 el: '.comment',
-	 app_id: 'f0IAtvV4JCrEKhhKCmkpg0cv-gzGzoHsz', 
-	 app_key: 'kuWPTFYN1C3qDUADPM7ryYs3', 
-	 placeholder: '记得留下你的昵称和邮箱...可以快速收到回复ヾﾉ≧∀≦)o',
-	 meta: guest_info,
-	 notify: true,
-	 verify: true,
-	 avatar: 'monsterid',
-	 recordIP: true,
-	 visitor: false,
-	 lang: 'zh-cn'
-  });
-  </script>
-
+  -->
   
 
 </article>
