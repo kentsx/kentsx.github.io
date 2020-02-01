@@ -103,10 +103,10 @@
       
 
       
-        <p>用到现在最精易用的txt转ePub以及mobi的软件。真的特别好用。</p>
-<p>软件自带了正则表达，会提取文中的第X章等，给输出文件加上目录。<br>进一步的正则表达等还在研究。这里先放一个1.50版本。版权归原作者所有哈~</p>
-<p><a href="https://kentsx-github-1256168505.cos.ap-shanghai.myqcloud.com/easypub_v1.50.zip" target="_blank" rel="noopener">下载</a></p>
-
+        <p>用到现在最精易用的txt转ePub以及mobi的软件。真的特别好用。
+        
+          <a class="article-more-link" href="/2018/2018-05-05-EasyPub-截至目前最好用的转换器/">阅读更多</a>
+        
       
     </div>
       
@@ -165,19 +165,10 @@
 
       
         <blockquote>
-<p>Q:在hexo next主题中，把gp的图片嵌入到fancybox中后（<a href="https://kentspace.xyz/2018/2018-04-09-Hexo-next%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E9%A1%B5/" target="_blank" rel="noopener">方法点此</a>的第五点两条斜杠），发现打赏功能中的图片也默认套上了fancybox，吃藕~丑。</p>
-</blockquote>
-<h3 id="如何才能根据需求使用fancybox呢？"><a href="#如何才能根据需求使用fancybox呢？" class="headerlink" title="如何才能根据需求使用fancybox呢？"></a>如何才能根据需求使用fancybox呢？</h3><p>搜索后，发现如下方法，供大家分享使用：</p>
-<p>找到themes\next\source\js\src\utils.js文件，在文件中<code>var $image = $(this);</code>后加入<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(<span class="keyword">this</span>).hasClass(<span class="string">'nofancybox'</span>)) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure></p>
-<p>即<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">wrapImageWithFancyBox: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">'.content img'</span>)</span><br><span class="line">      .not(<span class="string">'[hidden]'</span>)</span><br><span class="line">      .not(<span class="string">'.group-picture img, .post-gallery img'</span>)</span><br><span class="line">      .each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> $image = $(<span class="keyword">this</span>);</span><br><span class="line">			<span class="keyword">if</span> ($(<span class="keyword">this</span>).hasClass(<span class="string">'nofancybox'</span>)) <span class="keyword">return</span>;</span><br><span class="line">			<span class="comment">//以上这句</span></span><br><span class="line">        <span class="keyword">var</span> imageTitle = $image.attr(<span class="string">'title'</span>);</span><br><span class="line">        <span class="keyword">var</span> $imageWrapLink = $image.parent(<span class="string">'a'</span>);</span><br></pre></td></tr></table></figure></p>
-<p>之后，在img标签使用的时候加上class=”nofancybox”即可。</p>
-<h3 id="修改reward-swig"><a href="#修改reward-swig" class="headerlink" title="修改reward.swig"></a>修改reward.swig</h3><p>找到themes\next\layout_macro\reward.swig，打开后，分别在微信、支付宝和bitcoin的img标签中加入<code>class=&quot;nofancybox&quot;</code></p>
-<p>例如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"nofancybox"</span> <span class="attr">id</span>=<span class="string">"wechat_qr"</span> <span class="attr">src</span>=<span class="string">"&#123;&#123; theme.wechatpay &#125;&#125;"</span> <span class="attr">alt</span>=<span class="string">"&#123;&#123; theme.author &#125;&#125; &#123;&#123; __('reward.wechatpay') &#125;&#125;"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>
-<hr>
-<blockquote>
-<p><a href="https://blog.csdn.net/cddchina/article/details/79764432" target="_blank" rel="noopener">原出处</a></p>
-</blockquote>
-
+<p>Q:在hexo next主题中，把gp的图片嵌入到fancybox中后（<a href="https://kentspace.xyz/2018/2018-04-09-Hexo-next%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E9%A1%B5/" target="_blank" rel="noopener">方法点此</a>的第五点两条斜杠），发现打赏功能中的图片也默认套上了fancybox，吃藕~丑。<br>
+        
+          <a class="article-more-link" href="/2018/2018-05-03-网站优化-设置部分图片不使用fancybox/">阅读更多</a>
+        
       
     </div>
       
@@ -235,72 +226,10 @@
       
 
       
-        <p>可惜自己手上没有云台，只是用了非常简单的设备，把小蚁相机固定在了自行车把手上，所以导致画面的晃动感会这么强烈。<br>不过也正因为这些晃动感，手持感特别强，比较有行走中的感觉。</p>
-<p>后期用VUE做了简单的剪辑，还记得那次是在地铁上剪的，差点搞到手机没电了。^^</p>
-<p>以后有机会，入手一个GoPro，外加DJI的云台，感觉画面一下子就会有专业摄影的感觉了。</p>
-<p>几年不在上海，上财早已不再是我当初毕业时候那番风貌了。</p>
-<video src="https://korigin-1256168505.cos.ap-shanghai.myqcloud.com/SUFE_100thAniversary20181007.mov.f30.mp4" type="video/mp4" controls="controls" width="100%" height="100%"><br></video>
-
-<p>若要看高清无水印版，请移步B站：<a href="https://www.bilibili.com/video/av22313159/" target="_blank" rel="noopener">点此链接</a></p>
-
-      
-    </div>
-      
-  </div>
-
-  
-
-  
-
-</article>
-
-
-
+        <p>可惜自己手上没有云台，只是用了非常简单的设备，把小蚁相机固定在了自行车把手上，所以导致画面的晃动感会这么强烈。<br>不过也正因为这些晃动感，手持感特别强，比较有行走中的感觉。
         
-          
-
-<article id="post-2018-04-16-老大新婚快乐！" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
+          <a class="article-more-link" href="/2018/2017-10-07-上财百年，与你相伴/">阅读更多</a>
         
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2018/2018-04-16-老大新婚快乐！/">老大新婚快乐！</a>
-    </h2>
-  
-  
-
-
-
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2018/2018-04-16-老大新婚快乐！/" class="article-date">
-  <time datetime="2018-04-18T14:24:53.000Z" itemprop="datePublished">2018-04-18</time>
-</a>
-        
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/下班以后嗨起来/">下班以后嗨起来</a>
-  </div>
-
-      </div>
-    
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-      
-      
-
-      
-        <video src="https://korigin-1256168505.cos.ap-shanghai.myqcloud.com/20180418-LeonWedding.mov.f30.mp4" type="video/mp4" controls="controls" width="100%" height="100%"><br></video>
       
     </div>
       
@@ -382,12 +311,73 @@
 
 
         
+          
+
+<article id="post-2018-04-10-Win10-64Bit-安装NET-Framework-3-5" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2018/2018-04-10-Win10-64Bit-安装NET-Framework-3-5/">Win10 64Bit 安装NET Framework 3.5及上交所报告编辑软件下载</a>
+    </h2>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2018/2018-04-10-Win10-64Bit-安装NET-Framework-3-5/" class="article-date">
+  <time datetime="2018-04-10T03:16:43.000Z" itemprop="datePublished">2018-04-10</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/金融狗工作日常/">金融狗工作日常</a>
+  </div>
+
+      </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+      
+
+      
+        <p>上海交易所债券年报编辑软件XBRL，需要有NET Framework 3.5。无奈我用的电脑是win10 64bit的系统，只好重新装这个框架。网上找来找去，还是这个安装方法最简单，就2步。<br>
+        
+          <a class="article-more-link" href="/2018/2018-04-10-Win10-64Bit-安装NET-Framework-3-5/">阅读更多</a>
+        
+      
+    </div>
+      
+  </div>
+
+  
+
+  
+
+</article>
+
+
+
+        
     </article>
     
   
     
       <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/8/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/10/">下一页</a>
+        <a class="extend prev" rel="prev" href="/page/8/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/10/">下一页</a>
       </nav>
     
   </section>

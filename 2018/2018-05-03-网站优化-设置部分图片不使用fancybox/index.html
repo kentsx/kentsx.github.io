@@ -79,7 +79,7 @@
 
       
         <blockquote>
-<p>Q:在hexo next主题中，把gp的图片嵌入到fancybox中后（<a href="https://kentspace.xyz/2018/2018-04-09-Hexo-next%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E9%A1%B5/" target="_blank" rel="noopener">方法点此</a>的第五点两条斜杠），发现打赏功能中的图片也默认套上了fancybox，吃藕~丑。</p>
+<p>Q:在hexo next主题中，把gp的图片嵌入到fancybox中后（<a href="https://kentspace.xyz/2018/2018-04-09-Hexo-next%E6%B7%BB%E5%8A%A0%E7%9B%B8%E5%86%8C%E9%A1%B5/" target="_blank" rel="noopener">方法点此</a>的第五点两条斜杠），发现打赏功能中的图片也默认套上了fancybox，吃藕~丑。<br><a id="more"></a></p>
 </blockquote>
 <h3 id="如何才能根据需求使用fancybox呢？"><a href="#如何才能根据需求使用fancybox呢？" class="headerlink" title="如何才能根据需求使用fancybox呢？"></a>如何才能根据需求使用fancybox呢？</h3><p>搜索后，发现如下方法，供大家分享使用：</p>
 <p>找到themes\next\source\js\src\utils.js文件，在文件中<code>var $image = $(this);</code>后加入<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ($(<span class="keyword">this</span>).hasClass(<span class="string">'nofancybox'</span>)) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure></p>
@@ -97,7 +97,7 @@
     
         <footer class="article-footer">
           <!--关闭share
-          <a data-url="https://blog.kmore.ml/2018/2018-05-03-网站优化-设置部分图片不使用fancybox/" data-id="ck622zq1d003pd8ezd9jnfb8o"
+          <a data-url="https://blog.kmore.ml/2018/2018-05-03-网站优化-设置部分图片不使用fancybox/" data-id="ck63957gn0030scezllud32y9"
              class="article-share-link">分享</a>
           -->
           
