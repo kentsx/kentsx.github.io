@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  
+    <meta name="keywords" content="KENT, ELMORE, MORE STORIES">
+  
+  
+    <meta name="description" content="MORE ABOUT MR.K LIFE">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    Hexo/next添加相册页 |
+    
+    KMORE</title>
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-2018-04-09-Hexo-next添加相册页" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo/next添加相册页
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2018/pt=0409131409/" class="article-date">
+  <time datetime="2018-04-09T05:14:09.000Z" itemprop="datePublished">2018-04-09</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%87%91%E8%9E%8D%E7%8B%97%E5%9C%A8%E5%81%87%E8%A3%85%E7%A0%81%E5%86%9C/">金融狗在假装码农</a>
+  </div>
+
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+      
+
+      
+        <p>总算在网上找到了一个适合Next主题的相册页搭建方法。并非原创，在此只是把遇到的问题及解决方案都归总，便于自己今后调整及有需要的人。<a id="more"></a></p>
+<h2 id="创建相册页"><a href="#创建相册页" class="headerlink" title="创建相册页"></a>创建相册页</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"photo"</span>  <span class="comment">#可以选择其他名字，但此后路径及内容请作对应调整</span></span><br></pre></td></tr></table></figure>
+<p>此时会在<code>source</code>文件夹中生成<code>photo</code>文件夹</p>
+<h2 id="创建menu标签及汉化"><a href="#创建menu标签及汉化" class="headerlink" title="创建menu标签及汉化"></a>创建menu标签及汉化</h2><p>同时，在主题的<code>_config.yml</code>中的menu标签下，加入<code>photo: /photo/ || camera-retro</code>。</p>
+<p>如果需要中文，则进一步在<code>\languages\zh-Hans.yml</code>中的menu标签下，加入<code>photo: 相册</code></p>
+<h2 id="关闭版权设置"><a href="#关闭版权设置" class="headerlink" title="关闭版权设置"></a>关闭版权设置</h2><p>修改主题文件<code>themes/next/layout/_macro/post.swig</code><br>在此文件中搜索 <code>theme.post_copyright.enable</code></p>
+<p>定位后，在该行代码中加入<code>and not post.copyright.disable</code><br>改改完后如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;%if theme.post_copyright.enable and not is_index and not post.copyright.disable%&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="编辑相册页内容"><a href="#编辑相册页内容" class="headerlink" title="编辑相册页内容"></a>编辑相册页内容</h2><p>利用next主题的group_pictures这个js，我们在<code>\source\photo\index.md</code>中替换为以下内容（具体使用什么版式请自行调整gp x-x，可以使用相对路劲）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: </span><br><span class="line">type: &quot;picture&quot;</span><br><span class="line">layout: post</span><br><span class="line">copyright:</span><br><span class="line">    disable: true</span><br><span class="line">---</span><br><span class="line">&#123;% gp 8-7 %&#125;  ##gp x-x具体请看group_picutures中的注释</span><br><span class="line">![1](https:&#x2F;&#x2F;cdn.stocksnap.io&#x2F;img-thumbs&#x2F;960w&#x2F;BUI8ASSJRG.jpg &quot;capture&quot;)</span><br><span class="line">![1](https:&#x2F;&#x2F;cdn.stocksnap.io&#x2F;img-thumbs&#x2F;960w&#x2F;BUI8ASSJRG.jpg &quot;test&quot;)</span><br><span class="line">![1](https:&#x2F;&#x2F;cdn.stocksnap.io&#x2F;img-thumbs&#x2F;960w&#x2F;BUI8ASSJRG.jpg)</span><br><span class="line">![1](https:&#x2F;&#x2F;cdn.stocksnap.io&#x2F;img-thumbs&#x2F;960w&#x2F;BUI8ASSJRG.jpg)</span><br><span class="line">![1](https:&#x2F;&#x2F;cdn.stocksnap.io&#x2F;img-thumbs&#x2F;960w&#x2F;BUI8ASSJRG.jpg)</span><br><span class="line">![1](https:&#x2F;&#x2F;cdn.stocksnap.io&#x2F;img-thumbs&#x2F;960w&#x2F;BUI8ASSJRG.jpg)</span><br><span class="line">![xxxxx](https:&#x2F;&#x2F;cdn.stocksnap.io&#x2F;img-thumbs&#x2F;960w&#x2F;BUI8ASSJRG.jpg)</span><br><span class="line">![xxxxx](https:&#x2F;&#x2F;cdn.stocksnap.io&#x2F;img-thumbs&#x2F;960w&#x2F;BUI8ASSJRG.jpg)</span><br><span class="line">&#123;% endgp %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="调整gp的fancybox设置"><a href="#调整gp的fancybox设置" class="headerlink" title="调整gp的fancybox设置"></a>调整gp的fancybox设置</h2><p>此时<code>hexo clan &amp;&amp; hexo g</code>及<code>hexo s</code>后预览的图片并不能放大，这是因为主题默认的gp是没有启用fancybox的。</p>
+<p>在next主题issue中发现此问题的解决方案：<a href="https://github.com/iissnan/hexo-theme-next/issues/1043" target="_blank" rel="noopener">链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在&#x2F;next&#x2F;source&#x2F;js&#x2F;src&#x2F;utils.js中修改代码如下</span><br><span class="line"></span><br><span class="line">wrapImageWithFancyBox: function() &#123;</span><br><span class="line">    $(&#39;.content img&#39;)</span><br><span class="line">      .not(&#39;[hidden]&#39;)</span><br><span class="line">      &#x2F;&#x2F; .not(&#39;.group-picture img, .post-gallery img&#39;)</span><br><span class="line">      .each(function() &#123;</span><br></pre></td></tr></table></figure>
+<p>注意那两个斜杠，就是把那一句注释掉，问题就解决了。</p>
+<p>在重新部署后，就会看到相册页已经在菜单栏中，并且已经可以放大浏览了。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>如还有问题，欢迎留言。并且可以看看我的相册。</p>
+<p>参考<a href="https://ehlxr.me/picture/" target="_blank" rel="noopener">ehlxr的相册页</a>处理。</p>
+
+      
+    </div>
+    
+        <footer class="article-footer">
+          <!--关闭share
+          <a data-url="https://blog.kmore.ml/2018/pt=0409131409/" data-id="ck65butzq003bd0ez9d7vb63k"
+             class="article-share-link">分享</a>
+          -->
+          
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag">建站</a></li></ul>
+
+          
+            <div>&nbsp;</div>
+            <div>&nbsp;</div> 
+            <div style="text-align:center;color: #ccc;font-size:14px;">------------- END &nbsp;&nbsp;<i class="fe fe-smile"></i>&nbsp;&nbsp;感谢您的阅读 -------------</div>
+          
+            <!--文章结尾-->
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div class="article-copyright" style="text-align:left;font-size:14px;"><b>本文链接：</b><a href="https://blog.kmore.ml/2018/pt=0409131409/">
+            https://blog.kmore.ml/2018/pt=0409131409/</a></div>
+            <div class="article-copyright" style="text-align:left;font-size:14px;"><b>版权声明：</b>
+            本站遵循 “署名-非商业性使用-相同方式共享 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">3.0 (CC BY-NC-SA 3.0)”</a>许可协议。</div>
+        </footer>
+      
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2018/pt=0409152337/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            杭州太子湾公园赏春
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2018/pt=0405180944/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">给Anisina添加本地搜索</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  <!--
+    
+  -->
+  
+
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2015 - 2020 KMORE</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+<aside class="sidebar">
+  <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/images/logo.png" alt="KMORE"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="https://kmore.ml" target="_blank" rel="noopener">首页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">博客</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">时间轴</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">分类</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">相册</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">关于</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+</aside>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+</html>
