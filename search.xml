@@ -41,7 +41,7 @@
 </blockquote>
 <p>*<em>Update Records: *</em><br>1：国土部门已经改名为自然资源部，环保部已经更名为生态环境部。<br>2: 证监会查询平台网址已经变更了，竟然都没个公告LOL。<br>3: 国家税务总局的重大税收违法案件信息公布栏网址已更新<br>4：安全生产查询网站已变更为国家应急管理部。</p>
 <blockquote>
-<p>自动化部署实现情况–2020-1-26 update</p>
+<p>自动化部署实现情况–2020-1-26 update<br>自动化已经能实现6个网站。剩余4个网站中，裁判文书网（还差排序问题），税务信息公布栏与证监会公开平台已经能调去后台数据，但如何生成网页还在解决中</p>
 </blockquote>
 ]]></content>
       <categories>
@@ -106,6 +106,26 @@
         <tag>建站</tag>
         <tag>hexo</tag>
         <tag>加密</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于用python写募集的思考</title>
+    <url>/2020/pt=0207015818/</url>
+    <content><![CDATA[<p>自从这几天被困在家中以后，除了工作，我不想和任何人联系，编程似乎成了我最大的乐趣。</p>
+<a id="more"></a>通过python，研究网站的header request似乎变成了比直接用browser去看网页更有趣的一种方式。从后台的console中，你能看到好多平时作为前端用户完全感受不到的后端进程。 
+
+<p>这几天通过自己琢磨，加上不断google，现在基本已经能够掌握<code>json.load, json.dump</code>, 这些比较基础的json方式。<br>我自己也写了大概三四个小程序，用来整理抓取自己kindle中产生的clippings，正在琢磨如何把生成的文件upload到印象笔记上。奈何yinxiang出的这个api的文档真的比较难懂——可能是对我这种小白来说吧，所以目前只能做到生成md文件，然后手动git到github上，可凑活能看看。。</p>
+<p>另外就是非常无耻的去爬500px，信用中国这些网站，便于工作与建站了。</p>
+<p>OK，这些练习，让我对几个包的用法基本熟悉了。我就萌生了一个想法，募集说明书中有太多的内容都是前后颠来倒去的写，很多文件就完全是重复劳动。我是不是有可能把内容整理到json中，然后通过python-docx的library，来组合生成一个word募集说明书呢？或者说，先尝试生成一个md格式的文档，再用一些浏览器等来进行CSS渲染，可能会更快。</p>
+]]></content>
+      <categories>
+        <category>金融狗在假装码农</category>
+      </categories>
+      <tags>
+        <tag>word</tag>
+        <tag>工作</tag>
+        <tag>python</tag>
+        <tag>coding</tag>
       </tags>
   </entry>
   <entry>
