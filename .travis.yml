@@ -50,7 +50,7 @@ script:
   - git config user.email "kentisxie@126.com"
   - git add .
   - git commit -m " \#$TRAVIS_BUILD_NUMBER-TravisCI - `date +"%Y-%m-%d %H:%M"`"
-  - git push origin blog-source
+  - git push "https://${GH_TOKEN}@${GH_REF}" origin blog-source
   - hexo g
 
 after_script:
