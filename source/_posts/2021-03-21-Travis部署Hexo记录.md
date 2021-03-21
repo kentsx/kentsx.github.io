@@ -37,6 +37,9 @@ date: 2021-03-21 18:00:41
 现在新版本的travis已经没有`build only if .travis.yml is present`的开关了，但似乎不影响。
 
 我这里用的是access token的方法，也有用ssh密钥的，我觉得比较麻烦，而且我也成功。关键是这个比较简单！！！
+### 安装github app
+到[github marketplace](https://github.com/marketplace)，把`travis-ci`安装，一般情况下就默认开全部的repo就可以了。
+
 ### 本地库travis配置
 前面一步已经建立好了github库和travis的联系，但需要告诉travis要怎么去build对吧，这步就是做这个。
 本地项目库根目录中，新建一个`.travis.yml`的文件，把以下内容放进去：
@@ -85,6 +88,10 @@ env:
 
 ```
 再用一次git的添加推送方式，把这个`.travis.yml`文件推送到`blog-source`分支。正常的话，travis已经就会开始build第一次了。
+## 后续计划
+网上有说语雀和hexo的互通，我还在琢磨，是否有必要。
+[《Hexo 博客终极玩法：云端写作，自动部署》](https://segmentfault.com/a/1190000017797561)
+
 ## 参考文章
 - [《使用 Travis CI 实现 Hexo 博客自动部署》](https://xirikm.net/2019/826-2)
 - [《用 Travis CI 自动部署 hexo》](https://segmentfault.com/a/1190000004667156)
