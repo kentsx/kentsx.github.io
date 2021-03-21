@@ -1,0 +1,182 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: Kent # your blog title name【‘s blog会自动补充】
+subtitle: A PLACE TO RECORD LIFE
+author: Kent S. XIE # 作者
+language: 
+timezone: 
+
+# custom Site settings
+# more detail check out docs
+SEOTitle: Kent's blog - 肯特天地
+header-img: "../image/head_pic.jpg"
+#可以考虑调整
+email: kentisxie@126.com
+description: "Kent S.X 的个人博客（由Coding托管）"
+keyword: kent’s blog,Kent S. XIE, 肯特, 博客, 谢诗澜
+# seo key words
+
+favicon: "https://kentsx-github-1256168505.cos.ap-shanghai.myqcloud.com/klogo.png" 
+# custom end
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://kentspace.xyz
+root: /
+permalink: :year/:title/
+permalink_defaults:
+
+# SNS settings
+# RSS:
+weibo_username: kentisxie
+zhihu_username: 
+github_username: kentsx
+twitter_username: 
+facebook_username:  
+linkedin_username: kentsxie 
+
+# Build settings
+anchorjs: false                        # if you want to customize anchor. check out line:289 of `post.ejs`
+
+
+# Disqus settings 
+disqus_username: 
+
+# Duoshuo settings
+duoshuo_username:  # 你的多说帐号
+# Share component is depend on Comment so we can NOT use share only.
+duoshuo_share: false                     # set to false if you want to use Comment without Sharing
+
+# Use livere
+use_livere: true #使用LiveRe的开关
+livere_uid: "MTAyMC8zNTM2OC8xMTkwNA=="  # 替换引号内uid
+
+# Analytics settings
+# Baidu Analytics
+ba_track_id: 
+# Google Analytics
+ga_track_id: UA-116675010-1            # Format: UA-xxxxxx-xx
+ga_domain:
+
+# Sidebar settings
+sidebar-about-description: 学习搭站，努力记录生活   
+# 个人描述
+sidebar-avatar: ../image/profile_pic.jpg
+# use absolute URL
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+# friends
+friends:  # 友链
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: false
+  auto_detect: false
+  tab_replace:
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 8
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+
+markdown:
+  plugins:
+    - markdown-it-abbr
+    - markdown-it-footnote
+    - markdown-it-ins
+    - markdown-it-sub
+    - markdown-it-sup
+    - markdown-it-emoji
+
+## Themes: https://hexo.io/themes/
+theme: Anisina
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: 
+        github: ssh://git@github.com/kentsx/kentsx.github.io
+        coding: https://git.coding.net/kentsx/kentsx.coding.me.git
+  branch: master
+
+
+# img CDN path
+cdn-url:  # 你的CDN地址
+
+# Qiniu imageView2 API
+# More info http://developer.qiniu.com/code/v6/api/kodo-api/image/imageview2.html
+clip-content: "?imageView2/1/w/1400/h/400/interlace/1/q/90"
+clip-avatar: ""
+clip-home-post-bg: "?imageView2/1/w/800/h/300/interlace/1/q/70"
+
+# post default images
+post-default-img: "https://kentsx-github-1256168505.cos.ap-shanghai.myqcloud.com/background%20img.jpg" 
+#博文默认的图片
+post-default-img-mobile: "../image/background_img.jpg" 
+#移动端显示的图片及PC端首页图片
+
+# search api , set your custom key
+swiftype_key: 
+
+
+# archive page title 
+archive:
+    title: 归档
+    description: 按照日期归档
+
+#site verification
+#google_site_verification: true
+#baidu_site_verification: true
+
+# sitemap
+sitemap:
+    path: sitemap.xml
+baidusitemap:
+    path: baidusitemap.xml    
+    
+search:
+  path: search.xml
+  field: post

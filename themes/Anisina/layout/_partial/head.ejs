@@ -1,0 +1,81 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="<%= config.description %>">
+    <meta name="keyword" content="<%= config.keyword %>">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="<%- config.favicon || 'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png' %>">
+    <link rel="alternate" type="application/atom+xml" title="<%= config.title %>" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        <% if (page.title) { %>
+        <%= page.title + '｜' + config.SEOTitle %>
+        <% } else{ %>
+        <%= config.SEOTitle %>
+        <% } %>
+    </title>
+
+    <link rel="canonical" href="<%= config.url + config.root + (page.path || '').replace('index.html', '') %>">
+
+    <!-- Bootstrap Core CSS -->
+    <%- css('css/bootstrap.min.css') %>
+
+    <!-- Custom CSS -->
+    <%- css('css/blog-style.css') %>
+
+    <!-- Pygments Github CSS -->
+    <%- css('css/syntax') %>
+	
+	<!-- Google Web Master验证 -->
+	<meta name="google-site-verification" content="__qaFH-PY_59Mcz4d5phJBRvwnZduitenJEIFMFONA8" />
+	<meta name="google-site-verification" content="zbNnqeyUA_AMWTStxMvUjC9Bdpl6JMYL15oPSDuuq-E" />
+	
+	<!-- Baidu Web Master验证 -->
+	<meta name="baidu-site-verification" content="LDr783Jm1z" />
+	
+	<!-- 版权信息样式 -->
+	<%- css('css/copyright') %>
+	
+	<!-- 百度统计-->
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?62fa6e4da16eb4bf3b2b7aba0c81304d";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116675010-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-116675010-1');
+	</script>
+	
+	<!--百度自动推送-->
+	<script>
+	(function(){
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if (curProtocol === 'https'){
+	   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+	  }
+	  else{
+	  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	  }
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
+	</script>
+
+</head>
