@@ -28,6 +28,9 @@ branches:
 
 
 # S: Build Lifecycle
+before_instal:
+- export TZ='Asia/Shanghai' # 更改时区
+
 install:
   - npm install
 
@@ -41,7 +44,7 @@ cache:
 
 script:
   # - npm run deploy
-  - cross-env YUQUE_TOKEN=$YUQUE_TOKEN
+  - cross-env YUQUE_TOKEN=$YUQUE_TOKEN yuque-hexo sync
   - hexo g
 
 after_script:
@@ -50,7 +53,7 @@ after_script:
   - git config user.name "kentsx"
   - git config user.email "kentisxie@126.com"
   - git add .
-  - git commit -m " @$TRAVIS_BUILD_NUMBER@TravisCI - `date +"%Y-%m-%d %H:%M"`"
+  - git commit -m " \#$TRAVIS_BUILD_NUMBER-TravisCI - `date +"%Y-%m-%d %H:%M"`"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
 # E: Build LifeCycle
 
