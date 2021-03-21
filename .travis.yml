@@ -48,10 +48,9 @@ script:
   - cross-env YUQUE_TOKEN=$YUQUE_TOKEN yuque-hexo sync
   - git config user.name "kentsx"
   - git config user.email "kentisxie@126.com"
-  - git checkout -b blog-source
   - git add .
   - git commit -m " \#$TRAVIS_BUILD_NUMBER-TravisCI - `date +"%Y-%m-%d %H:%M"`"
-  - git push -u origin blog-source
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" origin:blog-source
   - hexo g
 
 after_script:
