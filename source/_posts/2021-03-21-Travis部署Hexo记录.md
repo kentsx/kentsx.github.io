@@ -20,7 +20,7 @@ date: 2021-03-21 18:00:41
 2、使每次push都可以直接启动Travis并且生成新的Github page。
 
 ### 新建分支并push
-0、删除本地hexo生成的文件夹，我只留下了`node_modules`,`scanfolds`,`source`,`themes`文件夹和根目录下已经有的文件，这样这个hexo项目应该基本是清空完了，只留下了核心的部分。
+0、删除本地hexo生成的文件夹，我只留下了`scanfolds`,`source`,`themes`文件夹和根目录下已经有的文件，这样这个hexo项目应该基本是清空完了，只留下了核心的部分。
 1、**新建git**：在hexo文件的根目录，`git init`
 2、**连接remote库**：`git remote add origin git@github.com:xxxx/xxxx.git`，这里的xxxx根据自己的来定，可以直接在github网页复制得到；
 3、**新建branch**：`git checkout -b blog-source`，生成新的branch`blog-source`
