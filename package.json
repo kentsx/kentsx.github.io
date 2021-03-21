@@ -25,7 +25,7 @@
   "scripts": {
     "clean": "hexo clean",
     "clean:yuque": "yuque-hexo clean",
-    "deploy": "npm run sync && hexo clean && hexo g",
+    "deploy": "npm run sync && hexo clean && hexo g"
   },
   "dependencies": {
     "hexo": "^5.0.0",
