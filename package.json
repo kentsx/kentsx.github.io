@@ -21,7 +21,7 @@
     "login": "kmore",
     "repo": "blog",
     "onlyPublished": false,
-    "token":"ncW6PgDQuYyJA8o90VyZp7EPFADuOz9nuPnucHWZ",
+    "YUQUE_TOKEN":"ncW6PgDQuYyJA8o90VyZp7EPFADuOz9nuPnucHWZ",
   },
   "scripts": {
     "clean": "hexo clean",
