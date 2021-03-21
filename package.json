@@ -20,14 +20,12 @@
     "baseUrl": "https://www.yuque.com/api/v2",
     "login": "kmore",
     "repo": "blog",
-    "onlyPublished": false,
-    "YUQUE_TOKEN":"ncW6PgDQuYyJA8o90VyZp7EPFADuOz9nuPnucHWZ",
+    "onlyPublished": false
   },
   "scripts": {
     "clean": "hexo clean",
     "clean:yuque": "yuque-hexo clean",
-    "deploy": "npm run sync && hexo deploy",
-    "publish": "npm run clean && npm run deploy"
+    "deploy": "npm run sync && hexo clean && hexo g",
   },
   "dependencies": {
     "hexo": "^5.0.0",
