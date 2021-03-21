@@ -49,7 +49,7 @@ after_script:
   - git config user.name "kentsx"
   - git config user.email "kentisxie@126.com"
   - git add .
-  - git commit -m "Update docs"
+  - git commit -m " TravisCI第 $TRAVIS_BUILD_NUMBER 次自动构建发布博客 -`date +"%Y-%m-%d %H:%M"`"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
 # E: Build LifeCycle
 

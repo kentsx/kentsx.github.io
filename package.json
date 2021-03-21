@@ -20,8 +20,7 @@
     "baseUrl": "https://www.yuque.com/api/v2",
     "login": "kmore",
     "repo": "blog",
-    "onlyPublished": false,
-    "token":"ncW6PgDQuYyJA8o90VyZp7EPFADuOz9nuPnucHWZ"
+    "onlyPublished": false
   },
   "scripts": {
     "clean": "hexo clean",
@@ -44,9 +43,7 @@
     "hexo-renderer-stylus": "^2.0.0",
     "hexo-server": "^2.0.0",
     "hexo-simple-mindmap": "^0.2.0",
-    "hexo-theme-landscape": "^0.0.3"
-  },
-  "devDependencies": {
+    "hexo-theme-landscape": "^0.0.3",
     "yuque-hexo": "^1.7.0"
-  }
+  },
 }
