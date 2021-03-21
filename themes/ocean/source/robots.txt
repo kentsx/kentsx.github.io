@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Allow: /home/
+Allow: /archives/
+Allow: /gallery/
+Allow: /about/
+
+Disallow: /images/
+Disallow: /css/
+Disallow: /js/
+Disallow: /fancybox/
+Disallow: /work-log/
+
+Sitemap: https://blog.kmore.ml/sitemap.xml
+Sitemap: https://blog.kmore.ml/baidusitemap.xml

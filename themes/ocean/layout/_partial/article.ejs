@@ -1,0 +1,71 @@
+
+
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    <% if (post.link || post.title){ %>
+      <header class="article-header">
+        <%- partial('post/title', {class_name: 'article-title'}) %>
+      </header>
+    <% } %>
+
+    <% if (index || is_post()) { %>
+      <div class="article-meta">
+        <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
+        <%- partial('post/category') %>
+      </div>
+    <% } %>
+
+    <% if (theme.toc && is_post()){ %>
+      <%- partial('post/tocbot') %>
+    <% } %>
+
+    <div class="article-entry" itemprop="articleBody">
+      <%- partial('post/albums') %>
+      <%#- # partial('post/justifiedGallery') %>
+      <%- partial('post/gallery') %>
+      <% if (post.excerpt && index){ %>
+        <%- post.excerpt %>
+        <% if (theme.excerpt_link){ %>
+          <a class="article-more-link" href="<%- url_for(post.path) %>"><%= theme.excerpt_link %></a>
+        <% } %>
+      <% } else { %>
+        <%- post.content %>
+      <% } %>
+    </div>
+    <% if (!index || is_post()) { %>
+        <footer class="article-footer">
+          <!--关闭share
+          <a data-url="<%- post.permalink %>" data-id="<%= post._id %>"
+             class="article-share-link"><%= __('share') %></a>
+          -->
+          <%- partial('post/tag') %>
+          <% if (!index && is_post()) { %>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div> 
+            <div style="text-align:center;color: #ccc;font-size:14px;">------------- END &nbsp;&nbsp;<i class="fe fe-smile"></i>&nbsp;&nbsp;感谢您的阅读 -------------</div>
+          <% } %>
+            <!--文章结尾-->
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div class="article-copyright" style="text-align:left;font-size:14px;"><b>本文链接：</b><a href="<%- post.permalink %>">
+            <%- post.permalink %></a></div>
+            <div class="article-copyright" style="text-align:left;font-size:14px;"><b>版权声明：</b>
+            本站遵循 “署名-非商业性使用-相同方式共享 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">3.0 (CC BY-NC-SA 3.0)”</a>许可协议。</div>
+        </footer>
+    <% } %>  
+  </div>
+
+  <% if (!index){ %>
+    <%- partial('post/nav') %>
+  <% } %>
+
+  <% if (is_post()) { %>
+  <!--
+    <%- partial('post/gitalk') %>
+  -->
+  <%} %>
+
+</article>
+
+

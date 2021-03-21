@@ -1,0 +1,31 @@
+<% if (theme.valine.enable) { %>
+  <div class="comment_headling"  style="margin-top:5rem;">
+	<font size="5"><i class="fe fe-comments"></i> 评论</font>
+  </div>
+  <div class="comment"></div>
+  <%- js('https://cdn1.lncld.net/static/js/3.0.4/av-min.js') %>
+  <%- js('js/Valine.min.js') %>
+  <script type="text/javascript">
+  // https://cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js
+  GUEST_INFO = ["nick", "mail", "link"],
+  guest_info = "nick,mail,link".split(",").filter(function(i) {
+		return - 1 < GUEST_INFO.indexOf(i)
+  });
+  guest_info = 0 == guest_info.length ? GUEST_INFO: guest_info,
+  new Valine({
+	 // AV 对象来自上面引入av-min.js
+	 av: AV, 
+	 el: '.comment',
+	 app_id: '<%- theme.valine.app_id %>', 
+	 app_key: '<%- theme.valine.app_key %>', 
+	 placeholder: '<%- theme.valine.placeholder %>',
+	 meta: guest_info,
+	 notify: <%- theme.valine.notify %>,
+	 verify: <%- theme.valine.verify %>,
+	 avatar: '<%- theme.valine.avatar %>',
+	 recordIP: <%- theme.valine.recordIP %>,
+	 visitor: <%- theme.valine.visitor %>,
+	 lang: 'zh-cn'
+  });
+  </script>
+<% } %>

@@ -1,0 +1,57 @@
+# Menu
+# Nav的中文直接在这里改
+menu:
+  首页: https://kmore.ml
+  博客: /
+  时间轴: /archives
+  分类: /categories
+  相册: /gallery
+  关于: /about
+  
+rss: #/atom.xml
+
+
+# Miscellaneous
+favicon: /favicon.png
+brand: /images/logo.png
+
+# Ocean Video
+# Because I put videos in multiple formats on the same path, I just labeled the path here.
+ocean:
+  overlay: true
+  path: /images/bgpic/
+  brand: /images/logo_invert.png
+
+# Content
+excerpt_link: 阅读全文
+
+# Tags
+show_count: false
+
+# Toc
+toc: true
+
+# fancybox
+fancybox: true
+
+# Gitalk
+gitalk:
+  enable: false # true
+  clientID: # GitHub Application Client ID
+  clientSecret: # Client Secret
+  repo: # Repository name
+  owner: # GitHub ID
+  admin: # GitHub ID
+
+# Valine 不能与gitalk同时开启
+# valine:
+  # enable: true
+  # app_id:  f0IAtvV4JCrEKhhKCmkpg0cv-gzGzoHsz
+  # app_key:  kuWPTFYN1C3qDUADPM7ryYs3
+  # placeholder: 记得留下你的昵称和邮箱...可以快速收到回复ヾﾉ≧∀≦)o # [v1.0.7 new]留言框占位提示文字
+  # notify: true # 评论回复邮件提醒 。 第三方支持：https://github.com/zhaojun1998/Valine-Admin
+  # verify: true # 验证码 。 开启邮件提醒会默认开启验证码选项
+  # avatar: monsterid # Gravatar头像。可选项：[identicon monsterid  wavatar retro robohash mp ''] ，见 https://valine.js.org/avatar.html
+  # recordIP: true # 是否记录评论者ip
+  # visitor: false  # 阅读量统计 https://valine.js.org/visitor.html
+  # pageSize: 10 # pagination size
