@@ -44,8 +44,13 @@ cache:
 
 script:
   # - npm run deploy
-  - cross-env YUQUE_TOKEN=$YUQUE_TOKEN yuque-hexo clean
+  - yuque-hexo clean
   - cross-env YUQUE_TOKEN=$YUQUE_TOKEN yuque-hexo sync
+  - git config user.name "kentsx"
+  - git config user.email "kentisxie@126.com"
+  - git add .
+  - git commit -m " \#$TRAVIS_BUILD_NUMBER-TravisCI - `date +"%Y-%m-%d %H:%M"`"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" blog-source:blog-source
   - hexo g
 
 after_script:
