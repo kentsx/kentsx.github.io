@@ -20,7 +20,8 @@
     "baseUrl": "https://www.yuque.com/api/v2",
     "login": "kmore",
     "repo": "blog",
-    "onlyPublished": false
+    "onlyPublished": false,
+    "token":"ncW6PgDQuYyJA8o90VyZp7EPFADuOz9nuPnucHWZ",
   },
   "scripts": {
     "clean": "hexo clean",
