@@ -92,6 +92,14 @@ env:
 网上有说语雀和hexo的互通，我还在琢磨，是否有必要。
 [《Hexo 博客终极玩法：云端写作，自动部署》](https://segmentfault.com/a/1190000017797561)
 
+## 异地写作
+在一台安装了git的电脑上，git clone blog-source分支，并且push回去，即可完成发布了
+```
+git clone -b blog-source https://github.com/XXXX/XXXX.git
+```
+手动复制一下scanffoldS中的模板到`source/_post`中，写作，push。
+其他电脑的话，可以git pull一次，再开始。
+
 ## 参考文章
 - [《使用 Travis CI 实现 Hexo 博客自动部署》](https://xirikm.net/2019/826-2)
 - [《用 Travis CI 自动部署 hexo》](https://segmentfault.com/a/1190000004667156)
