@@ -31,6 +31,10 @@ branches:
 install:
   - npm install
 
+# 缓存文件
+cache:
+  directories:
+    - node_modules
 
 #before_script:
  # - npm install -g gulp
