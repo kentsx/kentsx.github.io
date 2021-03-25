@@ -46,6 +46,7 @@ script:
   # - npm run deploy
   - yuque-hexo clean
   - cross-env YUQUE_TOKEN=$YUQUE_TOKEN yuque-hexo sync
+  - git init
   - git config user.name "kentsx"
   - git config user.email "kentisxie@126.com"
   - git add .
