@@ -3,10 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
     "clean": "hexo clean",
-    "deploy": "hexo deploy",
-    "server": "hexo server"
+    "clean:yuque": "yuque-hexo clean",
+    "deploy": "npm run sync && hexo clean && hexo g"
   },
   "hexo": {
     "version": "5.3.0"
@@ -22,12 +21,8 @@
     "repo": "blog",
     "onlyPublished": false
   },
-  "scripts": {
-    "clean": "hexo clean",
-    "clean:yuque": "yuque-hexo clean",
-    "deploy": "npm run sync && hexo clean && hexo g"
-  },
   "dependencies": {
+    "cross-env": "^7.0.3",
     "hexo": "^5.0.0",
     "hexo-deployer-git": "^2.1.0",
     "hexo-generator-archive": "^1.0.0",
@@ -44,7 +39,6 @@
     "hexo-server": "^2.0.0",
     "hexo-simple-mindmap": "^0.2.0",
     "hexo-theme-landscape": "^0.0.3",
-    "yuque-hexo": "^1.7.0",
-    "cross-env": "^7.0.3"
+    "yuque-hexo": "^1.7.0"
   }
 }
