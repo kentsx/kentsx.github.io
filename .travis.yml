@@ -53,7 +53,7 @@ script:
   - git checkout blog-source
   - git add .
   - git commit -m " -#$TRAVIS_BUILD_NUMBER-TravisCI - `date +"%Y-%m-%d %H:%M"`"
-  - git status
+  # - git status
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" blog-source:blog-source
   - hexo g
 
