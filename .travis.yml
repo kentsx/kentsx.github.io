@@ -50,7 +50,7 @@ script:
   # - git init
   - git config user.name "kentsx"
   - git config user.email "kentisxie@126.com"
-  - git checkout blog-source
+  # - git checkout blog-source
   - git add .
   - git commit -m " -#$TRAVIS_BUILD_NUMBER-TravisCI - `date +"%Y-%m-%d %H:%M"`"
   # - git status
