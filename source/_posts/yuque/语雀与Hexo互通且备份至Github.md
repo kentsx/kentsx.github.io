@@ -9,7 +9,7 @@ categories:
   - 金融狗在假装码农
 ---
 
-![3.png](https://cdn.nlark.com/yuque/0/2021/png/682563/1616750856496-d2431950-20cc-4176-8670-3fb60debec75.png#align=left&display=inline&height=735&margin=%5Bobject%20Object%5D&name=3.png&originHeight=735&originWidth=1184&size=42996&status=done&style=none&width=1184)
+![1.png](https://cdn.nlark.com/yuque/0/2021/png/682563/1616761587747-2543b58a-3a9d-49be-bdaa-1b78495a0a64.png#align=left&display=inline&height=343&margin=%5Bobject%20Object%5D&name=1.png&originHeight=343&originWidth=1195&size=98288&status=done&style=none&width=1195)
 接着上一篇[《Travis 部署 Hexo 记录》](https://blog.kmore.ml/2021/pt=03211800/)继续写。。。
 
 <!-- more --> 
@@ -27,7 +27,7 @@ categories:
 #### 新建云函数
 
 点开后选择自定义创建。地域我选的`广州`，据说只有广州和北京的能用，这个可以自己试试吧。运行环境选`php7`，函数名随意啦。
-![新建云函数](https://z3.ax1x.com/2021/03/25/6XfT2j.png)
+![11.png](https://cdn.nlark.com/yuque/0/2021/png/682563/1616761559546-fa1fc966-bc5a-4e06-9626-532d01134ff4.png#align=left&display=inline&height=301&margin=%5Bobject%20Object%5D&name=11.png&originHeight=301&originWidth=680&size=93861&status=done&style=none&width=680)
 
 #### 建立函数
 
@@ -150,7 +150,7 @@ apiId：api-kysretyg
 访问路径：https://service-5i0acgmi-1256168505.gz.apigw.tencentcs.com/release/xxxxxxx
 ```
 
-![触发管理](https://z3.ax1x.com/2021/03/25/6Xf7xs.png)
+![2.png](https://cdn.nlark.com/yuque/0/2021/png/682563/1616761579831-e7a9ecb1-078e-4bb3-a00d-0768f7956b91.png#align=left&display=inline&height=679&margin=%5Bobject%20Object%5D&name=2.png&originHeight=679&originWidth=1054&size=33157&status=done&style=none&width=1054)
 复制最后一行的访问路径，备用。
 至此，腾讯云这边就解决了。
 
@@ -166,8 +166,8 @@ apiId：api-kysretyg
 
 #### 获取 token
 
-进入到语雀的账号设置中，有一个 token 的标签，名字随意，至少勾选`读取你的知识库`和`读取你的文档`，然后把一长串 token 保存备份，也要用到。
-![获取token](https://z3.ax1x.com/2021/03/25/6XhpRJ.png)
+进入到语雀的账号设置中，有一个 token 的标签，名字随意，至少勾选`**读取你的知识库**`和`**读取你的文档**`，然后把一长串 token 保存备份，也要用到。
+![3.png](https://cdn.nlark.com/yuque/0/2021/png/682563/1616750856496-d2431950-20cc-4176-8670-3fb60debec75.png#align=left&display=inline&height=735&margin=%5Bobject%20Object%5D&name=3.png&originHeight=735&originWidth=1184&size=42996&status=done&style=none&width=1184)
 
 #### 配置 webhook
 
@@ -177,7 +177,7 @@ apiId：api-kysretyg
 - 把前面在腾讯云里复制出来的访问路径地址，复制到 URL 栏里
 - 在下面勾选中，我是勾选了**发布文档、更新文档、删除文档。**
 
-![新建WebHook](https://z3.ax1x.com/2021/03/25/6Xh9z9.png)
+![4.png](https://cdn.nlark.com/yuque/0/2021/png/682563/1616761448640-e53c9557-acb5-4889-8d5e-c44c77672ca6.png#align=left&display=inline&height=635&margin=%5Bobject%20Object%5D&name=4.png&originHeight=635&originWidth=1437&size=41580&status=done&style=none&width=1437)
 添加保存即可！
 
 ### Hexo 配置
