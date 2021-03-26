@@ -50,11 +50,11 @@ script:
   # - git init
   - git config user.name "kentsx"
   - git config user.email "kentisxie@126.com"
-  - git checkout blog-source
+  - git checkout -b blog-source-incl-yuque-all
   - git add .
-  - git commit -m "[skip travis] -#$TRAVIS_BUILD_NUMBER-TravisCI - `date +"%Y-%m-%d %H:%M"`"
+  - git commit -m "-#$TRAVIS_BUILD_NUMBER-TravisCI - `date +"%Y-%m-%d %H:%M"`"
   # - git status
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" blog-source:blog-source
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" blog-source-incl-yuque-all:blog-source-incl-yuque-all
   - hexo g
 
 after_script:
