@@ -28,7 +28,7 @@ branches:
 
 
 # S: Build Lifecycle
-before_instal:
+before_install:
 - export TZ='Asia/Shanghai' # 更改时区
 
 install:
