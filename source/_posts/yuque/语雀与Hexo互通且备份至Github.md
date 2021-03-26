@@ -9,6 +9,7 @@ categories:
   - 金融狗在假装码农
 ---
 
+![3.png](https://cdn.nlark.com/yuque/0/2021/png/682563/1616750856496-d2431950-20cc-4176-8670-3fb60debec75.png#align=left&display=inline&height=735&margin=%5Bobject%20Object%5D&name=3.png&originHeight=735&originWidth=1184&size=42996&status=done&style=none&width=1184)
 接着上一篇[《Travis 部署 Hexo 记录》](https://blog.kmore.ml/2021/pt=03211800/)继续写。。。
 
 <!-- more --> 
