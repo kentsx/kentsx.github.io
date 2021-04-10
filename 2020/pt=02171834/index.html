@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="referrer" content="no-referrer" />
+  <!--语雀防盗链-->
+  
+  
+    <meta name="keywords" content="KENT, ELMORE, MORE STORIES">
+  
+  
+    <meta name="description" content="MORE ABOUT MR.K LIFE">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    迈出了爬虫的第一步 |
+    
+    KMORE</title>
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-2020-02-17-迈出了爬虫的第一步" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      迈出了爬虫的第一步
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2020/pt=02171834/" class="article-date">
+  <time datetime="2020-02-17T10:34:09.000Z" itemprop="datePublished">2020-02-17</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%87%91%E8%9E%8D%E7%8B%97%E5%9C%A8%E5%81%87%E8%A3%85%E7%A0%81%E5%86%9C/">金融狗在假装码农</a>
+  </div>
+
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+      
+
+      
+        <p>今天趁着在家“怠”工的机会，因为不断要处理各种事情，所以没法专心学SciPy。只能随便撸一下爬虫的东西，同时因为爬虫，发现这两项需要好好研究一下。</p>
+<a id="more"></a> 
+
+<h2 id="爬虫功能"><a href="#爬虫功能" class="headerlink" title="爬虫功能"></a>爬虫功能</h2><p>这个爬虫的功能其实很单一，网上找到大神做的反代理<a target="_blank" rel="noopener" href="https://douban.uieee.com/">豆瓣Api</a>，可以获取和影视相关的素材，结合我之前打算复刻一个简易的豆瓣，所以爬点电影相关的数据回来。</p>
+<p>这个爬虫的思路也很原始，真的是从一个点开始爬，真的让我发现人和人之间是有各种牵丝万缕的联系的。</p>
+<p>我当时想法很简单，脑子里蹦出一个演员“姜文”，就是你了。先从豆瓣上找到姜文的id，然后输入给api，获取了第一个json，里面包括了姜文参演的47部作品以及每部作品的其他演员、导演等等。</p>
+<p>当然每个人的id也都在json中，于是就是循环！找到这个人的id，去api上抓数据，返回，保存本地，然后循环在本地里看每个人的相关联的人物，如果和之前已经生成的重复了，就跳过，否则就创建一个新的json文件。如此往复。没有任何对人物关系的优化。</p>
+<p>但尽管这么糙的程序，仍旧花了我小半天来写，跑起来之后，我还是被爬虫的能力惊艳到了。短短半个小时，爬回来了有700个人的资料。</p>
+<h2 id="效率仍有待提高"><a href="#效率仍有待提高" class="headerlink" title="效率仍有待提高"></a>效率仍有待提高</h2><p>半小时700个file，尽管要open close write read for这些操作，但效率还是太低。于是我就开始去研究多线程和多进程。这个是我以往从来没有接触过的。分析了一下，多进程似乎更复杂一点，涉及到更多的比如数据重复等等问题，而且我这个数据I/O类型的，所以我选择了多进程。</p>
+<p>一上来没什么经验，因为for循环，一下把threading加到了几千；电脑瞬间起飞LOL。然后就研究如何控制线程数等等。这块还有不少空间可以去了解，对于CPU密集型的任务，尤其是在数据分析中，多进程、多线程还是非常普遍的。</p>
+<h2 id="数据库怎么搞"><a href="#数据库怎么搞" class="headerlink" title="数据库怎么搞"></a>数据库怎么搞</h2><p>好了，现在run了一下，已经有1700多个json文档了，每个都是一个演员的豆瓣信息，怎么处理？肯定不可能是放在json里面吧，关系型数据库就显得很必要了。可SQL怎么弄，又难到我了。这个也得学。。。</p>
+<p>我尝试着结合Django去弄，虽然磕磕绊绊，但好歹也有些进展。晚上再试试看。</p>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
+      
+    </div>
+    
+        <footer class="article-footer">
+          <!--关闭share
+          <a data-url="https://blog.kmore.ml/2020/pt=02171834/" data-id="cknc164z5006upcs04u71fk85"
+             class="article-share-link">分享</a>
+          -->
+          
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/coding/" rel="tag">coding</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A0%81%E5%86%9C/" rel="tag">码农</a></li></ul>
+
+          
+            <div>&nbsp;</div>
+            <div>&nbsp;</div> 
+            <div style="text-align:center;color: #ccc;font-size:14px;">------------- END &nbsp;&nbsp;<i class="fe fe-smile"></i>&nbsp;&nbsp;感谢您的阅读 -------------</div>
+          
+            <!--文章结尾-->
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div class="article-copyright" style="text-align:left;font-size:14px;"><b>本文链接：</b><a href="https://blog.kmore.ml/2020/pt=02171834/">
+            https://blog.kmore.ml/2020/pt=02171834/</a></div>
+            <div class="article-copyright" style="text-align:left;font-size:14px;"><b>版权声明：</b>
+            本站遵循 “署名-非商业性使用-相同方式共享 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">3.0 (CC BY-NC-SA 3.0)”</a>许可协议。</div>
+        </footer>
+      
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2020/pt=02231615/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            转移整理Lightroom
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/pt=02152250/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">Ubuntu下的小坑记录</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  <!--
+    
+  -->
+  
+
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2015 - 2021 KMORE</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+<aside class="sidebar">
+  <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/images/logo.png" alt="KMORE"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" target="_blank" rel="noopener" href="https://kmore.ml">首页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">博客</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">时间轴</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">分类</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">相册</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">关于</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+</aside>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>

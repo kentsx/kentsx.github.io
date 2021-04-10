@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="referrer" content="no-referrer" />
+  <!--语雀防盗链-->
+  
+  
+    <meta name="keywords" content="KENT, ELMORE, MORE STORIES">
+  
+  
+    <meta name="description" content="MORE ABOUT MR.K LIFE">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    黑苹果紫色屏幕问题 |
+    
+    KMORE</title>
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-2021-02-03-黑苹果紫色屏幕问题" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      黑苹果紫色屏幕问题
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2021/pt=02030104/" class="article-date">
+  <time datetime="2021-02-02T17:04:18.000Z" itemprop="datePublished">2021-02-03</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%87%91%E8%9E%8D%E7%8B%97%E5%9C%A8%E5%81%87%E8%A3%85%E7%A0%81%E5%86%9C/">金融狗在假装码农</a>
+  </div>
+
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+      
+
+      
+        <p>买了一台NUC，当时让卖家装好了win10和MAC系统，一开始测试都没有什么问题，但是…</p>
+<a id="more"></a> 因为想要用一个比较纯粹的linux系统来学习编程，所以自己又装了ubuntu20.04LTS版。装完之后，第一反应是发现mac系统进不去了，因为根本没有引导。后来这个问题通过refind解决了，但现在的引导界面非常丑，以后还得想想办法。
+
+<h2 id="问题产生"><a href="#问题产生" class="headerlink" title="问题产生"></a>问题产生</h2><p>今天主要说下能进入mac之后发生的一个很恶心的事情，那就是紫屏。这个问题主要出现在黑苹果以及mac外接显示器上。我的情况大致是这样，一开始启动mac系统的时候，屏幕颜色正常，然后进度条到1/3的地方，屏幕会闪一下，出来就紫色了。通过我昨晚搞定以后，我总结了一下这个问题的产生原因，我大致推测了一下，一开始启动mac的时候，屏幕的显示文件是由引导盘或者是底层的文件来支持的，但到进度条1/3左右的时候，苹果系统里的相应文件介入了，而这个文件对于显示器的支持有bug，所以就出现了这种问题。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>通过网上搜索，可以解决的方法，就是通过注入EDID信息之后，强制让mac以RGB色彩来解析给显示器。</p>
+<h2 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h2><h3 id="生成一个EDID文件"><a href="#生成一个EDID文件" class="headerlink" title="生成一个EDID文件"></a>生成一个EDID文件</h3><p><strong>1. 首先下载从github一个<a target="_blank" rel="noopener" href="https://gist.githubusercontent.com/adaugherity/7435890/raw/66c54c17b179809b028b58a2ca7af0b9540d05b6/patch-edid.rb">.rb</a>文件</strong><br><strong>2. 打开终端，然后使用ruby命令运行该脚本。方法是输入ruby，再把这个文件拖进到Terminal。如下：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby xxxxx&#x2F;xxxx&#x2F;patch-edid.rb</span><br></pre></td></tr></table></figure>
+<p><strong>3. 运行完毕后，在终端上会显示该生成的文件被存放的位置，找到它。建议先剪切到桌面即可。</strong><br><strong>4. 修改系统文件</strong></p>
+<blockquote>
+<p>这步所有要做的，都是为了把生成的一个文件夹放到Mac系统文件夹中。我用的是Big Sur，从前某个版本的Mac开始，为了增强安全性，是无法通过直接挂载系统盘的方式修改系统文件的。</p>
+</blockquote>
+<ul>
+<li><p><strong>解决思路是: 将系统重新挂载在到一个有读写权限的新目录下，在该目录下操作即可。</strong>（方法来自网络搜索，非原创）</p>
+</li>
+<li><p>进入系统Recovery模式，从terminal中将系统保护SIP关掉；我是黑苹果，用的opencore引导，在opencore界面按空格，就能看到Recovery盘了。进入恢复盘中的Terminal，输入以下两条命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">csrutil authenticated-root disable</span><br><span class="line">csrutil disable</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启开机进入系统，可以在终端查看是否已将SIP关掉（csrutil status；csrutil authenticated-root status），都显示Disable即可；</p>
+</li>
+<li><p>通过 <code>sudo mount -o nobrowse -t apfs /dev/diskNsM /xxx/xx </code>重新将系统盘挂载到本地。/xxx/xx 是可以在任意地方新建的目录（例如：<code>/Users/mac/Desktop/aaa</code>）。diskNsM 为系统盘的设备名，这个在”磁盘工具-设备” 里可以看到（例如：disk1s5s1），注意要把后面的s1去掉，因为磁盘工具里面里显示的是系统盘的快照，挂载成这个snapshot是没用的！！</p>
+</li>
+<li><p>如果是上述例子的情况的话，就执行 <code>sudo mount -o nobrowse -t apfs /dev/disk1s5 /Users/mac/Desktop/aaa</code>，这样系统盘就重新挂载到了桌面的aaa文件夹下面，从这个文件夹进去就是系统根目录了。而且这个文件夹是可读可写的。</p>
+</li>
+</ul>
+<h3 id="把EDID文件放入Mac系统文件夹"><a href="#把EDID文件放入Mac系统文件夹" class="headerlink" title="把EDID文件放入Mac系统文件夹"></a>把EDID文件放入Mac系统文件夹</h3><p>我们把之前放在桌面上的EDID配置文件夹，整个拖入<code>/System/Library/Displays/Contents/Resources/Overrides/</code>的系统配置文件夹。<br>如果提示覆盖之类，选是。同时为了保险起见，也可以先把原来的复制一下，以防万一。</p>
+<h3 id="重建snapshot"><a href="#重建snapshot" class="headerlink" title="重建snapshot"></a>重建snapshot</h3><p>最后需要重建系统 snapshot，使用到的命令为：<code>sudo bless --folder /xxx/xx/System/Library/CoreServices --bootefi --create-snapshot</code>，其中/xxx/xx是最初设置的目录；如果是上述例子的情况的话，就执行：<code>sudo bless --folder /Users/mac/Desktop/aaa/System/Library/CoreServices --bootefi --create-snapshot</code></p>
+<h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><p>重启系统，再次重启进入Recovery模式，重新开启SIP以免系统失去安全防护。打开terminal，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">csrutil enable</span><br><span class="line">csrutil authenticated-root enable</span><br></pre></td></tr></table></figure>
+<p>再次重启系统进入一般的Mac系统，会发现挂载的磁盘消失，而修改的设置已经写入到原先不能更改的系统文件中了。</p>
+<p><strong>最重要的是，基佬紫消失！！！</strong></p>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
+      
+    </div>
+    
+        <footer class="article-footer">
+          <!--关闭share
+          <a data-url="https://blog.kmore.ml/2021/pt=02030104/" data-id="cknc164zd007apcs0eac53sna"
+             class="article-share-link">分享</a>
+          -->
+          
+          
+            <div>&nbsp;</div>
+            <div>&nbsp;</div> 
+            <div style="text-align:center;color: #ccc;font-size:14px;">------------- END &nbsp;&nbsp;<i class="fe fe-smile"></i>&nbsp;&nbsp;感谢您的阅读 -------------</div>
+          
+            <!--文章结尾-->
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div class="article-copyright" style="text-align:left;font-size:14px;"><b>本文链接：</b><a href="https://blog.kmore.ml/2021/pt=02030104/">
+            https://blog.kmore.ml/2021/pt=02030104/</a></div>
+            <div class="article-copyright" style="text-align:left;font-size:14px;"><b>版权声明：</b>
+            本站遵循 “署名-非商业性使用-相同方式共享 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">3.0 (CC BY-NC-SA 3.0)”</a>许可协议。</div>
+        </footer>
+      
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2021/pt=02030137/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            迁移Hexo到NUC
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/pt=08040037/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">写下来才知道发生了这么多</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  <!--
+    
+  -->
+  
+
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2015 - 2021 KMORE</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+<aside class="sidebar">
+  <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/images/logo.png" alt="KMORE"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" target="_blank" rel="noopener" href="https://kmore.ml">首页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">博客</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">时间轴</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">分类</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">相册</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">关于</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+</aside>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>

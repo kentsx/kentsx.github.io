@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="referrer" content="no-referrer" />
+  <!--语雀防盗链-->
+  
+  
+    <meta name="keywords" content="KENT, ELMORE, MORE STORIES">
+  
+  
+    <meta name="description" content="MORE ABOUT MR.K LIFE">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    Travis部署Hexo记录 |
+    
+    KMORE</title>
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+<main class="content">
+  <section class="outer">
+  
+
+<article id="post-2021-03-21-Travis部署Hexo记录" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Travis部署Hexo记录
+    </h1>
+  
+  
+
+
+
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2021/pt=03211800/" class="article-date">
+  <time datetime="2021-03-21T10:00:41.000Z" itemprop="datePublished">2021-03-21</time>
+</a>
+        
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%87%91%E8%9E%8D%E7%8B%97%E5%9C%A8%E5%81%87%E8%A3%85%E7%A0%81%E5%86%9C/">金融狗在假装码农</a>
+  </div>
+
+      </div>
+    
+
+    
+      
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+      
+
+      
+        <p>今天终于心血来潮，来弄一下这个事情，以前觉得用Hexo写博客的时候，确实有一个纠结的地方，就是每次换电脑或者出差的时候，就不方便。</p>
+<a id="more"></a> 
+
+<p>现在一部分解决了这个问题，就是使用Travis来做这个中间的步骤。网上也有很多案例，但无奈我试了授权的方法，依然没能成功，最后是在综合了几篇的方法之后，最终成功了。</p>
+<h2 id="目标及准备工作"><a href="#目标及准备工作" class="headerlink" title="目标及准备工作"></a>目标及准备工作</h2><h3 id="目标2个"><a href="#目标2个" class="headerlink" title="目标2个"></a>目标2个</h3><p>1、将博客源码放在blog repo的blog-source分支；<br>2、使每次push都可以直接启动Travis并且生成新的Github page。</p>
+<h3 id="新建分支并push"><a href="#新建分支并push" class="headerlink" title="新建分支并push"></a>新建分支并push</h3><p>0、删除本地hexo生成的文件夹，我只留下了<code>scanfolds</code>,<code>source</code>,<code>themes</code>文件夹和根目录下已经有的文件，这样这个hexo项目应该基本是清空完了，只留下了核心的部分。<br>1、<strong>新建git</strong>：在hexo文件的根目录，<code>git init</code><br>2、<strong>连接remote库</strong>：<code>git remote add origin git@github.com:xxxx/xxxx.git</code>，这里的xxxx根据自己的来定，可以直接在github网页复制得到；<br>3、<strong>新建branch</strong>：<code>git checkout -b blog-source</code>，生成新的branch<code>blog-source</code><br>4、<strong>推送到remote库</strong>：<code>git add .</code>，<code>git commit -m &#39;blog-source branch&#39;</code>，<code>git push -u origin blog-source</code></p>
+<p>这时候在github网页上就能看到一个新的分支，并且已经把刚才文件夹里的东西存在里面了</p>
+<h2 id="配置Travis"><a href="#配置Travis" class="headerlink" title="配置Travis"></a>配置Travis</h2><h3 id="注册并且导入repo"><a href="#注册并且导入repo" class="headerlink" title="注册并且导入repo"></a>注册并且导入repo</h3><p>注册直接用github sign-in，这样你的repo应该就会都同步过去了。配置我是自己摸索的，可以参考这篇文章<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e22c13d85659">《手把手教你使用Travis CI自动部署你的Hexo博客到Github上》</a></p>
+<h3 id="Travis网页设置"><a href="#Travis网页设置" class="headerlink" title="Travis网页设置"></a>Travis网页设置</h3><p>在<code>github---&gt; settings---&gt;developers settings----&gt;Personal access tokens</code>里面，生成一个token，选择的权限可以把除了delete repo以外的都勾上，然后把一串token复制出来，备用<br>回到Travis网页，在repo的setting里，有个Environmental Variables，新建一个<code>GH_TOKEN</code>（千万不要用别的名字），把刚刚获取的一串token复制到value里并apply。<br>现在新版本的travis已经没有<code>build only if .travis.yml is present</code>的开关了，但似乎不影响。</p>
+<p>我这里用的是access token的方法，也有用ssh密钥的，我觉得比较麻烦，而且我也成功。关键是这个比较简单！！！</p>
+<h3 id="安装github-app"><a href="#安装github-app" class="headerlink" title="安装github app"></a>安装github app</h3><p>到<a target="_blank" rel="noopener" href="https://github.com/marketplace">github marketplace</a>，把<code>travis-ci</code>安装，一般情况下就默认开全部的repo就可以了。</p>
+<h3 id="本地库travis配置"><a href="#本地库travis配置" class="headerlink" title="本地库travis配置"></a>本地库travis配置</h3><p>前面一步已经建立好了github库和travis的联系，但需要告诉travis要怎么去build对吧，这步就是做这个。<br>本地项目库根目录中，新建一个<code>.travis.yml</code>的文件，把以下内容放进去：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#选择语言和版本</span><br><span class="line">language: node_js</span><br><span class="line">node_js: stable</span><br><span class="line"></span><br><span class="line"># 需要的环境和安装</span><br><span class="line"># S: Build Lifecycle</span><br><span class="line">install:</span><br><span class="line">  - npm install</span><br><span class="line"></span><br><span class="line"># 如果你用了gulp压缩就开，我没用所以我就注释掉了</span><br><span class="line">#before_script:</span><br><span class="line"> # - npm install -g gulp</span><br><span class="line"></span><br><span class="line">#执行的命令，就是之前常用的hexo g</span><br><span class="line">script:</span><br><span class="line">  - hexo g</span><br><span class="line"></span><br><span class="line">#hexo g生成的网页都在public文件夹里，以前的hexo d就是把这些内容放到github上</span><br><span class="line"># 现在就手动把这些内容放进去</span><br><span class="line">after_script:</span><br><span class="line">  - cd .&#x2F;public</span><br><span class="line">  - git init</span><br><span class="line">  # xxxx换成github名字</span><br><span class="line">  - git config user.name &quot;XXXXX&quot;</span><br><span class="line">  # 换成github的登录邮箱</span><br><span class="line">  - git config user.email &quot;XXX@XXXX.com&quot;</span><br><span class="line">  - git add .</span><br><span class="line">  # 这步就是git的备注，随意改引号里的东西</span><br><span class="line">  - git commit -m &quot;Update docs&quot;</span><br><span class="line">  # 告诉Travis环境变量，push到的分支是master</span><br><span class="line">  - git push --force --quiet &quot;https:&#x2F;&#x2F;$&#123;GH_TOKEN&#125;@$&#123;GH_REF&#125;&quot; master:master</span><br><span class="line"># E: Build LifeCycle</span><br><span class="line"></span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">  # travis运行的触发条件，我的是blog-source分支有变动就触发</span><br><span class="line">    - blog-source</span><br><span class="line">env:</span><br><span class="line"> global:</span><br><span class="line"> # repo的地址，可以在github中获取</span><br><span class="line">   - GH_REF: github.com&#x2F;xxxx&#x2F;xxxxx</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>再用一次git的添加推送方式，把这个<code>.travis.yml</code>文件推送到<code>blog-source</code>分支。正常的话，travis已经就会开始build第一次了。</p>
+<h2 id="后续计划"><a href="#后续计划" class="headerlink" title="后续计划"></a>后续计划</h2><p>网上有说语雀和hexo的互通，我还在琢磨，是否有必要。<br><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000017797561">《Hexo 博客终极玩法：云端写作，自动部署》</a></p>
+<h2 id="异地写作"><a href="#异地写作" class="headerlink" title="异地写作"></a>异地写作</h2><p>在一台安装了git的电脑上，git clone blog-source分支，并且push回去，即可完成发布了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b blog-source https:&#x2F;&#x2F;github.com&#x2F;XXXX&#x2F;XXXX.git</span><br></pre></td></tr></table></figure>
+<p>手动复制一下scanffoldS中的模板到<code>source/_post</code>中，写作，push。<br>其他电脑的话，可以git pull一次，再开始。</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://xirikm.net/2019/826-2">《使用 Travis CI 实现 Hexo 博客自动部署》</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000004667156">《用 Travis CI 自动部署 hexo》</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e22c13d85659">《手把手教你使用Travis CI自动部署你的Hexo博客到Github上》</a></li>
+</ul>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
+      
+    </div>
+    
+        <footer class="article-footer">
+          <!--关闭share
+          <a data-url="https://blog.kmore.ml/2021/pt=03211800/" data-id="cknc164zi007mpcs00i0gfm91"
+             class="article-share-link">分享</a>
+          -->
+          
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Travis/" rel="tag">Travis</a></li></ul>
+
+          
+            <div>&nbsp;</div>
+            <div>&nbsp;</div> 
+            <div style="text-align:center;color: #ccc;font-size:14px;">------------- END &nbsp;&nbsp;<i class="fe fe-smile"></i>&nbsp;&nbsp;感谢您的阅读 -------------</div>
+          
+            <!--文章结尾-->
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div class="article-copyright" style="text-align:left;font-size:14px;"><b>本文链接：</b><a href="https://blog.kmore.ml/2021/pt=03211800/">
+            https://blog.kmore.ml/2021/pt=03211800/</a></div>
+            <div class="article-copyright" style="text-align:left;font-size:14px;"><b>版权声明：</b>
+            本站遵循 “署名-非商业性使用-相同方式共享 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">3.0 (CC BY-NC-SA 3.0)”</a>许可协议。</div>
+        </footer>
+      
+  </div>
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2021/pt=03250313/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            深夜发一篇
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2021/pt=03152151/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">年度计划以及今年一些目标</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  <!--
+    
+  -->
+  
+
+</article>
+
+
+
+</section>
+  <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+    <li><i class="fe fe-bookmark"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2015 - 2021 KMORE</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean" target="_blank">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+<aside class="sidebar">
+  <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/images/logo.png" alt="KMORE"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" target="_blank" rel="noopener" href="https://kmore.ml">首页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">博客</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">时间轴</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">分类</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">相册</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">关于</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="搜索">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+</aside>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+  
+<script src="/js/tocbot.min.js"></script>
+
+  <script>
+    // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+    tocbot.init({
+      tocSelector: '.tocbot',
+      contentSelector: '.article-entry',
+      headingSelector: 'h1, h2, h3, h4, h5, h6',
+      hasInnerContainers: true,
+      scrollSmooth: true,
+      positionFixedSelector: '.tocbot',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
+    });
+  </script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>
